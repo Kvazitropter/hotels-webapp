@@ -1,0 +1,4060 @@
+[
+{
+  "model": "hotels.hotel",
+  "pk": 221,
+  "fields": {
+    "name": "ИмяСетиОтелей рядом с бул. Жуковского",
+    "phone_number": "+78561056561",
+    "email": "rkrasilnikova@zao.biz",
+    "country": "Russia",
+    "city": "п. Обоянь",
+    "address": "бул. Жуковского 62",
+    "floor_count": 6,
+    "is_active": true
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 222,
+  "fields": {
+    "name": "ИмяСетиОтелей над ул. Дальняя",
+    "phone_number": "+78795528443",
+    "email": "artem2009@ao.ru",
+    "country": "Russia",
+    "city": "д. Октябрьский (Башк.)",
+    "address": "ул. Дальняя 8",
+    "floor_count": 5,
+    "is_active": false
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 223,
+  "fields": {
+    "name": "ИмяСетиОтелей над ул. Комарова",
+    "phone_number": "+79382418394",
+    "email": "lebedevaevfrosinija@alkotorg.ru",
+    "country": "Russia",
+    "city": "к. Снежинск",
+    "address": "ул. Комарова 97",
+    "floor_count": 4,
+    "is_active": true
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 224,
+  "fields": {
+    "name": "ИмяСетиОтелей с видом на бул. Плеханова",
+    "phone_number": "+79049913188",
+    "email": "tatjana1997@ooo.com",
+    "country": "Russia",
+    "city": "к. Верещагино (Перм.)",
+    "address": "бул. Плеханова 879",
+    "floor_count": 5,
+    "is_active": true
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 225,
+  "fields": {
+    "name": "ИмяСетиОтелей рядом с ш. Портовое",
+    "phone_number": "+79087747046",
+    "email": "anani61@sidorova.net",
+    "country": "Russia",
+    "city": "к. Горячий Ключ",
+    "address": "ш. Портовое 7/3",
+    "floor_count": 8,
+    "is_active": true
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 226,
+  "fields": {
+    "name": "ИмяСетиОтелей на ш. Курортное",
+    "phone_number": "+79474668899",
+    "email": "visheslavlavrentev@samsonov.edu",
+    "country": "Russia",
+    "city": "г. Лянтор",
+    "address": "ш. Курортное 948",
+    "floor_count": 10,
+    "is_active": true
+  }
+},
+{
+  "model": "hotels.hotel",
+  "pk": 227,
+  "fields": {
+    "name": "ИмяСетиОтелей с видом на алл. Нижняя",
+    "phone_number": "+77637818547",
+    "email": "arefi_19@rao.ru",
+    "country": "Russia",
+    "city": "с. Муравленко",
+    "address": "алл. Нижняя 7/2",
+    "floor_count": 8,
+    "is_active": true
+  }
+},
+{
+  "model": "hotels.roomtype",
+  "pk": 362,
+  "fields": {
+    "name": "Номер рядом с площадью Захаров",
+    "description": "Некоторый природа плод господь.\nКоричневый назначить витрина цель забирать. Через табак аллея девка сынок легко выраженный.",
+    "size": 141,
+    "capacity": 5,
+    "bedroom_count": 4,
+    "bathroom_count": 2,
+    "has_balcony": false
+  }
+},
+{
+  "model": "hotels.roomtype",
+  "pk": 363,
+  "fields": {
+    "name": "Апартаменты рядом с бульваром Сорокин",
+    "description": "Назначить мусор устройство тусклый командующий. Печатать освободить роса кольцо пища вскакивать.\nГолубчик угроза район один. Багровый ложиться соответствие коробка товар миллиард палата сверкать.\nГосподь армейский командующий провал поговорить потрясти. Равнодушный нажать район другой.",
+    "size": 176,
+    "capacity": 1,
+    "bedroom_count": 1,
+    "bathroom_count": 0,
+    "has_balcony": false
+  }
+},
+{
+  "model": "hotels.roomtype",
+  "pk": 364,
+  "fields": {
+    "name": "Апартаменты у залива Юдин",
+    "description": "Радость сохранять девка помимо реклама жестокий. Поставить заведение за.\nВстать миф миг художественный идея табак. Мелочь радость бочок штаб голубчик мусор приятель. Бак единый монета полюбить.",
+    "size": 190,
+    "capacity": 6,
+    "bedroom_count": 2,
+    "bathroom_count": 0,
+    "has_balcony": false
+  }
+},
+{
+  "model": "hotels.roomtype",
+  "pk": 365,
+  "fields": {
+    "name": "Комната с видом на улицу Григорьева",
+    "description": "Жить возникновение правление даль чувство выражаться. Монета домашний остановить горький песенка.\nРешение бабочка остановить. Стакан написать возможно вывести успокоиться сустав протягивать.",
+    "size": 67,
+    "capacity": 8,
+    "bedroom_count": 3,
+    "bathroom_count": 3,
+    "has_balcony": false
+  }
+},
+{
+  "model": "hotels.roomtype",
+  "pk": 366,
+  "fields": {
+    "name": "Номер на заливе Архипов",
+    "description": "Девка карман следовательно. Танцевать отметить успокоиться пятеро развернуться цель.\nАдвокат провал некоторый госпожа термин полюбить. Идея коричневый темнеть видимо означать некоторый слать.",
+    "size": 55,
+    "capacity": 8,
+    "bedroom_count": 2,
+    "bathroom_count": 1,
+    "has_balcony": false
+  }
+},
+{
+  "model": "hotels.roomtype",
+  "pk": 367,
+  "fields": {
+    "name": "Апартаменты в центре квартала Гришина",
+    "description": "Лететь привлекать прелесть багровый развитый тесно бегать слишком. Трубка миф команда набор секунда слать.\nАрмейский уронить войти уничтожение цвет заявление сынок. Секунда коммунизм командование цепочка один мрачно холодно миг.",
+    "size": 91,
+    "capacity": 5,
+    "bedroom_count": 4,
+    "bathroom_count": 3,
+    "has_balcony": false
+  }
+},
+{
+  "model": "hotels.roomtype",
+  "pk": 368,
+  "fields": {
+    "name": "Номер на реке Самойлов",
+    "description": "Валюта печатать банк. Сопровождаться постоянный выгнать мера. Князь угроза командир хозяйка кожа.\nВойти сбросить валюта близко.\nПриличный редактор более рот художественный жидкий. Товар потрясти потянуться разуметься пропаганда тута правление недостаток.",
+    "size": 160,
+    "capacity": 7,
+    "bedroom_count": 2,
+    "bathroom_count": 1,
+    "has_balcony": true
+  }
+},
+{
+  "model": "hotels.roomtype",
+  "pk": 369,
+  "fields": {
+    "name": "Студия над заливом Кабанов",
+    "description": "Виднеться парень тесно пол некоторый изучить. Посвятить лапа ребятишки руководитель факультет помолчать роскошный.\nБок поставить прежний актриса конструкция стакан. Казнь табак вздрагивать художественный столетие неправда столетие увеличиваться.",
+    "size": 184,
+    "capacity": 2,
+    "bedroom_count": 1,
+    "bathroom_count": 1,
+    "has_balcony": false
+  }
+},
+{
+  "model": "hotels.roomtype",
+  "pk": 370,
+  "fields": {
+    "name": "Комната в центре площади Никитина",
+    "description": "Механический заведение печатать перебивать спорт цель полоска. Скользить банк зарплата термин терапия. Правление бак правление возмутиться поймать ночь самостоятельно.\nТрубка мелькнуть отдел. Миг аж выдержать умирать приходить правление второй четыре. Покинуть реклама способ космос.",
+    "size": 67,
+    "capacity": 2,
+    "bedroom_count": 1,
+    "bathroom_count": 0,
+    "has_balcony": true
+  }
+},
+{
+  "model": "hotels.roomtype",
+  "pk": 371,
+  "fields": {
+    "name": "Студия в центре района Аксенов",
+    "description": "Экзамен белье отметить передо. Покинуть упор госпожа выразить интеллектуальный салон. Очередной прелесть результат мягкий услать.\nОсвобождение инфекция дыхание пробовать около. Блин привлекать привлекать подробность поколение вскакивать выдержать. Ставить деловой возможно висеть ведь палка.",
+    "size": 34,
+    "capacity": 2,
+    "bedroom_count": 1,
+    "bathroom_count": 0,
+    "has_balcony": false
+  }
+},
+{
+  "model": "hotels.roomtype",
+  "pk": 372,
+  "fields": {
+    "name": "Номер в центре площади Силина",
+    "description": "Ремень похороны дошлый освободить наслаждение. Бак монета палец плясать налоговый спешить.\nВыдержать свежий нервно. Отметить полюбить изменение изучить полевой дремать.\nУронить карандаш вывести еврейский другой гулять очко.",
+    "size": 143,
+    "capacity": 3,
+    "bedroom_count": 1,
+    "bathroom_count": 1,
+    "has_balcony": false
+  }
+},
+{
+  "model": "hotels.roomtype",
+  "pk": 373,
+  "fields": {
+    "name": "Комната на реке Котов",
+    "description": "Настать вывести смелый мягкий упор белье. Процесс сынок фонарик зима степь. Коммунизм освободить выбирать бригада район.\nПокинуть тяжелый горький заложить пропасть указанный. Коробка развернуться основание рот.",
+    "size": 98,
+    "capacity": 5,
+    "bedroom_count": 2,
+    "bathroom_count": 2,
+    "has_balcony": false
+  }
+},
+{
+  "model": "hotels.roomtype",
+  "pk": 374,
+  "fields": {
+    "name": "Номер над рекой Дмитриева",
+    "description": "Космос угодный плясать ребятишки да посвятить основание конструкция. Пламя появление социалистический. Да слать торговля выразить спорт растеряться перебивать.\nВоенный запеть предоставить запеть налоговый разнообразный. Плод совет дыхание уронить роскошный.",
+    "size": 141,
+    "capacity": 2,
+    "bedroom_count": 1,
+    "bathroom_count": 0,
+    "has_balcony": true
+  }
+},
+{
+  "model": "hotels.roomtype",
+  "pk": 375,
+  "fields": {
+    "name": "Комната у бульвара Назаров",
+    "description": "Манера багровый упор функция. Основание монета лететь виднеться тревога. Упор исследование мальчишка бровь идея сынок. Счастье изучить ремень заработать зато наслаждение.\nПотом разнообразный фонарик вздрогнуть палец протягивать возбуждение. Угол человечек вытаскивать конструкция передо прежний.",
+    "size": 127,
+    "capacity": 8,
+    "bedroom_count": 1,
+    "bathroom_count": 1,
+    "has_balcony": false
+  }
+},
+{
+  "model": "hotels.roomtype",
+  "pk": 376,
+  "fields": {
+    "name": "Комната у залива Дмитриев",
+    "description": "Угол механический сверкающий коллектив умирать прошептать. Механический назначить карман естественный непривычный рабочий сходить процесс. Мусор человечек естественный запретить.\nНосок лапа четыре. Деньги основание исследование.",
+    "size": 198,
+    "capacity": 2,
+    "bedroom_count": 1,
+    "bathroom_count": 1,
+    "has_balcony": false
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5194,
+  "fields": {
+    "hotel": 221,
+    "room_type": 372,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "3275.57",
+    "extra_pay_per_person": "836.85",
+    "floor": 1,
+    "number_on_floor": 1,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5195,
+  "fields": {
+    "hotel": 221,
+    "room_type": 367,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "3335.97",
+    "extra_pay_per_person": "1461.44",
+    "floor": 1,
+    "number_on_floor": 2,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5196,
+  "fields": {
+    "hotel": 221,
+    "room_type": 371,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "11867.77",
+    "extra_pay_per_person": "3262.29",
+    "floor": 1,
+    "number_on_floor": 3,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5197,
+  "fields": {
+    "hotel": 221,
+    "room_type": 367,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "13091.29",
+    "extra_pay_per_person": "6332.28",
+    "floor": 1,
+    "number_on_floor": 4,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5198,
+  "fields": {
+    "hotel": 221,
+    "room_type": 365,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "3298.98",
+    "extra_pay_per_person": "989.16",
+    "floor": 1,
+    "number_on_floor": 5,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5199,
+  "fields": {
+    "hotel": 221,
+    "room_type": 365,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": true,
+    "price_per_night": "5262.71",
+    "extra_pay_per_person": "1872.42",
+    "floor": 1,
+    "number_on_floor": 6,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5200,
+  "fields": {
+    "hotel": 221,
+    "room_type": 371,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "1647.88",
+    "extra_pay_per_person": "751.46",
+    "floor": 1,
+    "number_on_floor": 7,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5201,
+  "fields": {
+    "hotel": 221,
+    "room_type": 373,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "9833.23",
+    "extra_pay_per_person": "3116.66",
+    "floor": 1,
+    "number_on_floor": 8,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5202,
+  "fields": {
+    "hotel": 221,
+    "room_type": 372,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "17314.15",
+    "extra_pay_per_person": "7450.09",
+    "floor": 1,
+    "number_on_floor": 9,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5203,
+  "fields": {
+    "hotel": 221,
+    "room_type": 370,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "5989.69",
+    "extra_pay_per_person": "2551.49",
+    "floor": 1,
+    "number_on_floor": 10,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5204,
+  "fields": {
+    "hotel": 221,
+    "room_type": 370,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "9852.37",
+    "extra_pay_per_person": "3911.47",
+    "floor": 1,
+    "number_on_floor": 11,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5205,
+  "fields": {
+    "hotel": 221,
+    "room_type": 365,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": true,
+    "price_per_night": "5619.73",
+    "extra_pay_per_person": "2739.84",
+    "floor": 2,
+    "number_on_floor": 1,
+    "variant": "A"
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5206,
+  "fields": {
+    "hotel": 221,
+    "room_type": 375,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "18121.62",
+    "extra_pay_per_person": "8831.53",
+    "floor": 2,
+    "number_on_floor": 1,
+    "variant": "B"
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5207,
+  "fields": {
+    "hotel": 221,
+    "room_type": 373,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "16868.69",
+    "extra_pay_per_person": "7219.18",
+    "floor": 2,
+    "number_on_floor": 2,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5208,
+  "fields": {
+    "hotel": 221,
+    "room_type": 369,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "1182.47",
+    "extra_pay_per_person": "386.37",
+    "floor": 2,
+    "number_on_floor": 3,
+    "variant": "A"
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5209,
+  "fields": {
+    "hotel": 221,
+    "room_type": 372,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "16165.42",
+    "extra_pay_per_person": "7181.22",
+    "floor": 2,
+    "number_on_floor": 3,
+    "variant": "B"
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5210,
+  "fields": {
+    "hotel": 221,
+    "room_type": 373,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "12069.74",
+    "extra_pay_per_person": "5780.00",
+    "floor": 2,
+    "number_on_floor": 4,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5211,
+  "fields": {
+    "hotel": 221,
+    "room_type": 364,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "16502.77",
+    "extra_pay_per_person": "7246.62",
+    "floor": 2,
+    "number_on_floor": 5,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5212,
+  "fields": {
+    "hotel": 221,
+    "room_type": 364,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "13349.46",
+    "extra_pay_per_person": "5865.05",
+    "floor": 2,
+    "number_on_floor": 6,
+    "variant": "A"
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5213,
+  "fields": {
+    "hotel": 221,
+    "room_type": 369,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "11429.54",
+    "extra_pay_per_person": "3465.21",
+    "floor": 2,
+    "number_on_floor": 6,
+    "variant": "B"
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5214,
+  "fields": {
+    "hotel": 222,
+    "room_type": 373,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "2528.99",
+    "extra_pay_per_person": "1241.18",
+    "floor": 1,
+    "number_on_floor": 1,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5215,
+  "fields": {
+    "hotel": 222,
+    "room_type": 366,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "18702.78",
+    "extra_pay_per_person": "9081.52",
+    "floor": 1,
+    "number_on_floor": 2,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5216,
+  "fields": {
+    "hotel": 222,
+    "room_type": 362,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "12503.51",
+    "extra_pay_per_person": "6226.94",
+    "floor": 1,
+    "number_on_floor": 3,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5217,
+  "fields": {
+    "hotel": 222,
+    "room_type": 364,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "6578.05",
+    "extra_pay_per_person": "2042.40",
+    "floor": 1,
+    "number_on_floor": 4,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5218,
+  "fields": {
+    "hotel": 222,
+    "room_type": 362,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "8441.92",
+    "extra_pay_per_person": "2465.47",
+    "floor": 1,
+    "number_on_floor": 5,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5219,
+  "fields": {
+    "hotel": 222,
+    "room_type": 369,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "13950.56",
+    "extra_pay_per_person": "4453.88",
+    "floor": 1,
+    "number_on_floor": 6,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5220,
+  "fields": {
+    "hotel": 222,
+    "room_type": 363,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "8142.17",
+    "extra_pay_per_person": "2202.11",
+    "floor": 1,
+    "number_on_floor": 7,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5221,
+  "fields": {
+    "hotel": 222,
+    "room_type": 363,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "3194.25",
+    "extra_pay_per_person": "1410.54",
+    "floor": 1,
+    "number_on_floor": 8,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5222,
+  "fields": {
+    "hotel": 222,
+    "room_type": 376,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "5784.14",
+    "extra_pay_per_person": "2412.01",
+    "floor": 1,
+    "number_on_floor": 9,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5223,
+  "fields": {
+    "hotel": 222,
+    "room_type": 373,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "3592.46",
+    "extra_pay_per_person": "976.13",
+    "floor": 1,
+    "number_on_floor": 10,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5224,
+  "fields": {
+    "hotel": 222,
+    "room_type": 366,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "4630.67",
+    "extra_pay_per_person": "1363.58",
+    "floor": 1,
+    "number_on_floor": 11,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5225,
+  "fields": {
+    "hotel": 222,
+    "room_type": 362,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "5775.09",
+    "extra_pay_per_person": "2822.63",
+    "floor": 1,
+    "number_on_floor": 12,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5226,
+  "fields": {
+    "hotel": 222,
+    "room_type": 376,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "19909.73",
+    "extra_pay_per_person": "5779.72",
+    "floor": 1,
+    "number_on_floor": 13,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5227,
+  "fields": {
+    "hotel": 222,
+    "room_type": 363,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "2438.59",
+    "extra_pay_per_person": "820.34",
+    "floor": 1,
+    "number_on_floor": 14,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5228,
+  "fields": {
+    "hotel": 222,
+    "room_type": 376,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "14821.86",
+    "extra_pay_per_person": "7258.22",
+    "floor": 1,
+    "number_on_floor": 15,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5229,
+  "fields": {
+    "hotel": 222,
+    "room_type": 368,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": true,
+    "price_per_night": "3397.39",
+    "extra_pay_per_person": "1305.81",
+    "floor": 1,
+    "number_on_floor": 16,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5230,
+  "fields": {
+    "hotel": 222,
+    "room_type": 366,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "17492.56",
+    "extra_pay_per_person": "4694.42",
+    "floor": 1,
+    "number_on_floor": 17,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5231,
+  "fields": {
+    "hotel": 222,
+    "room_type": 373,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "5509.58",
+    "extra_pay_per_person": "2137.35",
+    "floor": 1,
+    "number_on_floor": 18,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5232,
+  "fields": {
+    "hotel": 222,
+    "room_type": 368,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "13302.31",
+    "extra_pay_per_person": "6599.79",
+    "floor": 2,
+    "number_on_floor": 1,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5233,
+  "fields": {
+    "hotel": 222,
+    "room_type": 362,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "17370.28",
+    "extra_pay_per_person": "8348.38",
+    "floor": 2,
+    "number_on_floor": 2,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5234,
+  "fields": {
+    "hotel": 223,
+    "room_type": 370,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "17156.91",
+    "extra_pay_per_person": "5338.74",
+    "floor": 1,
+    "number_on_floor": 1,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5235,
+  "fields": {
+    "hotel": 223,
+    "room_type": 369,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "8407.76",
+    "extra_pay_per_person": "2766.32",
+    "floor": 1,
+    "number_on_floor": 2,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5236,
+  "fields": {
+    "hotel": 223,
+    "room_type": 364,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "15906.67",
+    "extra_pay_per_person": "4533.00",
+    "floor": 1,
+    "number_on_floor": 3,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5237,
+  "fields": {
+    "hotel": 223,
+    "room_type": 363,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "15890.97",
+    "extra_pay_per_person": "4305.81",
+    "floor": 1,
+    "number_on_floor": 4,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5238,
+  "fields": {
+    "hotel": 223,
+    "room_type": 371,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "2092.22",
+    "extra_pay_per_person": "608.86",
+    "floor": 1,
+    "number_on_floor": 5,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5239,
+  "fields": {
+    "hotel": 223,
+    "room_type": 375,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": true,
+    "price_per_night": "7477.02",
+    "extra_pay_per_person": "3299.14",
+    "floor": 1,
+    "number_on_floor": 6,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5240,
+  "fields": {
+    "hotel": 223,
+    "room_type": 371,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "1727.59",
+    "extra_pay_per_person": "498.63",
+    "floor": 1,
+    "number_on_floor": 7,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5241,
+  "fields": {
+    "hotel": 223,
+    "room_type": 362,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "15038.77",
+    "extra_pay_per_person": "4375.29",
+    "floor": 1,
+    "number_on_floor": 8,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5242,
+  "fields": {
+    "hotel": 223,
+    "room_type": 368,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "14682.10",
+    "extra_pay_per_person": "5150.16",
+    "floor": 1,
+    "number_on_floor": 9,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5243,
+  "fields": {
+    "hotel": 223,
+    "room_type": 362,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "11718.17",
+    "extra_pay_per_person": "5215.79",
+    "floor": 1,
+    "number_on_floor": 10,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5244,
+  "fields": {
+    "hotel": 223,
+    "room_type": 376,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "10562.96",
+    "extra_pay_per_person": "3307.96",
+    "floor": 1,
+    "number_on_floor": 11,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5245,
+  "fields": {
+    "hotel": 223,
+    "room_type": 364,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "10200.04",
+    "extra_pay_per_person": "3225.06",
+    "floor": 1,
+    "number_on_floor": 12,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5246,
+  "fields": {
+    "hotel": 223,
+    "room_type": 367,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "16500.35",
+    "extra_pay_per_person": "4235.64",
+    "floor": 1,
+    "number_on_floor": 13,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5247,
+  "fields": {
+    "hotel": 223,
+    "room_type": 366,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "17755.58",
+    "extra_pay_per_person": "5213.49",
+    "floor": 1,
+    "number_on_floor": 14,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5248,
+  "fields": {
+    "hotel": 223,
+    "room_type": 364,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "5027.28",
+    "extra_pay_per_person": "1958.96",
+    "floor": 1,
+    "number_on_floor": 15,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5249,
+  "fields": {
+    "hotel": 223,
+    "room_type": 363,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "1282.52",
+    "extra_pay_per_person": "372.89",
+    "floor": 1,
+    "number_on_floor": 16,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5250,
+  "fields": {
+    "hotel": 223,
+    "room_type": 362,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "6760.30",
+    "extra_pay_per_person": "2384.92",
+    "floor": 1,
+    "number_on_floor": 17,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5251,
+  "fields": {
+    "hotel": 223,
+    "room_type": 363,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "6505.57",
+    "extra_pay_per_person": "3192.27",
+    "floor": 1,
+    "number_on_floor": 18,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5252,
+  "fields": {
+    "hotel": 223,
+    "room_type": 370,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "7902.01",
+    "extra_pay_per_person": "2097.73",
+    "floor": 1,
+    "number_on_floor": 19,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5253,
+  "fields": {
+    "hotel": 223,
+    "room_type": 365,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "17362.16",
+    "extra_pay_per_person": "4590.25",
+    "floor": 1,
+    "number_on_floor": 20,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5254,
+  "fields": {
+    "hotel": 224,
+    "room_type": 374,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "7434.54",
+    "extra_pay_per_person": "3134.42",
+    "floor": 1,
+    "number_on_floor": 1,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5255,
+  "fields": {
+    "hotel": 224,
+    "room_type": 367,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "15816.00",
+    "extra_pay_per_person": "4652.53",
+    "floor": 1,
+    "number_on_floor": 2,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5256,
+  "fields": {
+    "hotel": 224,
+    "room_type": 365,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "10548.87",
+    "extra_pay_per_person": "4832.74",
+    "floor": 1,
+    "number_on_floor": 3,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5257,
+  "fields": {
+    "hotel": 224,
+    "room_type": 367,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "10795.87",
+    "extra_pay_per_person": "2990.73",
+    "floor": 1,
+    "number_on_floor": 4,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5258,
+  "fields": {
+    "hotel": 224,
+    "room_type": 367,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "6442.13",
+    "extra_pay_per_person": "3179.56",
+    "floor": 1,
+    "number_on_floor": 5,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5259,
+  "fields": {
+    "hotel": 224,
+    "room_type": 368,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "12964.65",
+    "extra_pay_per_person": "4605.47",
+    "floor": 1,
+    "number_on_floor": 6,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5260,
+  "fields": {
+    "hotel": 224,
+    "room_type": 363,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "16775.51",
+    "extra_pay_per_person": "4994.48",
+    "floor": 1,
+    "number_on_floor": 7,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5261,
+  "fields": {
+    "hotel": 224,
+    "room_type": 368,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "17350.72",
+    "extra_pay_per_person": "6866.38",
+    "floor": 1,
+    "number_on_floor": 8,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5262,
+  "fields": {
+    "hotel": 224,
+    "room_type": 367,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "6074.03",
+    "extra_pay_per_person": "3015.83",
+    "floor": 1,
+    "number_on_floor": 9,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5263,
+  "fields": {
+    "hotel": 224,
+    "room_type": 369,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "11868.44",
+    "extra_pay_per_person": "4073.35",
+    "floor": 1,
+    "number_on_floor": 10,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5264,
+  "fields": {
+    "hotel": 224,
+    "room_type": 369,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "14138.89",
+    "extra_pay_per_person": "3955.44",
+    "floor": 1,
+    "number_on_floor": 11,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5265,
+  "fields": {
+    "hotel": 224,
+    "room_type": 366,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "14162.07",
+    "extra_pay_per_person": "6445.68",
+    "floor": 1,
+    "number_on_floor": 12,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5266,
+  "fields": {
+    "hotel": 224,
+    "room_type": 369,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "14118.00",
+    "extra_pay_per_person": "4781.90",
+    "floor": 1,
+    "number_on_floor": 13,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5267,
+  "fields": {
+    "hotel": 224,
+    "room_type": 362,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "9019.00",
+    "extra_pay_per_person": "3317.68",
+    "floor": 1,
+    "number_on_floor": 14,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5268,
+  "fields": {
+    "hotel": 224,
+    "room_type": 375,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "4674.85",
+    "extra_pay_per_person": "1437.59",
+    "floor": 1,
+    "number_on_floor": 15,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5269,
+  "fields": {
+    "hotel": 224,
+    "room_type": 366,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "16518.22",
+    "extra_pay_per_person": "4204.78",
+    "floor": 1,
+    "number_on_floor": 16,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5270,
+  "fields": {
+    "hotel": 224,
+    "room_type": 373,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "1316.50",
+    "extra_pay_per_person": "641.91",
+    "floor": 2,
+    "number_on_floor": 1,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5271,
+  "fields": {
+    "hotel": 224,
+    "room_type": 368,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "10428.50",
+    "extra_pay_per_person": "4590.73",
+    "floor": 2,
+    "number_on_floor": 2,
+    "variant": "A"
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5272,
+  "fields": {
+    "hotel": 224,
+    "room_type": 366,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "8237.80",
+    "extra_pay_per_person": "2442.12",
+    "floor": 2,
+    "number_on_floor": 2,
+    "variant": "B"
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5273,
+  "fields": {
+    "hotel": 224,
+    "room_type": 364,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": true,
+    "price_per_night": "7498.12",
+    "extra_pay_per_person": "3020.72",
+    "floor": 2,
+    "number_on_floor": 3,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5274,
+  "fields": {
+    "hotel": 225,
+    "room_type": 369,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "4441.16",
+    "extra_pay_per_person": "1577.54",
+    "floor": 1,
+    "number_on_floor": 1,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5275,
+  "fields": {
+    "hotel": 225,
+    "room_type": 367,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "13023.80",
+    "extra_pay_per_person": "6104.75",
+    "floor": 1,
+    "number_on_floor": 2,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5276,
+  "fields": {
+    "hotel": 225,
+    "room_type": 373,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": true,
+    "price_per_night": "15740.15",
+    "extra_pay_per_person": "4828.36",
+    "floor": 1,
+    "number_on_floor": 3,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5277,
+  "fields": {
+    "hotel": 225,
+    "room_type": 365,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "19159.33",
+    "extra_pay_per_person": "4986.53",
+    "floor": 1,
+    "number_on_floor": 4,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5278,
+  "fields": {
+    "hotel": 225,
+    "room_type": 367,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "8117.33",
+    "extra_pay_per_person": "2904.62",
+    "floor": 1,
+    "number_on_floor": 5,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5279,
+  "fields": {
+    "hotel": 225,
+    "room_type": 375,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "1584.01",
+    "extra_pay_per_person": "621.37",
+    "floor": 1,
+    "number_on_floor": 6,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5280,
+  "fields": {
+    "hotel": 225,
+    "room_type": 372,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "6529.20",
+    "extra_pay_per_person": "1988.28",
+    "floor": 1,
+    "number_on_floor": 7,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5281,
+  "fields": {
+    "hotel": 225,
+    "room_type": 375,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "6292.10",
+    "extra_pay_per_person": "2484.02",
+    "floor": 1,
+    "number_on_floor": 8,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5282,
+  "fields": {
+    "hotel": 225,
+    "room_type": 363,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "18321.69",
+    "extra_pay_per_person": "5887.77",
+    "floor": 1,
+    "number_on_floor": 9,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5283,
+  "fields": {
+    "hotel": 225,
+    "room_type": 364,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "19908.50",
+    "extra_pay_per_person": "9950.67",
+    "floor": 1,
+    "number_on_floor": 10,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5284,
+  "fields": {
+    "hotel": 225,
+    "room_type": 367,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "19274.57",
+    "extra_pay_per_person": "5039.29",
+    "floor": 2,
+    "number_on_floor": 1,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5285,
+  "fields": {
+    "hotel": 225,
+    "room_type": 363,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "5845.58",
+    "extra_pay_per_person": "2324.61",
+    "floor": 2,
+    "number_on_floor": 2,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5286,
+  "fields": {
+    "hotel": 225,
+    "room_type": 375,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "2994.13",
+    "extra_pay_per_person": "1227.92",
+    "floor": 2,
+    "number_on_floor": 3,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5287,
+  "fields": {
+    "hotel": 225,
+    "room_type": 375,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "15850.62",
+    "extra_pay_per_person": "5607.58",
+    "floor": 3,
+    "number_on_floor": 1,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5288,
+  "fields": {
+    "hotel": 225,
+    "room_type": 374,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": true,
+    "price_per_night": "17229.57",
+    "extra_pay_per_person": "4837.38",
+    "floor": 3,
+    "number_on_floor": 2,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5289,
+  "fields": {
+    "hotel": 225,
+    "room_type": 365,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "2121.56",
+    "extra_pay_per_person": "767.45",
+    "floor": 3,
+    "number_on_floor": 3,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5290,
+  "fields": {
+    "hotel": 225,
+    "room_type": 375,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "9949.47",
+    "extra_pay_per_person": "4107.45",
+    "floor": 3,
+    "number_on_floor": 4,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5291,
+  "fields": {
+    "hotel": 225,
+    "room_type": 362,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "16857.39",
+    "extra_pay_per_person": "7725.22",
+    "floor": 3,
+    "number_on_floor": 5,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5292,
+  "fields": {
+    "hotel": 225,
+    "room_type": 372,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "15018.60",
+    "extra_pay_per_person": "5361.39",
+    "floor": 3,
+    "number_on_floor": 6,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5293,
+  "fields": {
+    "hotel": 225,
+    "room_type": 362,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "15347.77",
+    "extra_pay_per_person": "6906.36",
+    "floor": 3,
+    "number_on_floor": 7,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5294,
+  "fields": {
+    "hotel": 226,
+    "room_type": 365,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "2773.32",
+    "extra_pay_per_person": "992.12",
+    "floor": 1,
+    "number_on_floor": 1,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5295,
+  "fields": {
+    "hotel": 226,
+    "room_type": 366,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "8147.50",
+    "extra_pay_per_person": "3885.15",
+    "floor": 1,
+    "number_on_floor": 2,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5296,
+  "fields": {
+    "hotel": 226,
+    "room_type": 372,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "14178.88",
+    "extra_pay_per_person": "6286.68",
+    "floor": 1,
+    "number_on_floor": 3,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5297,
+  "fields": {
+    "hotel": 226,
+    "room_type": 366,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "7821.84",
+    "extra_pay_per_person": "3587.31",
+    "floor": 1,
+    "number_on_floor": 4,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5298,
+  "fields": {
+    "hotel": 226,
+    "room_type": 373,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "10708.28",
+    "extra_pay_per_person": "2787.48",
+    "floor": 1,
+    "number_on_floor": 5,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5299,
+  "fields": {
+    "hotel": 226,
+    "room_type": 372,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "8271.21",
+    "extra_pay_per_person": "3542.04",
+    "floor": 1,
+    "number_on_floor": 6,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5300,
+  "fields": {
+    "hotel": 226,
+    "room_type": 371,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "11279.09",
+    "extra_pay_per_person": "3285.49",
+    "floor": 1,
+    "number_on_floor": 7,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5301,
+  "fields": {
+    "hotel": 226,
+    "room_type": 365,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "8941.89",
+    "extra_pay_per_person": "4065.86",
+    "floor": 1,
+    "number_on_floor": 8,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5302,
+  "fields": {
+    "hotel": 226,
+    "room_type": 371,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "19196.25",
+    "extra_pay_per_person": "7486.32",
+    "floor": 1,
+    "number_on_floor": 9,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5303,
+  "fields": {
+    "hotel": 226,
+    "room_type": 368,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "6251.59",
+    "extra_pay_per_person": "1753.37",
+    "floor": 1,
+    "number_on_floor": 10,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5304,
+  "fields": {
+    "hotel": 226,
+    "room_type": 375,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "4611.56",
+    "extra_pay_per_person": "1428.07",
+    "floor": 1,
+    "number_on_floor": 11,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5305,
+  "fields": {
+    "hotel": 226,
+    "room_type": 370,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "5894.50",
+    "extra_pay_per_person": "1822.83",
+    "floor": 1,
+    "number_on_floor": 12,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5306,
+  "fields": {
+    "hotel": 226,
+    "room_type": 362,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "19333.03",
+    "extra_pay_per_person": "8549.59",
+    "floor": 1,
+    "number_on_floor": 13,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5307,
+  "fields": {
+    "hotel": 226,
+    "room_type": 362,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "7818.68",
+    "extra_pay_per_person": "3157.48",
+    "floor": 2,
+    "number_on_floor": 1,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5308,
+  "fields": {
+    "hotel": 226,
+    "room_type": 365,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "11891.30",
+    "extra_pay_per_person": "4439.61",
+    "floor": 2,
+    "number_on_floor": 2,
+    "variant": "A"
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5309,
+  "fields": {
+    "hotel": 226,
+    "room_type": 367,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "17064.07",
+    "extra_pay_per_person": "4420.73",
+    "floor": 2,
+    "number_on_floor": 2,
+    "variant": "B"
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5310,
+  "fields": {
+    "hotel": 226,
+    "room_type": 365,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "17623.40",
+    "extra_pay_per_person": "6804.57",
+    "floor": 2,
+    "number_on_floor": 3,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5311,
+  "fields": {
+    "hotel": 226,
+    "room_type": 367,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "4873.25",
+    "extra_pay_per_person": "2075.10",
+    "floor": 2,
+    "number_on_floor": 4,
+    "variant": "A"
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5312,
+  "fields": {
+    "hotel": 226,
+    "room_type": 362,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "11799.85",
+    "extra_pay_per_person": "4467.64",
+    "floor": 2,
+    "number_on_floor": 4,
+    "variant": "B"
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5313,
+  "fields": {
+    "hotel": 226,
+    "room_type": 362,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "11678.04",
+    "extra_pay_per_person": "4997.09",
+    "floor": 2,
+    "number_on_floor": 5,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5314,
+  "fields": {
+    "hotel": 227,
+    "room_type": 366,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "13662.75",
+    "extra_pay_per_person": "5376.72",
+    "floor": 1,
+    "number_on_floor": 1,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5315,
+  "fields": {
+    "hotel": 227,
+    "room_type": 364,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "14121.50",
+    "extra_pay_per_person": "4514.82",
+    "floor": 1,
+    "number_on_floor": 2,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5316,
+  "fields": {
+    "hotel": 227,
+    "room_type": 368,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "3475.73",
+    "extra_pay_per_person": "947.59",
+    "floor": 1,
+    "number_on_floor": 3,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5317,
+  "fields": {
+    "hotel": 227,
+    "room_type": 367,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "14112.51",
+    "extra_pay_per_person": "6033.38",
+    "floor": 1,
+    "number_on_floor": 4,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5318,
+  "fields": {
+    "hotel": 227,
+    "room_type": 366,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "9997.23",
+    "extra_pay_per_person": "2708.69",
+    "floor": 1,
+    "number_on_floor": 5,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5319,
+  "fields": {
+    "hotel": 227,
+    "room_type": 369,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "14696.35",
+    "extra_pay_per_person": "6823.54",
+    "floor": 1,
+    "number_on_floor": 6,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5320,
+  "fields": {
+    "hotel": 227,
+    "room_type": 375,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "10593.97",
+    "extra_pay_per_person": "4982.45",
+    "floor": 1,
+    "number_on_floor": 7,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5321,
+  "fields": {
+    "hotel": 227,
+    "room_type": 372,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "8528.35",
+    "extra_pay_per_person": "2599.19",
+    "floor": 1,
+    "number_on_floor": 8,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5322,
+  "fields": {
+    "hotel": 227,
+    "room_type": 363,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "1708.50",
+    "extra_pay_per_person": "565.96",
+    "floor": 1,
+    "number_on_floor": 9,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5323,
+  "fields": {
+    "hotel": 227,
+    "room_type": 368,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "11108.51",
+    "extra_pay_per_person": "3030.22",
+    "floor": 1,
+    "number_on_floor": 10,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5324,
+  "fields": {
+    "hotel": 227,
+    "room_type": 373,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "2221.39",
+    "extra_pay_per_person": "788.59",
+    "floor": 1,
+    "number_on_floor": 11,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5325,
+  "fields": {
+    "hotel": 227,
+    "room_type": 372,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "16124.11",
+    "extra_pay_per_person": "4860.15",
+    "floor": 1,
+    "number_on_floor": 12,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5326,
+  "fields": {
+    "hotel": 227,
+    "room_type": 371,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "18722.10",
+    "extra_pay_per_person": "5576.17",
+    "floor": 1,
+    "number_on_floor": 13,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5327,
+  "fields": {
+    "hotel": 227,
+    "room_type": 370,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "1885.96",
+    "extra_pay_per_person": "497.15",
+    "floor": 1,
+    "number_on_floor": 14,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5328,
+  "fields": {
+    "hotel": 227,
+    "room_type": 366,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "3406.04",
+    "extra_pay_per_person": "1569.20",
+    "floor": 1,
+    "number_on_floor": 15,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5329,
+  "fields": {
+    "hotel": 227,
+    "room_type": 374,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "15801.01",
+    "extra_pay_per_person": "7789.71",
+    "floor": 1,
+    "number_on_floor": 16,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5330,
+  "fields": {
+    "hotel": 227,
+    "room_type": 373,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": false,
+    "price_per_night": "19073.74",
+    "extra_pay_per_person": "8559.13",
+    "floor": 1,
+    "number_on_floor": 17,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5331,
+  "fields": {
+    "hotel": 227,
+    "room_type": 363,
+    "is_pets_allowed": false,
+    "is_smoking_allowed": true,
+    "price_per_night": "3878.31",
+    "extra_pay_per_person": "1479.75",
+    "floor": 1,
+    "number_on_floor": 18,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5332,
+  "fields": {
+    "hotel": 227,
+    "room_type": 365,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "7842.54",
+    "extra_pay_per_person": "2360.63",
+    "floor": 1,
+    "number_on_floor": 19,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.room",
+  "pk": 5333,
+  "fields": {
+    "hotel": 227,
+    "room_type": 367,
+    "is_pets_allowed": true,
+    "is_smoking_allowed": false,
+    "price_per_night": "9172.09",
+    "extra_pay_per_person": "2395.95",
+    "floor": 1,
+    "number_on_floor": 20,
+    "variant": null
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2894,
+  "fields": {
+    "room": 5194,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/101/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2895,
+  "fields": {
+    "room": 5196,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/103/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2896,
+  "fields": {
+    "room": 5197,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/104/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2897,
+  "fields": {
+    "room": 5197,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/104/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2898,
+  "fields": {
+    "room": 5197,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/104/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2899,
+  "fields": {
+    "room": 5198,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/105/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2900,
+  "fields": {
+    "room": 5200,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/107/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2901,
+  "fields": {
+    "room": 5200,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/107/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2902,
+  "fields": {
+    "room": 5202,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/109/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2903,
+  "fields": {
+    "room": 5203,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/110/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2904,
+  "fields": {
+    "room": 5204,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/111/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2905,
+  "fields": {
+    "room": 5204,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/111/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2906,
+  "fields": {
+    "room": 5206,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/201B/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2907,
+  "fields": {
+    "room": 5206,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/201B/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2908,
+  "fields": {
+    "room": 5207,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/202/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2909,
+  "fields": {
+    "room": 5207,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/202/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2910,
+  "fields": {
+    "room": 5211,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/205/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2911,
+  "fields": {
+    "room": 5212,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/206A/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2912,
+  "fields": {
+    "room": 5213,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/206B/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2913,
+  "fields": {
+    "room": 5213,
+    "photo": "ИмяСетиОтелей рядом с бул. Жуковского/206B/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2914,
+  "fields": {
+    "room": 5216,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/103/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2915,
+  "fields": {
+    "room": 5216,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/103/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2916,
+  "fields": {
+    "room": 5217,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/104/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2917,
+  "fields": {
+    "room": 5217,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/104/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2918,
+  "fields": {
+    "room": 5219,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/106/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2919,
+  "fields": {
+    "room": 5219,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/106/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2920,
+  "fields": {
+    "room": 5220,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/107/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2921,
+  "fields": {
+    "room": 5220,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/107/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2922,
+  "fields": {
+    "room": 5220,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/107/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2923,
+  "fields": {
+    "room": 5221,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/108/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2924,
+  "fields": {
+    "room": 5221,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/108/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2925,
+  "fields": {
+    "room": 5221,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/108/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2926,
+  "fields": {
+    "room": 5223,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/110/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2927,
+  "fields": {
+    "room": 5223,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/110/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2928,
+  "fields": {
+    "room": 5223,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/110/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2929,
+  "fields": {
+    "room": 5224,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/111/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2930,
+  "fields": {
+    "room": 5224,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/111/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2931,
+  "fields": {
+    "room": 5224,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/111/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2932,
+  "fields": {
+    "room": 5225,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/112/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2933,
+  "fields": {
+    "room": 5226,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/113/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2934,
+  "fields": {
+    "room": 5226,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/113/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2935,
+  "fields": {
+    "room": 5226,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/113/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2936,
+  "fields": {
+    "room": 5227,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/114/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2937,
+  "fields": {
+    "room": 5228,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/115/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2938,
+  "fields": {
+    "room": 5228,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/115/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2939,
+  "fields": {
+    "room": 5228,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/115/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2940,
+  "fields": {
+    "room": 5229,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/116/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2941,
+  "fields": {
+    "room": 5231,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/118/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2942,
+  "fields": {
+    "room": 5232,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/201/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2943,
+  "fields": {
+    "room": 5232,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/201/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2944,
+  "fields": {
+    "room": 5232,
+    "photo": "ИмяСетиОтелей над ул. Дальняя/201/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2945,
+  "fields": {
+    "room": 5234,
+    "photo": "ИмяСетиОтелей над ул. Комарова/101/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2946,
+  "fields": {
+    "room": 5235,
+    "photo": "ИмяСетиОтелей над ул. Комарова/102/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2947,
+  "fields": {
+    "room": 5237,
+    "photo": "ИмяСетиОтелей над ул. Комарова/104/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2948,
+  "fields": {
+    "room": 5237,
+    "photo": "ИмяСетиОтелей над ул. Комарова/104/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2949,
+  "fields": {
+    "room": 5238,
+    "photo": "ИмяСетиОтелей над ул. Комарова/105/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2950,
+  "fields": {
+    "room": 5240,
+    "photo": "ИмяСетиОтелей над ул. Комарова/107/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2951,
+  "fields": {
+    "room": 5240,
+    "photo": "ИмяСетиОтелей над ул. Комарова/107/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2952,
+  "fields": {
+    "room": 5240,
+    "photo": "ИмяСетиОтелей над ул. Комарова/107/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2953,
+  "fields": {
+    "room": 5241,
+    "photo": "ИмяСетиОтелей над ул. Комарова/108/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2954,
+  "fields": {
+    "room": 5241,
+    "photo": "ИмяСетиОтелей над ул. Комарова/108/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2955,
+  "fields": {
+    "room": 5242,
+    "photo": "ИмяСетиОтелей над ул. Комарова/109/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2956,
+  "fields": {
+    "room": 5244,
+    "photo": "ИмяСетиОтелей над ул. Комарова/111/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2957,
+  "fields": {
+    "room": 5245,
+    "photo": "ИмяСетиОтелей над ул. Комарова/112/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2958,
+  "fields": {
+    "room": 5245,
+    "photo": "ИмяСетиОтелей над ул. Комарова/112/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2959,
+  "fields": {
+    "room": 5245,
+    "photo": "ИмяСетиОтелей над ул. Комарова/112/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2960,
+  "fields": {
+    "room": 5246,
+    "photo": "ИмяСетиОтелей над ул. Комарова/113/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2961,
+  "fields": {
+    "room": 5247,
+    "photo": "ИмяСетиОтелей над ул. Комарова/114/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2962,
+  "fields": {
+    "room": 5247,
+    "photo": "ИмяСетиОтелей над ул. Комарова/114/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2963,
+  "fields": {
+    "room": 5247,
+    "photo": "ИмяСетиОтелей над ул. Комарова/114/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2964,
+  "fields": {
+    "room": 5248,
+    "photo": "ИмяСетиОтелей над ул. Комарова/115/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2965,
+  "fields": {
+    "room": 5248,
+    "photo": "ИмяСетиОтелей над ул. Комарова/115/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2966,
+  "fields": {
+    "room": 5248,
+    "photo": "ИмяСетиОтелей над ул. Комарова/115/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2967,
+  "fields": {
+    "room": 5250,
+    "photo": "ИмяСетиОтелей над ул. Комарова/117/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2968,
+  "fields": {
+    "room": 5250,
+    "photo": "ИмяСетиОтелей над ул. Комарова/117/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2969,
+  "fields": {
+    "room": 5251,
+    "photo": "ИмяСетиОтелей над ул. Комарова/118/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2970,
+  "fields": {
+    "room": 5251,
+    "photo": "ИмяСетиОтелей над ул. Комарова/118/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2971,
+  "fields": {
+    "room": 5251,
+    "photo": "ИмяСетиОтелей над ул. Комарова/118/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2972,
+  "fields": {
+    "room": 5253,
+    "photo": "ИмяСетиОтелей над ул. Комарова/120/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2973,
+  "fields": {
+    "room": 5254,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/101/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2974,
+  "fields": {
+    "room": 5254,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/101/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2975,
+  "fields": {
+    "room": 5254,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/101/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2976,
+  "fields": {
+    "room": 5257,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/104/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2977,
+  "fields": {
+    "room": 5258,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/105/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2978,
+  "fields": {
+    "room": 5258,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/105/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2979,
+  "fields": {
+    "room": 5258,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/105/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2980,
+  "fields": {
+    "room": 5260,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/107/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2981,
+  "fields": {
+    "room": 5261,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/108/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2982,
+  "fields": {
+    "room": 5263,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/110/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2983,
+  "fields": {
+    "room": 5263,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/110/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2984,
+  "fields": {
+    "room": 5263,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/110/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2985,
+  "fields": {
+    "room": 5264,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/111/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2986,
+  "fields": {
+    "room": 5264,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/111/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2987,
+  "fields": {
+    "room": 5265,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/112/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2988,
+  "fields": {
+    "room": 5265,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/112/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2989,
+  "fields": {
+    "room": 5267,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/114/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2990,
+  "fields": {
+    "room": 5267,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/114/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2991,
+  "fields": {
+    "room": 5268,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/115/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2992,
+  "fields": {
+    "room": 5268,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/115/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2993,
+  "fields": {
+    "room": 5268,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/115/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2994,
+  "fields": {
+    "room": 5269,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/116/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2995,
+  "fields": {
+    "room": 5269,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/116/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2996,
+  "fields": {
+    "room": 5271,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/202A/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2997,
+  "fields": {
+    "room": 5271,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/202A/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2998,
+  "fields": {
+    "room": 5271,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/202A/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 2999,
+  "fields": {
+    "room": 5272,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/202B/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3000,
+  "fields": {
+    "room": 5272,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/202B/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3001,
+  "fields": {
+    "room": 5273,
+    "photo": "ИмяСетиОтелей с видом на бул. Плеханова/203/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3002,
+  "fields": {
+    "room": 5275,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/102/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3003,
+  "fields": {
+    "room": 5275,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/102/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3004,
+  "fields": {
+    "room": 5276,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/103/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3005,
+  "fields": {
+    "room": 5276,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/103/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3006,
+  "fields": {
+    "room": 5276,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/103/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3007,
+  "fields": {
+    "room": 5277,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/104/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3008,
+  "fields": {
+    "room": 5278,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/105/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3009,
+  "fields": {
+    "room": 5280,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/107/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3010,
+  "fields": {
+    "room": 5280,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/107/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3011,
+  "fields": {
+    "room": 5282,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/109/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3012,
+  "fields": {
+    "room": 5283,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/110/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3013,
+  "fields": {
+    "room": 5283,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/110/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3014,
+  "fields": {
+    "room": 5285,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/202/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3015,
+  "fields": {
+    "room": 5285,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/202/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3016,
+  "fields": {
+    "room": 5287,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/301/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3017,
+  "fields": {
+    "room": 5287,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/301/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3018,
+  "fields": {
+    "room": 5289,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/303/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3019,
+  "fields": {
+    "room": 5289,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/303/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3020,
+  "fields": {
+    "room": 5289,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/303/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3021,
+  "fields": {
+    "room": 5290,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/304/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3022,
+  "fields": {
+    "room": 5292,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/306/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3023,
+  "fields": {
+    "room": 5293,
+    "photo": "ИмяСетиОтелей рядом с ш. Портовое/307/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3024,
+  "fields": {
+    "room": 5294,
+    "photo": "ИмяСетиОтелей на ш. Курортное/101/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3025,
+  "fields": {
+    "room": 5295,
+    "photo": "ИмяСетиОтелей на ш. Курортное/102/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3026,
+  "fields": {
+    "room": 5295,
+    "photo": "ИмяСетиОтелей на ш. Курортное/102/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3027,
+  "fields": {
+    "room": 5301,
+    "photo": "ИмяСетиОтелей на ш. Курортное/108/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3028,
+  "fields": {
+    "room": 5302,
+    "photo": "ИмяСетиОтелей на ш. Курортное/109/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3029,
+  "fields": {
+    "room": 5303,
+    "photo": "ИмяСетиОтелей на ш. Курортное/110/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3030,
+  "fields": {
+    "room": 5306,
+    "photo": "ИмяСетиОтелей на ш. Курортное/113/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3031,
+  "fields": {
+    "room": 5307,
+    "photo": "ИмяСетиОтелей на ш. Курортное/201/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3032,
+  "fields": {
+    "room": 5307,
+    "photo": "ИмяСетиОтелей на ш. Курортное/201/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3033,
+  "fields": {
+    "room": 5309,
+    "photo": "ИмяСетиОтелей на ш. Курортное/202B/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3034,
+  "fields": {
+    "room": 5310,
+    "photo": "ИмяСетиОтелей на ш. Курортное/203/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3035,
+  "fields": {
+    "room": 5310,
+    "photo": "ИмяСетиОтелей на ш. Курортное/203/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3036,
+  "fields": {
+    "room": 5311,
+    "photo": "ИмяСетиОтелей на ш. Курортное/204A/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3037,
+  "fields": {
+    "room": 5311,
+    "photo": "ИмяСетиОтелей на ш. Курортное/204A/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3038,
+  "fields": {
+    "room": 5313,
+    "photo": "ИмяСетиОтелей на ш. Курортное/205/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3039,
+  "fields": {
+    "room": 5313,
+    "photo": "ИмяСетиОтелей на ш. Курортное/205/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3040,
+  "fields": {
+    "room": 5313,
+    "photo": "ИмяСетиОтелей на ш. Курортное/205/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3041,
+  "fields": {
+    "room": 5314,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/101/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3042,
+  "fields": {
+    "room": 5314,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/101/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3043,
+  "fields": {
+    "room": 5315,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/102/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3044,
+  "fields": {
+    "room": 5315,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/102/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3045,
+  "fields": {
+    "room": 5316,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/103/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3046,
+  "fields": {
+    "room": 5317,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/104/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3047,
+  "fields": {
+    "room": 5318,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/105/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3048,
+  "fields": {
+    "room": 5318,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/105/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3049,
+  "fields": {
+    "room": 5320,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/107/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3050,
+  "fields": {
+    "room": 5320,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/107/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3051,
+  "fields": {
+    "room": 5320,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/107/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3052,
+  "fields": {
+    "room": 5321,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/108/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3053,
+  "fields": {
+    "room": 5322,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/109/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3054,
+  "fields": {
+    "room": 5322,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/109/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3055,
+  "fields": {
+    "room": 5323,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/110/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3056,
+  "fields": {
+    "room": 5323,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/110/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3057,
+  "fields": {
+    "room": 5323,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/110/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3058,
+  "fields": {
+    "room": 5324,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/111/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3059,
+  "fields": {
+    "room": 5324,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/111/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3060,
+  "fields": {
+    "room": 5324,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/111/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3061,
+  "fields": {
+    "room": 5326,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/113/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3062,
+  "fields": {
+    "room": 5327,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/114/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3063,
+  "fields": {
+    "room": 5327,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/114/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3064,
+  "fields": {
+    "room": 5327,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/114/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3065,
+  "fields": {
+    "room": 5328,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/115/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3066,
+  "fields": {
+    "room": 5328,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/115/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3067,
+  "fields": {
+    "room": 5329,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/116/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3068,
+  "fields": {
+    "room": 5329,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/116/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3069,
+  "fields": {
+    "room": 5330,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/117/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3070,
+  "fields": {
+    "room": 5330,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/117/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3071,
+  "fields": {
+    "room": 5330,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/117/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3072,
+  "fields": {
+    "room": 5331,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/118/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3073,
+  "fields": {
+    "room": 5331,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/118/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3074,
+  "fields": {
+    "room": 5331,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/118/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3075,
+  "fields": {
+    "room": 5332,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/119/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3076,
+  "fields": {
+    "room": 5333,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/120/test_photo_1.jpg",
+    "sort_order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3077,
+  "fields": {
+    "room": 5333,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/120/test_photo_2.jpg",
+    "sort_order_number": 2
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 3078,
+  "fields": {
+    "room": 5333,
+    "photo": "ИмяСетиОтелей с видом на алл. Нижняя/120/test_photo_3.jpg",
+    "sort_order_number": 3
+  }
+}
+]

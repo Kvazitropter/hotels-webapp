@@ -13,7 +13,7 @@ class RoomInline(admin.TabularInline):
 class RoomPhotoInline(admin.TabularInline):
     model = RoomPhoto
     extra = 1
-    fields = ('photo_path', 'sort_order_number')
+    fields = ('photo', 'sort_order_number')
 
 
 @admin.register(Hotel)
@@ -88,7 +88,7 @@ class RoomAdmin(admin.ModelAdmin):
 @admin.register(RoomPhoto)
 class RoomPhotoAdmin(admin.ModelAdmin):
     list_select_related = ('room',)
-    list_display = ('room_number', 'photo_path', 'sort_order_number')
+    list_display = ('room_number', 'photo', 'sort_order_number')
     list_per_page = 30
     search_fields = (
         'room__floor', 'room__number_on_floor',
@@ -96,7 +96,7 @@ class RoomPhotoAdmin(admin.ModelAdmin):
     )
     fieldsets = (
         ('Загрузка фото', {
-            'fields': ('room', 'photo_path', 'sort_order_number'),
+            'fields': ('room', 'photo', 'sort_order_number'),
         }),
     )
 

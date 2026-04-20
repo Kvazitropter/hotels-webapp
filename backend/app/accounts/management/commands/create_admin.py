@@ -4,7 +4,7 @@ from django.core.management.base import BaseCommand, CommandParser
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from app.accounts.models import Group
-from app.accounts.utils.validators import validate_email, validate_phone
+from utils.validators import validate_email, validate_phone
 
 
 User = get_user_model()

@@ -2,7 +2,9 @@ import difflib
 import re
 from typing import Optional
 
+from django.conf import settings
 from django.db.models import Model
+import phonenumbers
 
 
 def validate_lookup_str(lookup_str: str) -> tuple[bool, Optional[str]]:
@@ -60,3 +62,12 @@ def validate_lookup_params(
             suggestions[base_key] = similar
 
     return len(wrong_fields) == 0, wrong_fields, suggestions
+
+
+def validate_email(email: str) -> bool:
+    return re.match(r'.+@.+', email)
+
+
+def validate_phone(phone_str: str) -> bool:
+    num = phonenumbers.parse(phone_str, settings.PHONENUMBER_DEFAULT_REGION)
+    return phonenumbers.is_valid_number(num)

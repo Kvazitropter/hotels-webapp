@@ -8,8 +8,8 @@ from django.contrib.auth import get_user_model
 from app.accounts.models import Group
 from faker import Faker
 
-from app.accounts.utils.normalizers import normalize_email, normalize_phone
-from app.accounts.utils.validators import validate_email, validate_phone
+from utils.normalizers import normalize_email, normalize_phone
+from utils.validators import validate_email, validate_phone
 
 
 User = get_user_model()

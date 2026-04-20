@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import Max
 from django.core.validators import MinValueValidator, MaxValueValidator, RegexValidator, FileExtensionValidator
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -34,6 +35,13 @@ class Hotel(models.Model):
         max_length=255,
         verbose_name='Адрес',
     )
+    floor_count = models.PositiveSmallIntegerField(
+        verbose_name='Количество этажей',
+        validators=[
+            MinValueValidator(1, message='Количество этажей не может быть меньше 1'),
+            MaxValueValidator(10, message='Количество этажей не может быть больше 10'),
+        ],
+    )
     is_active = models.BooleanField(
         default=False,
         verbose_name='Активен',
@@ -46,16 +54,7 @@ class Hotel(models.Model):
         ordering = ['is_active', 'country', 'city', 'name']
 
     def __str__(self) -> str:
-        parts = [
-            f'Отель {self.name}',
-            f'номер телефона: {self.phone}',
-            f'email: {self.email}',
-            f'адрес: {self.address}',
-            self.city,
-            self.country,
-            f'Состояние: {"работает" if self.is_active else "закрыт"}'
-        ]
-        return ', '.join(parts)
+        return self.name
 
 
 class RoomType(models.Model):
@@ -69,7 +68,7 @@ class RoomType(models.Model):
     )
     size = models.PositiveSmallIntegerField(
         validators=[MinValueValidator(2, message='Номер должен быть размером хотя бы 2 кв. м.')],
-        verbose_name='Площадь',
+        verbose_name='Площадь (кв.м.)',
         help_text='в квадратных метрах',
     )
     capacity = models.PositiveSmallIntegerField(
@@ -95,14 +94,9 @@ class RoomType(models.Model):
         verbose_name = 'Тип номера'
         verbose_name_plural = 'Типы номеров'
         ordering = ['name', '-capacity', '-size']
-    
+
     def __str__(self) -> str:
-        parts = [
-            f'Тип комнаты: {self.name}',
-            f'Размер: {self.size}',
-            f'Вместимость: {self.capacity} человек',
-        ]
-        return ', '.join(parts)
+        return self.name
 
 
 class Room(models.Model):
@@ -139,7 +133,7 @@ class Room(models.Model):
     floor = models.PositiveSmallIntegerField(
         validators=[
             MinValueValidator(1, message='Этаж не может быть меньше 1'),
-            MaxValueValidator(100, message='Этаж не может быть больше 100'),
+            MaxValueValidator(10, message='Этаж не может быть больше 10'),
         ],
         verbose_name='Номер этажа',
     )
@@ -153,7 +147,7 @@ class Room(models.Model):
     variant = models.CharField(
         max_length=1,
         null=True,
-        blank=True, 
+        blank=True,
         validators=[RegexValidator(
             regex=r'^[A-Z]$',
             message='Вариация может быть только латинской буквой в высшем регистре',
@@ -166,16 +160,8 @@ class Room(models.Model):
         db_table = 'room'
         verbose_name = 'Номер'
         verbose_name_plural = 'Номера'
-        ordering = [
-            'hotel__name', 'room_type__name', 'floor',
-            'number_on_floor', 'variant', '-price_per_night'
-        ]
+        ordering = ['floor', 'number_on_floor', 'variant']
         constraints = [
-            models.UniqueConstraint(
-                fields=('hotel', 'floor'),
-                name='unique_floor_per_hotel',
-                violation_error_message='В отеле этаж с таких номером может быть только один',
-            ),
             models.UniqueConstraint(
                 fields=('hotel', 'floor', 'number_on_floor', 'variant'),
                 name='unique_room_per_hotel',
@@ -184,21 +170,26 @@ class Room(models.Model):
             )
         ]
 
+    def save(self, *args, **kwargs):
+        if not self.pk:
+            hotel = self.hotel
+            if hotel and self.floor > hotel.floor_count:
+                raise ValueError(
+                    f'Максимальное количество этажей в отеле {hotel}: {hotel.floor_count}'
+                )
+        super().save(*args, **kwargs)
+
     @property
     def room_number(self) -> str:
-        return f'{100 * self.floor + self.number_on_floor}{self.variant if self.variant else ""}'
+        number_on_floor = str(self.number_on_floor).rjust(2, '0')
+        return f'{self.floor % 9}{number_on_floor}{self.variant if self.variant else ""}'
 
     def __str__(self) -> str:
-        parts = [
-            f'Номер: {self.room_number}',
-            f'этаж: {self.floor}',
-            f'отель: {str(self.room_type.hotel)}'
-        ]
-        return ', '.join(parts)
+        return self.room_number
 
 
 def _photo_path(instance, filename) -> str:
-    return f'rooms/{instance.room.room_type.hotel_id}/{instance.room_id}/{filename}'
+    return f'{instance.room.hotel.name}/{instance.room.room_number}/{filename}'
 
 
 class RoomPhoto(models.Model):
@@ -207,7 +198,7 @@ class RoomPhoto(models.Model):
         on_delete=models.CASCADE,
         related_name='photos',
     )
-    photo_path = models.ImageField(
+    photo = models.ImageField(
         upload_to=_photo_path,
         validators=[
             FileExtensionValidator(
