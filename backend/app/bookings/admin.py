@@ -14,7 +14,7 @@ class BookingAdmin(admin.ModelAdmin):
     list_display = ('user', 'room', 'check_in_date', 'check_out_date')
     list_per_page = 30
     list_filter = ('status', 'room__hotel__name', 'room__room_type__name')
-    readonly_fields = ('total_price',)
+    readonly_fields = ('total_price', 'created_at')
     search_fields = ('room__room_number',)
     fieldsets = (
         ('Основная информация', {
@@ -34,9 +34,10 @@ class BookingAdmin(admin.ModelAdmin):
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
-    list_display = ('booking', 'rating', 'created_at', 'is_published')
+    list_display = ('booking', 'rating', 'created_at', 'status')
     list_per_page = 30
-    list_filter = ('rating', 'is_published')
+    list_filter = ('rating', 'status')
+    readonly_fields = ('created_at',)
     search_fields = (
         'comment', 'booking__user__email',
         'booking__user__phone', 'room__room_type__name'
@@ -48,7 +49,7 @@ class ReviewAdmin(admin.ModelAdmin):
         ('Отзыв', {
             'fields': ('rating', 'comment'),
         }),
-        ('Публикация', {
-            'fields': ('is_published', 'published_at'),
+        ('Модерация и публикация', {
+            'fields': ('status', 'moderated_by', 'rejection_reason', 'published_at'),
         }),
     )

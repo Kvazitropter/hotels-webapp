@@ -20,6 +20,11 @@ WITHOUT_PHOTO = ''
 # Параметры удаления отелей
 HOTEL_LOOKUP = ''
 ROOM_TYPE_LOOKUP = ''
+# Тестовые бронирования
+BOOKING_COUNT = 15
+REVIEW_COUNT = 5
+# Параметры удаления бронирований
+BOOKING_LOOKUP = ''
 
 # Функции
 define dump_to_file
@@ -59,6 +64,8 @@ list-commands:
 	@echo   delete-hotels               - Удалить отели по фильтру
 	@echo   delete-room-types           - Удалить типы номеров по фильтру
 	@echo   delete-hotels-all           - Удалить все отели и типы номеров
+	@echo   create-bookings             - Сгенерировать бронирования
+	@echo   delete-bookings-all         - Удалить все бронирования и отзывы
 	@echo   list-commands               - Показать эту справку
 
 migrate:
@@ -89,11 +96,13 @@ load-data:
 	$(call docker_load_from_file,auth_data)
 	$(call docker_load_from_file,users_data)
 	$(call docker_load_from_file,hotels_data)
+	$(call docker_load_from_file,bookings_data)
 
 save-data:
 	$(call docker_dump_to_file,auth accounts.GroupPriority,auth_data)
 	$(call docker_dump_to_file,accounts.User,users_data)
 	$(call docker_dump_to_file,hotels,hotels_data)
+	$(call docker_dump_to_file,bookings,bookings_data)
 
 ## Пользователи
 create-admin:
@@ -137,3 +146,13 @@ delete-room-types:
 	docker compose exec backend uv run python manage.py delete_room_types --room-type-lookup=$(ROOM_TYPE_LOOKUP)
 
 delete-hotels-all: delete-hotels delete-room-types
+
+# Бронирование
+create-bookings:
+	@echo "Доступны параметры BOOKING_COUNT=<число> REVIEW_COUNT=<число>"
+	docker compose exec backend uv run python manage.py create_test_bookings \
+		--bookings=$(BOOKING_COUNT) --reviews=$(REVIEW_COUNT)
+
+delete-bookings-all:
+	@echo "Доступен параметр BOOKING_LOOKUP=<параметр=значение>"
+	docker compose exec backend uv run python manage.py delete_bookings --booking-lookup=$(BOOKING_LOOKUP)

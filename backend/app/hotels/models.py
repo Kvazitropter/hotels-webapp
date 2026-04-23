@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models import Max
+from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator, MaxValueValidator, RegexValidator, FileExtensionValidator
 from phonenumber_field.modelfields import PhoneNumberField
 
@@ -174,7 +174,7 @@ class Room(models.Model):
         if not self.pk:
             hotel = self.hotel
             if hotel and self.floor > hotel.floor_count:
-                raise ValueError(
+                raise ValidationError(
                     f'Максимальное количество этажей в отеле {hotel}: {hotel.floor_count}'
                 )
         super().save(*args, **kwargs)

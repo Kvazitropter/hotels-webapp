@@ -57,20 +57,18 @@ class Command(BaseCommand):
     def _create_users(self, user_count: int, group: Optional[Group]) -> None:
         existing_emails = set(User.objects.values_list('email', flat=True))
         existing_phones = set(User.objects.values_list('phone_number', flat=True))
-        new_emails = set()
-        new_phones = set()
         new_users = []
 
         for _ in range(user_count):
             email = normalize_email(fake.email())
             while email in existing_emails or not validate_email(email):
                 email = normalize_email(fake.email())
-            new_emails.add(email)
+            existing_emails.add(email)
 
             phone = normalize_phone(fake.phone_number())
             while phone in existing_phones or not validate_phone(phone):
                 phone = normalize_phone(fake.phone_number())
-            new_phones.add(phone)
+            existing_phones.add(phone)
 
             gender = random.choice(['male', 'female'])
             if gender == 'male':
@@ -95,8 +93,6 @@ class Command(BaseCommand):
             user.set_password(password)
 
             new_users.append(user)
-            new_emails.add(user.email)
-            new_phones.add(user.phone_number)
 
         with transaction.atomic():
             User.objects.bulk_create(new_users)
