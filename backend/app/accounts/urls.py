@@ -3,7 +3,7 @@ from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from app.accounts.views import (
-    UserViewSet,
+    UserView,
     GuestViewSet,
     ModeratorViewSet,
     AdminViewSet,
@@ -11,12 +11,12 @@ from app.accounts.views import (
     LogoutView,
     PasswordResetRequestView,
     PasswordResetConfirmView,
-    MeViewSet,
+    MeView,
 )
 
 
 router = DefaultRouter()
-router.register(r'users', UserViewSet, basename='user')
+router.register(r'users', UserView, basename='user')
 router.register(r'guests', GuestViewSet, basename='guest')
 router.register(r'moderators', ModeratorViewSet, basename='moderator')
 router.register(r'admins', AdminViewSet, basename='admin')
@@ -29,7 +29,13 @@ urlpatterns = [
     path('auth/password-reset/', PasswordResetRequestView.as_view(), name='password-reset-request'),
     path('auth/password-reset/confirm/',
         PasswordResetConfirmView.as_view(), name='password-reset-confirm'),
-    path('me', MeViewSet.as_view({'get': 'retrieve'}), name='me'),
-    path('me/deactivate/', MeViewSet.as_view({'post': 'deactivate'}), name='me-deactivate'),
+    path('me',
+        MeView.as_view({'get': 'retrieve', 'patch': 'partial_update', 'delete': 'deactivate'}),
+        name='me'
+    ),
+    path('me/contact-change/',
+        MeView.as_view({'patch': 'request_change'}), name='me-contact-request'),
+    path('me/contact-change/confirm/',
+        MeView.as_view({'post': 'confirm_change'}), name='me-contact-confirm'),
     path('', include(router.urls)),
 ]

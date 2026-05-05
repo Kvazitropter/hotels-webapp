@@ -1,7 +1,9 @@
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.contrib.auth.tokens import default_token_generator
+from django.core.cache import cache
 from django.core.mail import send_mail
+from django.db import transaction
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
 from rest_framework import generics, mixins, status, viewsets
@@ -9,16 +11,19 @@ from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.exceptions import InvalidToken, TokenError
-from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework_simplejwt.tokens import BlacklistedToken, OutstandingToken, RefreshToken
 
 from app.accounts.permissions import AdminOnly, GuestOnly, ModeratorOnly
 from app.accounts.serializers import (
     AdministratorSerializer,
     AssignRoleSerializer,
+    ContactChangeConfirmSerializer,
+    ContactChangeRequestSerializer,
     GuestSerializer,
+    MeSerializer,
     ModeratorSerializer,
     ResetPasswordConfirmSerializer,
-    ResetPasswordSerializer,
+    ResetPasswordRequestSerializer,
     UserRegistrationSerializer,
     UserSerializer,
 )
@@ -63,32 +68,78 @@ class ModeratorViewSet(viewsets.ModelViewSet):
         return [IsAuthenticated(), AdminOnly()]
 
 
-class MeViewSet(
+class MeView(
     viewsets.GenericViewSet,
     mixins.RetrieveModelMixin,
+    mixins.UpdateModelMixin,
 ):
-    serializer_class = UserSerializer
+    serializer_class = MeSerializer
 
     def get_object(self):
         return User.objects.select_related('guest', 'moderator', 'admin') \
             .prefetch_related('guest__bookings').get(pk=self.request.user.pk)
 
     def get_permissions(self):
+        if self.action == 'confirm_change':
+            return [AllowAny()]
         if self.action == 'retrieve':
             return [IsAuthenticated()]
         return [IsAuthenticated(), GuestOnly()]
 
-    @action(detail=False, methods=['post'], url_path='deactivate')
+    @action(detail=False, methods=['delete'])
+    @transaction.atomic
     def deactivate(self, request):
         request.user.is_active = False
         request.user.save(update_fields=['is_active'])
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+    @action(detail=False, methods=['patch'])
+    def request_change(self, request):
+        serializer = ContactChangeRequestSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        change_type, new_value, uid, token = serializer.save(user=request.user)
+
+        confirm_url = f"{settings.FRONTEND_URL}/me/confirm-change?uid={uid}&token={token}"
+
+        if change_type == 'email':
+            recipient = new_value
+            subject = 'Подтверждение смены email'
+        else:
+            recipient = request.user.email
+            subject = 'Подтверждение смены номера телефона'
+
+        send_mail(
+            subject=subject,
+            message=f'Для подтверждения перейдите по ссылке: {confirm_url}',
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[recipient],
+        )
         return Response(
-            {'detail': 'Аккаунт будет удален через 30 дней'},
-            status=status.HTTP_200_OK
+            {'detail': f'Письмо с подтверждением отправлено на {recipient}'},
+            status=status.HTTP_200_OK,
         )
 
+    @action(detail=False, methods=['patch'])
+    @transaction.atomic
+    def confirm_change(self, request):
+        serializer = ContactChangeConfirmSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
 
-class UserViewSet(viewsets.GenericViewSet):
+        user = serializer.validated_data['user']
+        pending = serializer.validated_data['pending']
+
+        if pending['change_type'] == 'email':
+            user.email = pending['new_value']
+            user.save(update_fields=['email'])
+        else:
+            user.phone_number = pending['new_value']
+            user.save(update_fields=['phone_number'])
+
+        cache.delete(f'contact_change:{user.pk}')
+        return Response({'detail': 'Данные успешно обновлены'}, status=status.HTTP_200_OK)
+
+
+class UserView(viewsets.GenericViewSet):
     permission_classes = [IsAuthenticated, AdminOnly]
     queryset = User.objects.all()
 
@@ -158,7 +209,7 @@ class UserViewSet(viewsets.GenericViewSet):
 
 
 class PasswordResetRequestView(generics.GenericAPIView):
-    serializer_class = ResetPasswordSerializer
+    serializer_class = ResetPasswordRequestSerializer
     permission_classes = [AllowAny]
 
     def post(self, request):
@@ -192,6 +243,7 @@ class PasswordResetConfirmView(generics.GenericAPIView):
     serializer_class = ResetPasswordConfirmSerializer
     permission_classes = [AllowAny]
 
+    @transaction.atomic()
     def post(self, request):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -200,11 +252,9 @@ class PasswordResetConfirmView(generics.GenericAPIView):
         user.set_password(serializer.validated_data['new_password'])
         user.save(update_fields=['password'])
 
-        try:
-            from rest_framework_simplejwt.token_blacklist.models import OutstandingToken
-            OutstandingToken.objects.filter(user=user).delete()
-        except ImportError:
-            pass
+        tokens = OutstandingToken.objects.filter(user=user)
+        for token in tokens:
+            BlacklistedToken.objects.get_or_create(token=token)
 
         return Response(
             {'detail': 'Пароль успешно изменён.'},

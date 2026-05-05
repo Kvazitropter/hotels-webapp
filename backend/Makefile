@@ -86,7 +86,7 @@ superuser:
 	docker compose exec backend uv run python manage.py createsuperuser
 
 test:
-	docker compose exec backend uv run python manage.py test
+	docker compose exec backend uv run python manage.py test $(TEST_NAME)
 
 lint:
 	docker compose exec backend uv run ruff check .
@@ -139,7 +139,7 @@ delete-users:
 
 ## Отели
 create-hotels:
-	@echo "Доступны параметры HOTEL_NAME=<название сети> HOTEL_COUNT=<число> ROOM_TYPE_COUNT=<число> ROOM_PER_HOTEL=<число> WITHOUT_PHOTO='--without-photo'"
+	@echo "Доступны параметры HOTEL_NAME=<название сети> HOTEL_COUNT=<число> ROOM_TYPE_COUNT=<число> ROOM_PER_HOTEL=<число> WITHOUT_PHOTO='--without-photos'"
 	docker compose exec backend uv run python manage.py create_test_hotels --name $(HOTEL_NAME) \
 		--hotel-count $(HOTEL_COUNT) --room-type-count $(ROOM_TYPE_COUNT) --room-per-hotel $(ROOM_PER_HOTEL) $(WITHOUT_PHOTO)
 
@@ -149,9 +149,9 @@ create-room-types:
 		--hotel-count 0 --room-type-count $(ROOM_TYPE_COUNT) --room-per-hotel 0
 
 create-rooms:
-	@echo "Доступны параметры HOTEL_NAME=<название сети> ROOM_PER_HOTEL=<число> WITHOUT_PHOTO='--without-photo'"
+	@echo "Доступны параметры HOTEL_NAME=<название сети> ROOM_PER_HOTEL=<число> WITHOUT_PHOTO='--without-photos'"
 	docker compose exec backend uv run python manage.py create_test_hotels --name=$(HOTEL_NAME) \
-		--hotel-count=0 --room-type-count=0 --room-per-hotel=$(ROOM_PER_HOTEL)$(WITHOUT_PHOTO)
+		--hotel-count=0 --room-type-count=0 --room-per-hotel=$(ROOM_PER_HOTEL) $(WITHOUT_PHOTO)
 
 delete-hotels:
 	@echo "Доступен параметр HOTEL_LOOKUP=<параметр1=значение1,параметр2=значение2>"

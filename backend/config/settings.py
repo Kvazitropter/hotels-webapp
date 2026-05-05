@@ -38,7 +38,6 @@ INSTALLED_APPS = [
 
 AUTH_USER_MODEL = 'accounts.User'
 
-
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ['rest_framework.permissions.IsAuthenticated'],
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -154,6 +153,8 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
 
 # Сброс пароля:
+PASSWORD_RESET_TIMEOUT = 14400
+
 ## Для генерации ссылки в письме
 FRONTEND_URL = config('FRONTEND_URL')
 
@@ -166,8 +167,13 @@ EMAIL_BACKEND = _email_backend
 
 ## Только для продакшена:
 EMAIL_HOST = config('EMAIL_HOST')
+
 EMAIL_PORT = config('EMAIL_PORT')
+
 EMAIL_USE_TLS = config('EMAIL_USE_TLS')
+
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
