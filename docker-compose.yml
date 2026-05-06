@@ -26,6 +26,7 @@ services:
       - "${BACKEND_PORT}:8000"
     env_file:
       - .env
+      - ./backend/.env
     depends_on:
       db:
         condition: service_healthy

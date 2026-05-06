@@ -1,26 +1,22 @@
-***
-В самый первый раз
+Для запуска Docker используйте Makefile
 
-1. Создать .env (пример — `.env.example`)
-
-2. Инициализировать проект:
-
-***Если бэк***
+####  Первый запуск:
 
 ```bash
-docker compose run --rm backend uv run django-admin startproject  < имя > .
+make init
 ```
 
-***Если фронт***
-
-Создать файлы `frontend/src/index.js` и `frontend/public/index.html`
-
-3. Запустить:
+#### Запуск:
 
 ```bash
-make up
+make dev
 ```
-***
+
+#### Пересоздать БД:
+
+```bash
+make db-redo
+```
 
 #### Остановить
 
