@@ -10,7 +10,6 @@ class Migration(migrations.Migration):
 
     dependencies = [
         ('bookings', '0005_alter_booking_total_price'),
-        ('hotels', '0009_seed_room_categories'),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 

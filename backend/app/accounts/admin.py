@@ -2,7 +2,6 @@ from django.contrib import admin
 from django.contrib.auth import get_user_model
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin, GroupAdmin
 from django.contrib.auth.models import Group as BaseGroup
-from rest_framework_simplejwt.token_blacklist.models import OutstandingToken, BlacklistedToken
 
 from app.accounts.models import Group, Guest, Moderator, Administrator
 

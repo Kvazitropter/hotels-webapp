@@ -5,6 +5,8 @@ from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator, MaxValueValidator, RegexValidator, FileExtensionValidator
 from phonenumber_field.modelfields import PhoneNumberField
 
+from app.hotels.managers import RoomManager
+
 
 class Hotel(models.Model):
     MAX_FLOOR_COUNT = 10
@@ -78,31 +80,32 @@ class RoomCategory(models.Model):
         FULL = 'F', 'Полный санузел'
 
     class Tier(models.TextChoices):
-        # Высшая категория
         SUITE = 'SU', 'Сюит'
         APARTMENT = 'A', 'Апартамент'
         LUX = 'L', 'Люкс'
         JUNIOR_SUITE = 'JSU', 'Джуниор сюит'
         STUDIO = 'ST', 'Студия'
-        # Стандартные категории
         FIRST = '1', 'Первая категория (стандарт)'
         SECOND = '2', 'Вторая категория'
         THIRD = '3', 'Третья категория'
         FOURTH = '4', 'Четвёртая категория'
         FIFTH = '5', 'Пятая категория'
 
-    MIN_AREA = {
-        Tier.SUITE: 75,
-        Tier.APARTMENT: 40,
-        Tier.LUX: 35,
-        Tier.JUNIOR_SUITE: 25,
-        Tier.STUDIO: 25,
-        Tier.FIRST: 9,
-        Tier.SECOND: 9,
-        Tier.THIRD: 9,
-        Tier.FOURTH: 9,
-        Tier.FIFTH: 9,
-    }
+    PREMIUM_TIERS = (
+        Tier.SUITE,
+        Tier.APARTMENT,
+        Tier.LUX,
+        Tier.JUNIOR_SUITE,
+        Tier.STUDIO,
+    )
+
+    STANDARD_TIERS = (
+        Tier.FIRST,
+        Tier.SECOND,
+        Tier.THIRD,
+        Tier.FOURTH,
+        Tier.FIFTH,
+    )
 
     tier = models.CharField(
         max_length=3,
@@ -134,13 +137,11 @@ class RoomCategory(models.Model):
 
     @property
     def is_premium(self):
-        return self.tier in [
-            RoomCategory.Tier.SUITE,
-            RoomCategory.Tier.APARTMENT,
-            RoomCategory.Tier.LUX,
-            RoomCategory.Tier.JUNIOR_SUITE,
-            RoomCategory.Tier.STUDIO,
-        ]
+        return self.tier in self.PREMIUM_TIERS
+
+    @property
+    def is_standard(self):
+        return self.tier in self.STANDARD_TIERS
 
     def __str__(self):
         return self.get_tier_display()
@@ -222,6 +223,21 @@ class RoomType(models.Model):
                 raise ValidationError(
                     f'Категория "{self.category}" требует наличия кухни'
                 )
+            if self.bathroom_type:
+                if self.category.required_bathroom_type == RoomCategory.BathroomType.FULL:
+                    if (self.bathroom_type != RoomCategory.BathroomType.FULL
+                        or self.bathroom_count < 1):
+                        raise ValidationError(
+                            f'Категория "{self.category}" требует наличия полного санузла'
+                        )
+                if self.category.required_bathroom_type == RoomCategory.BathroomType.PARTIAL:
+                    if self.bathroom_type not in (
+                        RoomCategory.BathroomType.FULL, RoomCategory.BathroomType.PARTIAL
+                    ) or self.bathroom_count < 1:
+                        raise ValidationError(
+                            f'Категория "{self.category}" требует'
+                            'наличия хотя бы частичного санузла'
+                        )
 
     def save(self, *args, **kwargs):
         self.full_clean()
@@ -291,6 +307,8 @@ class Room(models.Model):
         verbose_name='Вариация номера',
         help_text='Например, 1A и 1B (указать только букву)',
     )
+
+    objects = RoomManager()
 
     class Meta:
         db_table = 'room'
