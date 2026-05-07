@@ -166,6 +166,9 @@ class Command(BaseCommand):
                 room_type_data['has_kitchen'] = category.requires_kitchen
             if room_type_data['bathroom_type'] != category.required_bathroom_type:
                 room_type_data['bathroom_type'] = category.required_bathroom_type
+            if (room_type_data['bathroom_type'] != RoomCategory.BathroomType.SHARED
+                and room_type_data['bathroom_count'] < 1):
+                room_type_data['bathroom_count'] = 1
             room_types.append(RoomType(category=category, **room_type_data))
 
         created_room_types = RoomType.objects.bulk_create(room_types)

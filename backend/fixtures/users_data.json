@@ -634,7 +634,7 @@
   "pk": 40,
   "fields": {
     "password": "pbkdf2_sha256$1200000$TXrEM9EE2rX9hlMFFzs2KD$ZWt4n1/Usn6xoVm+Xj4MWY52s7K7hB/zAWXuL1GhB9s=",
-    "last_login": "2026-05-04T14:05:32.228Z",
+    "last_login": "2026-05-05T07:58:26.256Z",
     "is_active": true,
     "date_joined": "2026-05-04T13:40:26.350Z",
     "email": "solomon1998@example.com",

@@ -163,7 +163,7 @@
     "tier": "3",
     "min_area": 9,
     "requires_kitchen": false,
-    "required_bathroom_type": "F",
+    "required_bathroom_type": "P",
     "min_rooms": 1
   }
 },
@@ -174,7 +174,7 @@
     "tier": "4",
     "min_area": 9,
     "requires_kitchen": false,
-    "required_bathroom_type": "F",
+    "required_bathroom_type": "P",
     "min_rooms": 1
   }
 },
@@ -185,7 +185,7 @@
     "tier": "5",
     "min_area": 9,
     "requires_kitchen": false,
-    "required_bathroom_type": "F",
+    "required_bathroom_type": "S",
     "min_rooms": 1
   }
 },
