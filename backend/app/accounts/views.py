@@ -32,7 +32,7 @@ from app.accounts.serializers import (
 User = get_user_model()
 
 
-class AdminViewSet(viewsets.ModelViewSet):
+class AdminViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = User.objects.filter(admin__isnull=False).select_related('admin')
     serializer_class = AdministratorSerializer
     permission_classes = [IsAuthenticated, AdminOnly]
@@ -41,31 +41,23 @@ class AdminViewSet(viewsets.ModelViewSet):
     ordering_fields = ['email', 'last_name', 'last_login']
 
 
-class GuestViewSet(viewsets.ModelViewSet):
+class GuestViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = User.objects.filter(guest__isnull=False).select_related('guest') \
         .prefetch_related('guest__bookings')
     serializer_class = GuestSerializer
+    permission_classes = [IsAuthenticated, (ModeratorOnly|AdminOnly)]
     filterset_fields = ['is_active', 'guest__bookings__status']
     search_fields = ['email', 'phone_number', 'last_name']
     ordering_fields = ['email', 'last_name', 'last_login']
 
-    def get_permissions(self):
-        if self.action in ('list', 'retrieve'):
-            return [IsAuthenticated(), (ModeratorOnly|AdminOnly)()]
-        return [IsAuthenticated(), AdminOnly()]
 
-
-class ModeratorViewSet(viewsets.ModelViewSet):
+class ModeratorViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = User.objects.filter(moderator__isnull=False).select_related('moderator')
     serializer_class = ModeratorSerializer
+    permission_classes = [IsAuthenticated, (ModeratorOnly|AdminOnly)]
     filterset_fields = ['is_active']
     search_fields = ['email', 'phone_number', 'last_name']
     ordering_fields = ['email', 'last_name', 'last_login']
-
-    def get_permissions(self):
-        if self.action in ('list', 'retrieve'):
-            return [IsAuthenticated(), (ModeratorOnly|AdminOnly)()]
-        return [IsAuthenticated(), AdminOnly()]
 
 
 class MeView(
@@ -139,7 +131,7 @@ class MeView(
         return Response({'detail': 'Данные успешно обновлены'}, status=status.HTTP_200_OK)
 
 
-class UserView(viewsets.GenericViewSet):
+class UserViewSet(viewsets.GenericViewSet):
     permission_classes = [IsAuthenticated, AdminOnly]
     queryset = User.objects.all()
 

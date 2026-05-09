@@ -94,7 +94,7 @@ class Booking(models.Model):
             models.CheckConstraint(
                 condition=models.Q(check_out_date__gt=models.F('check_in_date')),
                 name='booking_check_out_after_check_in',
-                violation_error_message='Дата выезда должна быть позже даты заезда'
+                violation_error_message='Дата выселения должна быть позже даты заселения'
             ),
             models.CheckConstraint(
                 condition=(
@@ -102,7 +102,8 @@ class Booking(models.Model):
                     models.Q(~models.Q(status=_BookingStatus.MOVED))
                 ),
                 name='booking_moved_to_required',
-                violation_error_message='При переносе бронирования необходимо указать ссылку на новое'
+                violation_error_message=('При переносе бронирования'
+                    'необходимо указать ссылку на новое')
             ),
         ]
 
@@ -119,6 +120,13 @@ class Booking(models.Model):
                 f'Номер рассчитан на {self.room.bed_count} гостей, '
                 f'указано {total_guests}'
             )
+
+        if self.status == Booking.Status.CANCELLED and not hasattr(self, 'cancellation'):
+            raise ValidationError(
+                f'У бронирования со статусом "{self.get_status_display()}"'
+                'должна быть соответствующая запись в таблице CancelledBooking'
+            )
+
         return super().clean()
 
     def save(self, *args, **kwargs):
@@ -126,8 +134,8 @@ class Booking(models.Model):
         super().save(*args, **kwargs)
 
     def cancel(self, reason: str) -> None:
-        if self.status in (Booking.Status.CANCELLED, Booking.Status.CLOSED):
-            raise ValueError('Нельзя отменить уже завершенное или отмененное бронирование')
+        if self.status != Booking.Status.ACTIVE:
+            raise ValueError('Нельзя отменить неактивное бронирование')
         self.status = Booking.Status.CANCELLED
         super(Booking, self).save(update_fields=['status'])
         CancelledBooking.objects.create(booking=self, cancellation_reason=reason)
@@ -159,6 +167,12 @@ class Booking(models.Model):
         return f'Бронирование ({self.check_in_date:%d.%m.%Y}, {self.check_out_date:%d.%m.%Y})'
 
 
+class _PaymentStatus(models.TextChoices):
+    OPEN = 'O', 'Ждет оплаты'
+    IRRELEVANT = 'I', 'Не актуально'
+    EXPIRED = 'E', 'Просрочен'
+    CLOSED = 'C', 'Оплачено'
+
 class BookingPayment(models.Model):
     class Purpose(models.TextChoices):
         PREPAY = 'PP', 'Предоплата'
@@ -167,11 +181,7 @@ class BookingPayment(models.Model):
         REFUND = 'RF', 'Возврат'
         PENALTY = 'PN', 'Штраф'
 
-    class Status(models.TextChoices):
-        OPEN = 'O', 'Ждет оплаты'
-        IRRELEVANT = 'I', 'Не актуально'
-        EXPIRED = 'E', 'Просрочен'
-        CLOSED = 'C', 'Оплачено'
+    Status = _PaymentStatus
 
     booking = models.ForeignKey(
         Booking,
@@ -211,6 +221,17 @@ class BookingPayment(models.Model):
         verbose_name = 'Платеж'
         verbose_name_plural = 'Платежи'
         ordering = ['-created_at', '-paid_at']
+        constraints = [
+            models.CheckConstraint(
+                condition=(
+                    models.Q(status=_PaymentStatus.CLOSED, paid_at__isnull=False) |
+                    models.Q(~models.Q(status=_PaymentStatus.CLOSED))
+                ),
+                name='booking_payment_paid_at_required',
+                violation_error_message=('При закрытии платежа'
+                    'необходимо указать дату оплаты')
+            ),
+        ]
 
     def __str__(self):
         return f'Оплата по {self.booking}, статус: {self.status}, сумма: {self.amount}'
@@ -279,7 +300,7 @@ class Review(models.Model):
     status = models.CharField(
         max_length=1,
         choices=Status.choices,
-        default=Status.ON_MODERATION,
+        default=Status.DRAFT,
     )
     moderated_by = models.ForeignKey(
         Moderator,
@@ -309,8 +330,11 @@ class Review(models.Model):
         constraints = [
             models.CheckConstraint(
                 condition=(
-                    models.Q(status=_ReviewStatus.PUBLISHED, published_at__isnull=False) |
-                    models.Q(~models.Q(status=_ReviewStatus.PUBLISHED))
+                    models.Q(
+                        status__in=[_ReviewStatus.PUBLISHED, _ReviewStatus.ARCHIVED],
+                        published_at__isnull=False
+                    ) |
+                    models.Q(~models.Q(status__in=[_ReviewStatus.PUBLISHED, _ReviewStatus.ARCHIVED]))
                 ),
                 name='review_published_at_required',
                 violation_error_message='Необходимо указать дату публикации'
@@ -338,9 +362,6 @@ class Review(models.Model):
     def clean(self):
         if self.booking and self.booking.status != Booking.Status.CLOSED:
             raise ValidationError('Отзыв можно оставить только на завершенную бронь')
-
-        if self.moderated_by and not self.moderated_by.is_staff:
-            raise ValidationError('Модерировать отзывы может только персонал')
 
     def save(self, *args, **kwargs):
         self.full_clean()

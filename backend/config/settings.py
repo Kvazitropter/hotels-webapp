@@ -17,6 +17,11 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=lambda v: [s.strip() for s in v.split(',')])
 
+CORS_ALLOWED_ORIGINS = [
+    config('FRONTEND_URL'),
+]
+
+CORS_ALLOW_ALL_ORIGINS = DEBUG
 
 # Application definition
 
@@ -28,6 +33,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'corsheaders',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
     'phonenumber_field',
@@ -60,6 +66,7 @@ SIMPLE_JWT = {
 }
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -158,22 +165,14 @@ PASSWORD_RESET_TIMEOUT = 14400
 ## Для генерации ссылки в письме
 FRONTEND_URL = config('FRONTEND_URL')
 
-_email_backend = 'django.core.mail.backends.smtp.EmailBackend'
 ## В режиме разработки письма пишутся в консоль
 if DEBUG:
-    _email_backend = 'django.core.mail.backends.console.EmailBackend'
-
-EMAIL_BACKEND = _email_backend
-
-## Только для продакшена:
-EMAIL_HOST = config('EMAIL_HOST')
-
-EMAIL_PORT = config('EMAIL_PORT')
-
-EMAIL_USE_TLS = config('EMAIL_USE_TLS')
-
-EMAIL_HOST_USER = config('EMAIL_HOST_USER')
-
-EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-
-DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = config('EMAIL_HOST')
+    EMAIL_PORT = config('EMAIL_PORT', cast=int)
+    EMAIL_USE_TLS = config('EMAIL_USE_TLS')
+    EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+    DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')

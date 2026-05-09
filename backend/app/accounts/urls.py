@@ -3,7 +3,7 @@ from rest_framework.routers import DefaultRouter
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 from app.accounts.views import (
-    UserView,
+    UserViewSet,
     GuestViewSet,
     ModeratorViewSet,
     AdminViewSet,
@@ -16,7 +16,7 @@ from app.accounts.views import (
 
 
 router = DefaultRouter()
-router.register(r'users', UserView, basename='user')
+router.register(r'users', UserViewSet, basename='user')
 router.register(r'guests', GuestViewSet, basename='guest')
 router.register(r'moderators', ModeratorViewSet, basename='moderator')
 router.register(r'admins', AdminViewSet, basename='admin')

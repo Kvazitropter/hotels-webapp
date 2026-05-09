@@ -279,7 +279,7 @@ class MeViewTest(APITestCase):
         self._set_pending(self.guest, 'email', new_email)
         payload = self._make_confirm_payload(self.guest)
         self.client.force_authenticate(self.guest)
-        response = self.client.patch(self.confirm_change_url, payload)
+        response = self.client.post(self.confirm_change_url, payload)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.guest.refresh_from_db()
         self.assertEqual(self.guest.email, new_email)
@@ -289,7 +289,7 @@ class MeViewTest(APITestCase):
         self._set_pending(self.guest, 'phone', new_phone)
         payload = self._make_confirm_payload(self.guest)
         self.client.force_authenticate(self.guest)
-        response = self.client.patch(self.confirm_change_url, payload)
+        response = self.client.post(self.confirm_change_url, payload)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.guest.refresh_from_db()
         self.assertEqual(str(self.guest.phone_number), new_phone)
@@ -298,13 +298,13 @@ class MeViewTest(APITestCase):
         self._set_pending(self.guest, 'email', 'new@example.com')
         payload = self._make_confirm_payload(self.guest)
         self.client.force_authenticate(self.guest)
-        self.client.patch(self.confirm_change_url, payload)
+        self.client.post(self.confirm_change_url, payload)
         self.assertIsNone(cache.get(f'contact_change:{self.guest.pk}'))
 
     def test_confirm_change_without_pending_returns_400(self):
         payload = self._make_confirm_payload(self.guest)
         self.client.force_authenticate(self.guest)
-        response = self.client.patch(self.confirm_change_url, payload)
+        response = self.client.post(self.confirm_change_url, payload)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_confirm_change_with_invalid_token_returns_400(self):
@@ -313,7 +313,7 @@ class MeViewTest(APITestCase):
         payload = self._make_confirm_payload(self.guest)
         payload['token'] = 'invalid-token'
         self.client.force_authenticate(self.guest)
-        response = self.client.patch(self.confirm_change_url, payload)
+        response = self.client.post(self.confirm_change_url, payload)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.guest.refresh_from_db()
         self.assertNotEqual(self.guest.email, new_email)
@@ -323,18 +323,18 @@ class MeViewTest(APITestCase):
         payload = self._make_confirm_payload(self.guest)
         payload['uid'] = 'invalid-uid'
         self.client.force_authenticate(self.guest)
-        response = self.client.patch(self.confirm_change_url, payload)
+        response = self.client.post(self.confirm_change_url, payload)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
 
     def test_confirm_change_token_cannot_be_reused(self):
         self._set_pending(self.guest, 'email', 'new@example.com')
         payload = self._make_confirm_payload(self.guest)
         self.client.force_authenticate(self.guest)
-        self.client.patch(self.confirm_change_url, payload)
+        self.client.post(self.confirm_change_url, payload)
 
         another_email = 'another@example.com'
         self._set_pending(self.guest, 'email', another_email)
-        response = self.client.patch(self.confirm_change_url, payload)
+        response = self.client.post(self.confirm_change_url, payload)
         self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
         self.guest.refresh_from_db()
         self.assertNotEqual(self.guest.email, another_email)
