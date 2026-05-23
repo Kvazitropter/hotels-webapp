@@ -1,11 +1,8 @@
 from django.conf import settings
 from django.contrib.auth import get_user_model
-from django.contrib.auth.tokens import default_token_generator
 from django.core.cache import cache
 from django.core.mail import send_mail
 from django.db import transaction
-from django.utils.encoding import force_bytes
-from django.utils.http import urlsafe_base64_encode
 from rest_framework import generics, mixins, status, viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -17,6 +14,7 @@ from app.accounts.permissions import AdminOnly, GuestOnly, ModeratorOnly
 from app.accounts.serializers import (
     AdministratorSerializer,
     AssignRoleSerializer,
+    ConfirmEmailSerializer,
     ContactChangeConfirmSerializer,
     ContactChangeRequestSerializer,
     GuestSerializer,
@@ -27,6 +25,7 @@ from app.accounts.serializers import (
     UserRegistrationSerializer,
     UserSerializer,
 )
+from app.accounts.utils.helpers import create_confirm_link
 
 
 User = get_user_model()
@@ -89,9 +88,8 @@ class MeView(
     def request_change(self, request):
         serializer = ContactChangeRequestSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        change_type, new_value, uid, token = serializer.save(user=request.user)
-
-        confirm_url = f"{settings.FRONTEND_URL}/me/confirm-change?uid={uid}&token={token}"
+        change_type, new_value = serializer.save(user=request.user)
+        confirm_url = create_confirm_link('me-contact-confirm', request.user)
 
         if change_type == 'email':
             recipient = new_value
@@ -127,7 +125,7 @@ class MeView(
             user.phone_number = pending['new_value']
             user.save(update_fields=['phone_number'])
 
-        cache.delete(f'contact_change:{user.pk}')
+        cache.delete(f'contact_change_{user.pk}')
         return Response({'detail': 'Данные успешно обновлены'}, status=status.HTTP_200_OK)
 
 
@@ -212,9 +210,7 @@ class PasswordResetRequestView(generics.GenericAPIView):
 
         try:
             user = User.objects.get(email=email, is_active=True)
-            uid = urlsafe_base64_encode(force_bytes(user.pk))
-            token = default_token_generator.make_token(user)
-            reset_url = f"{settings.FRONTEND_URL}/reset-password?uid={uid}&token={token}"
+            reset_url = create_confirm_link('password-reset-confirm', user)
 
             send_mail(
                 subject='Сброс пароля',
@@ -262,12 +258,34 @@ class RegisterView(generics.CreateAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         user = serializer.save()
+        confirm_url = create_confirm_link('register-email-confirm', user)
+
+        send_mail(
+            subject='Подтверждение регистрации',
+            message=f'Для завершения регистрации перейдите по ссылке: {confirm_url}',
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=[user.email],
+        )
+
         refresh = RefreshToken.for_user(user)
         return Response({
             'user': UserSerializer(user, context=self.get_serializer_context()).data,
             'access': str(refresh.access_token),
             'refresh': str(refresh),
         }, status=status.HTTP_201_CREATED)
+
+
+class ConfirmEmailView(generics.GenericAPIView):
+    permission_classes = [AllowAny]
+    serializer_class = ConfirmEmailSerializer
+
+    def post(self, request):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        return Response(
+            {'detail': 'Email успешно подтвержден'},
+            status=status.HTTP_200_OK
+        )
 
 
 class LogoutView(generics.GenericAPIView):

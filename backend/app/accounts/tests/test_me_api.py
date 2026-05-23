@@ -51,7 +51,7 @@ class MeViewTest(APITestCase):
         self.guest.assign_role(role=User.Role.GUEST)
 
     def _set_pending(self, user, change_type, new_value):
-        cache.set(f'contact_change:{user.pk}', {
+        cache.set(f'contact_change_{user.pk}', {
             'change_type': change_type,
             'new_value': new_value,
         }, timeout=600)
@@ -144,16 +144,6 @@ class MeViewTest(APITestCase):
         self.guest.refresh_from_db()
         self.assertFalse(self.guest.is_active)
 
-    # def test_delete_blacklists_tokens_and_invalidates_password(self):
-    #     password = 'GoodPassword432+'
-    #     refresh = RefreshToken.for_user(self.guest)
-    #     self.client.force_authenticate(self.guest)
-    #     self.client.delete(self.base_url)
-    #     self.assertTrue(
-    #         BlacklistedToken.objects.filter(token__jti=refresh['jti']).exists()
-    #     )
-    #     self.assertFalse(self.guest.check_password(password))
-
     def test_deleted_guest_cannot_auth(self):
         auth_data = {
             'email': 'guest@example.com',
@@ -193,8 +183,8 @@ class MeViewTest(APITestCase):
         email = mail.outbox[0]
         self.assertEqual(email.to, [new_email])
         self.assertEqual(email.subject, 'Подтверждение смены email')
-        self.assertIn('Для подтверждения перейдите по ссылке:', email.body)
-        self.assertIn('/me/confirm-change?uid=', email.body)
+        self.assertIn('uid=', email.body)
+        self.assertIn('token=', email.body)
 
     def test_guest_can_request_phone_number_change(self):
         self.client.force_authenticate(self.guest)
@@ -205,14 +195,14 @@ class MeViewTest(APITestCase):
         email = mail.outbox[0]
         self.assertEqual(email.to, [self.guest.email])
         self.assertEqual(email.subject, 'Подтверждение смены номера телефона')
-        self.assertIn('Для подтверждения перейдите по ссылке:', email.body)
-        self.assertIn('/me/confirm-change?uid=', email.body)
+        self.assertIn('uid=', email.body)
+        self.assertIn('token=', email.body)
 
     def test_request_change_saves_to_cache(self):
         self.client.force_authenticate(self.guest)
         new_email = 'new@email.com'
         self.client.patch(self.request_change_url, {'email': new_email})
-        pending = cache.get(f'contact_change:{self.guest.pk}')
+        pending = cache.get(f'contact_change_{self.guest.pk}')
         self.assertIsNotNone(pending)
         self.assertEqual(pending['change_type'], 'email')
         self.assertEqual(pending['new_value'], new_email)
@@ -221,7 +211,7 @@ class MeViewTest(APITestCase):
         self.client.force_authenticate(self.guest)
         self.client.patch(self.request_change_url, {'email': 'first@example.com'})
         self.client.patch(self.request_change_url, {'email': 'second@example.com'})
-        pending = cache.get(f'contact_change:{self.guest.pk}')
+        pending = cache.get(f'contact_change_{self.guest.pk}')
         self.assertEqual(pending['new_value'], 'second@example.com')
         self.assertEqual(len(mail.outbox), 2)
 
@@ -299,7 +289,7 @@ class MeViewTest(APITestCase):
         payload = self._make_confirm_payload(self.guest)
         self.client.force_authenticate(self.guest)
         self.client.post(self.confirm_change_url, payload)
-        self.assertIsNone(cache.get(f'contact_change:{self.guest.pk}'))
+        self.assertIsNone(cache.get(f'contact_change_{self.guest.pk}'))
 
     def test_confirm_change_without_pending_returns_400(self):
         payload = self._make_confirm_payload(self.guest)

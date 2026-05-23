@@ -8,6 +8,7 @@ from app.accounts.views import (
     ModeratorViewSet,
     AdminViewSet,
     RegisterView,
+    ConfirmEmailView,
     LogoutView,
     PasswordResetRequestView,
     PasswordResetConfirmView,
@@ -23,6 +24,7 @@ router.register(r'admins', AdminViewSet, basename='admin')
 
 urlpatterns = [
     path('auth/register/', RegisterView.as_view(), name='register'),
+    path('auth/register/confirm-email', ConfirmEmailView.as_view(), name='register-email-confirm'),
     path('auth/login/', TokenObtainPairView.as_view(), name='login'),
     path('auth/token/refresh/', TokenRefreshView.as_view(), name='token-refresh'),
     path('auth/logout/', LogoutView.as_view(), name='logout'),

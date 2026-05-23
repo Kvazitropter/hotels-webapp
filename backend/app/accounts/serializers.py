@@ -4,8 +4,8 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth.password_validation import validate_password
 from django.contrib.auth.tokens import default_token_generator
 from django.core.cache import cache
-from django.utils.encoding import force_bytes, force_str
-from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+from django.utils.encoding import force_str
+from django.utils.http import urlsafe_base64_decode
 from rest_framework import serializers
 
 from utils.validators import validate_email, validate_phone
@@ -135,14 +135,12 @@ class ContactChangeRequestSerializer(serializers.Serializer):
             new_value = str(self.validated_data['phone_number'])
 
         cache.set(
-            key=f'contact_change:{user.pk}',
+            key=f'contact_change_{user.pk}',
             value={'change_type': change_type, 'new_value': new_value},
             timeout=settings.PASSWORD_RESET_TIMEOUT,
         )
 
-        uid = urlsafe_base64_encode(force_bytes(user.pk))
-        token = default_token_generator.make_token(user)
-        return change_type, new_value, uid, token
+        return change_type, new_value
 
 
 class ContactChangeConfirmSerializer(_ConfirmLinkSerializer):
@@ -150,7 +148,7 @@ class ContactChangeConfirmSerializer(_ConfirmLinkSerializer):
         data = super().validate(data)
         user = data['user']
 
-        pending = cache.get(f'contact_change:{user.pk}')
+        pending = cache.get(f'contact_change_{user.pk}')
         if not pending:
             raise serializers.ValidationError('Ссылка недействительна или истекла')
 
@@ -200,3 +198,7 @@ class UserRegistrationSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(**validated_data)
         user.assign_role(User.Role.GUEST)
         return user
+
+
+class ConfirmEmailSerializer(_ConfirmLinkSerializer):
+    pass
