@@ -214,6 +214,84 @@ class BookingModelTest(TestCase):
         with self.assertRaises(ValidationError):
             booking.save(update_fields=['status'])
 
+    def test_overlapping_check_in_inside_already_booked_period(self):
+        Booking.objects.create(**self.booking_data)
+
+        overlapping_data = self.booking_data.copy()
+        overlapping_data['check_in_date'] = self.booking_data['check_in_date'] + timedelta(days=2)
+        overlapping_data['check_out_date'] = self.booking_data['check_out_date'] + timedelta(days=2)
+        with self.assertRaises(ValidationError):
+            Booking.objects.create(**overlapping_data)
+
+    def test_overlapping_check_out_inside_already_booked_period(self):
+        Booking.objects.create(**self.booking_data)
+
+        overlapping_data = self.booking_data.copy()
+        overlapping_data['check_in_date'] = self.booking_data['check_in_date'] - timedelta(days=2)
+        overlapping_data['check_out_date'] = self.booking_data['check_out_date'] - timedelta(days=2)
+        with self.assertRaises(ValidationError):
+            Booking.objects.create(**overlapping_data)
+
+    def test_overlapping_booking_period_part_of_already_booked_period(self):
+        Booking.objects.create(**self.booking_data)
+
+        overlapping_data = self.booking_data.copy()
+        overlapping_data['check_in_date'] = self.booking_data['check_in_date'] + timedelta(days=1)
+        overlapping_data['check_out_date'] = self.booking_data['check_out_date'] - timedelta(days=1)
+        with self.assertRaises(ValidationError):
+            Booking.objects.create(**overlapping_data)
+
+    def test_overlapping_booking_period_includes_already_booked_period(self):
+        Booking.objects.create(**self.booking_data)
+
+        overlapping_data = self.booking_data.copy()
+        overlapping_data['check_in_date'] = self.booking_data['check_in_date'] - timedelta(days=1)
+        overlapping_data['check_out_date'] = self.booking_data['check_out_date'] + timedelta(days=1)
+        with self.assertRaises(ValidationError):
+            Booking.objects.create(**overlapping_data)
+
+    def test_overlapping_with_cancelled_booking_allowed(self):
+        booking1 = Booking.objects.create(**self.booking_data)
+        booking1.cancel('Тест')
+        booking1.refresh_from_db()
+
+        try:
+            Booking.objects.create(**self.booking_data)
+        except ValidationError:
+            self.fail(
+                'Не удалось создать активное бронирование, даты которого пересекаются с отмененным'
+            )
+        self.assertEqual(Booking.objects.count(), 2)
+
+    def test_overlapping_with_moved_booking_allowed(self):
+        booking1 = Booking.objects.create(**self.booking_data)
+        booking1.move(
+            self.booking_data['check_in_date'] + timedelta(days=31),
+            self.booking_data['check_out_date'] + timedelta(days=31)
+        )
+        booking1.refresh_from_db()
+
+        try:
+            Booking.objects.create(**self.booking_data)
+        except ValidationError:
+            self.fail(
+                'Не удалось создать активное бронирование, '
+                'даты которого пересекаются с перенесенным'
+            )
+        self.assertEqual(Booking.objects.count(), 3)
+
+    def test_update_booking_to_overlap_raises_error(self):
+        Booking.objects.create(**self.booking_data)
+        data = self.booking_data.copy()
+        data['check_in_date'] = self.booking_data['check_in_date'] + timedelta(days=31)
+        data['check_out_date'] = self.booking_data['check_out_date'] + timedelta(days=31)
+        booking2 = Booking.objects.create(**data)
+
+        booking2.check_in_date = self.booking_data['check_in_date'] - timedelta(days=2)
+        booking2.check_out_date = self.booking_data['check_out_date'] - timedelta(days=2)
+        with self.assertRaises(ValidationError):
+            booking2.save(update_fields=['check_in_date', 'check_out_date'])
+
 
 class BookingPaymentModelTest(TestCase):
     def setUp(self):

@@ -682,3 +682,14 @@ class BookingCreateViewTest(APITestCase):
             self.client.force_authenticate(self.guest_user)
             response = self.client.post(self.base_url, booking_data)
             self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_create_overlapping_booking_fails(self):
+        self.client.force_authenticate(self.guest_user)
+        response1 = self.client.post(self.base_url, self.booking_data)
+        self.assertEqual(response1.status_code, status.HTTP_201_CREATED)
+
+        overlapping_data = self.booking_data.copy()
+        overlapping_data['check_in_date'] = self.booking_data['check_in_date'] + timedelta(days=2)
+        overlapping_data['check_out_date'] = self.booking_data['check_out_date'] + timedelta(days=2)
+        response2 = self.client.post(self.base_url, overlapping_data)
+        self.assertEqual(response2.status_code, status.HTTP_400_BAD_REQUEST)

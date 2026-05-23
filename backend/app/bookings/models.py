@@ -1,6 +1,6 @@
 from datetime import date
 
-from django.db import models
+from django.db import models, transaction
 from django.contrib.auth import get_user_model
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.core.exceptions import ValidationError
@@ -17,6 +17,7 @@ class _BookingStatus(models.TextChoices):
     MOVED = 'M', 'Перенесено'
     CANCELLED = 'CA', 'Отменено'
     CLOSED = 'CL', 'Завершено'
+    PENDING = 'P', 'В обработке'
 
 class Booking(models.Model):
     class Type(models.TextChoices):
@@ -111,6 +112,15 @@ class Booking(models.Model):
         if not self.room.hotel.is_active:
             raise ValidationError('Нельзя забронировать номер в неактивном отеле')
 
+        overlapping = Booking.objects.filter(
+            room=self.room,
+            status=Booking.Status.ACTIVE,
+            check_in_date__lt=self.check_out_date,
+            check_out_date__gt=self.check_in_date,
+        ).exclude(pk=self.pk)
+        if overlapping.exists():
+            raise ValidationError('Номер уже забронирован на выбранные даты.')
+
         if self.pets_count > 0 and not self.room.is_pets_allowed:
             raise ValidationError('В данном номере нельзя проживать с животными')
 
@@ -133,6 +143,7 @@ class Booking(models.Model):
         self.full_clean()
         super().save(*args, **kwargs)
 
+    @transaction.atomic
     def cancel(self, reason: str) -> None:
         if self.status != Booking.Status.ACTIVE:
             raise ValueError('Нельзя отменить неактивное бронирование')
@@ -140,10 +151,14 @@ class Booking(models.Model):
         super(Booking, self).save(update_fields=['status'])
         CancelledBooking.objects.create(booking=self, cancellation_reason=reason)
 
+    @transaction.atomic
     def move(self, new_check_in: date, new_check_out: date, **kwargs):
         if self.status != Booking.Status.ACTIVE:
             raise ValueError('Нельзя перенести неактивное бронирование')
-        self.status = Booking.Status.MOVED
+
+        self.status = Booking.Status.PENDING
+        super(Booking, self).save(update_fields=['status'])
+
         new_booking = Booking.objects.create(
             guest=self.guest,
             room=self.room,
@@ -156,6 +171,7 @@ class Booking(models.Model):
             type=self.type,
             **kwargs,
         )
+        self.status = Booking.Status.MOVED
         self.moved_to = new_booking
         super(Booking, self).save(update_fields=['status', 'moved_to'])
 
@@ -334,7 +350,9 @@ class Review(models.Model):
                         status__in=[_ReviewStatus.PUBLISHED, _ReviewStatus.ARCHIVED],
                         published_at__isnull=False
                     ) |
-                    models.Q(~models.Q(status__in=[_ReviewStatus.PUBLISHED, _ReviewStatus.ARCHIVED]))
+                    models.Q(
+                        ~models.Q(status__in=[_ReviewStatus.PUBLISHED, _ReviewStatus.ARCHIVED])
+                    )
                 ),
                 name='review_published_at_required',
                 violation_error_message='Необходимо указать дату публикации'
@@ -361,7 +379,7 @@ class Review(models.Model):
 
     def clean(self):
         if self.booking and self.booking.status != Booking.Status.CLOSED:
-            raise ValidationError('Отзыв можно оставить только на завершенную бронь')
+            raise ValidationError('Отзыв можно оставить только на завершенное бронирование')
 
     def save(self, *args, **kwargs):
         self.full_clean()
