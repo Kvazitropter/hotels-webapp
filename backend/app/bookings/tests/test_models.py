@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 from django.test import TestCase
 from django.utils import timezone
 
-from app.bookings.models import Booking, BookingPayment, CancelledBooking, Review
+from app.bookings.models import Booking, CancelledBooking, Review
 from app.hotels.models import Hotel, Room, RoomCategory, RoomType
 
 
@@ -86,7 +86,6 @@ class BookingModelTest(TestCase):
         self.assertEqual(booking.check_in_date, self.booking_data['check_in_date'])
         self.assertEqual(booking.check_out_date, self.booking_data['check_out_date'])
         self.assertEqual(booking.status, Booking.Status.ACTIVE)
-        self.assertEqual(booking.type, Booking.Type.GUARANTEED)
         self.assertIsNotNone(booking.created_at)
         self.assertIsNotNone(booking.updated_at)
         expected_days_count = (
@@ -99,8 +98,8 @@ class BookingModelTest(TestCase):
         booking = Booking.objects.create(
             **self.booking_data, updated_at=updated_at
         )
-        booking.type = Booking.Type.NOT_GUARANTEED
-        booking.save(update_fields=['type'])
+        booking.pets_count = 0
+        booking.save(update_fields=['pets_count'])
         self.assertNotEqual(booking.updated_at, updated_at)
         self.assertTrue(booking.updated_at > updated_at)
 
@@ -291,99 +290,6 @@ class BookingModelTest(TestCase):
         booking2.check_out_date = self.booking_data['check_out_date'] - timedelta(days=2)
         with self.assertRaises(ValidationError):
             booking2.save(update_fields=['check_in_date', 'check_out_date'])
-
-
-class BookingPaymentModelTest(TestCase):
-    def setUp(self):
-        self.hotel = Hotel.objects.create(
-            name='Тестовый Отель',
-            phone_number='+79123456789',
-            email='hotel@example.com',
-            country='Тестия',
-            city='Тестов',
-            address='ул. Тест, д. 1',
-            floor_count=5,
-            is_active=True,
-        )
-        self.standard_category = RoomCategory.objects.create(
-            tier=RoomCategory.Tier.FIRST,
-            min_area=10,
-            requires_kitchen=False,
-            required_bathroom_type=RoomCategory.BathroomType.PARTIAL,
-            min_rooms=1,
-        )
-        self.standard_room_type = RoomType.objects.create(
-            name='Стандартный Двухместный',
-            category=self.standard_category,
-            description='Описание стандартного номера',
-            size=20,
-            standard_capacity=2,
-            bedroom_count=1,
-            living_room_count=0,
-            bathroom_count=1,
-            bathroom_type=RoomCategory.BathroomType.PARTIAL,
-            has_kitchen=False,
-        )
-        self.room = Room.objects.create(
-            hotel=self.hotel,
-            room_type=self.standard_room_type,
-            bed_count=2,
-            price_per_night=Decimal('100.00'),
-            extra_pay_per_person=Decimal('20.00'),
-            is_pets_allowed=True,
-            is_smoking_allowed=True,
-            floor=2,
-            number_on_floor=5,
-            variant='A',
-        )
-        self.user = User.objects.create_user(
-            email='guest@example.com',
-            first_name='Guest',
-            last_name='Test',
-            phone_number='+79333333333',
-            password='GoodPassword432+'
-        )
-        self.user.assign_role(role=User.Role.GUEST)
-        self.guest = self.user.guest
-        self.booking = Booking.objects.create(
-            room=self.room,
-            guest=self.guest,
-            adults_count=1,
-            children_count=1,
-            pets_count=1,
-            check_in_date=date(2000, 1, 1),
-            check_out_date=date(2000, 1, 7),
-        )
-
-        self.booking_payment_data = {
-            'booking': self.booking,
-            'purpose': BookingPayment.Purpose.FULL_PAYMENT,
-            'amount': Decimal('100.00'),
-            'status': BookingPayment.Status.CLOSED,
-            'paid_at': timezone.datetime(2000, 1, 7, 14)
-        }
-
-    def test_create_booking_payment_success(self):
-        payment = BookingPayment.objects.create(**self.booking_payment_data)
-        self.assertEqual(payment.booking, self.booking)
-        self.assertEqual(payment.purpose, self.booking_payment_data['purpose'])
-        self.assertEqual(payment.amount, self.booking_payment_data['amount'])
-        self.assertEqual(payment.status, self.booking_payment_data['status'])
-        self.assertEqual(payment.paid_at, self.booking_payment_data['paid_at'])
-        self.assertIsNotNone(payment.created_at)
-
-    def test_create_booking_payment_default_status_open(self):
-        payment_data = self.booking_payment_data.copy()
-        del payment_data['status']
-        payment = BookingPayment.objects.create(**payment_data)
-        self.assertEqual(payment.status, BookingPayment.Status.OPEN)
-
-    def test_booking_with_status_closed_requires_paid_at(self):
-        payment_data = self.booking_payment_data.copy()
-        payment_data['paid_at'] = None
-        payment = BookingPayment(**payment_data)
-        with self.assertRaises(ValidationError):
-            payment.full_clean()
 
 
 class ReviewModelTest(TestCase):

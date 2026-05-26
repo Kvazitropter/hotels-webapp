@@ -1,7 +1,6 @@
 import json
 import re
 from datetime import datetime, date
-from typing import Union
 
 import phonenumbers
 
@@ -26,7 +25,7 @@ def parse_lookup(lookup_str: str) -> dict:
     return params
 
 
-def parse_value(value: str) -> Union[bool, int, float, str, list, dict, None, date, datetime]:
+def parse_value(value: str) -> bool | int | float | str | list | dict | None | date | datetime:
     """
     Преобразует строковое представление значения в соответствующий тип.
 

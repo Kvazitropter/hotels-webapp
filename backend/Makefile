@@ -14,13 +14,13 @@ HOTEL_NAME = 'ИмяСетиОтелей'
 HOTEL_COUNT = 5
 ROOM_TYPE_COUNT = 15
 ROOM_PER_HOTEL = 24
-WITHOUT_PHOTO = ''
+PHOTO_PER_ROOM = 0
 # Параметры удаления отелей
 HOTEL_LOOKUP = 'is_active=False'
 ROOM_TYPE_LOOKUP = ''
 # Тестовые бронирования
 BOOKING_COUNT = 30
-REVIEW_COUNT = 5
+WITH_REVIEW = ''
 # Параметры удаления бронирований
 BOOKING_LOOKUP = ''
 
@@ -86,7 +86,7 @@ superuser:
 	docker compose exec backend uv run python manage.py createsuperuser
 
 test:
-	docker compose exec backend uv run python manage.py test $(TEST_NAME)
+	docker compose exec backend uv run python -W ignore manage.py test $(TEST_NAME)
 
 coverage:
 	docker compose exec backend uv run coverage run --source="." manage.py test $(APP_NAME)
@@ -148,9 +148,9 @@ delete-users:
 
 ## Отели
 create-hotels:
-	@echo "Доступны параметры HOTEL_NAME=<название сети> HOTEL_COUNT=<число> ROOM_TYPE_COUNT=<число> ROOM_PER_HOTEL=<число> WITHOUT_PHOTO='--without-photos'"
+	@echo "Доступны параметры HOTEL_NAME=<название сети> HOTEL_COUNT=<число> ROOM_TYPE_COUNT=<число> ROOM_PER_HOTEL=<число> PHOTO_PER_ROOM=<число>"
 	docker compose exec backend uv run python manage.py create_test_hotels --name $(HOTEL_NAME) \
-		--hotel-count $(HOTEL_COUNT) --room-type-count $(ROOM_TYPE_COUNT) --room-per-hotel $(ROOM_PER_HOTEL) $(WITHOUT_PHOTO)
+		--hotel-count $(HOTEL_COUNT) --room-type-count $(ROOM_TYPE_COUNT) --room-per-hotel $(ROOM_PER_HOTEL) --photo-per-room $(PHOTO_PER_ROOM)
 
 create-room-types:
 	@echo "Доступны параметры HOTEL_NAME=<название сети> ROOM_TYPE_COUNT=<число>"
@@ -174,9 +174,15 @@ delete-hotels-all: delete-hotels delete-room-types
 
 # Бронирование
 create-bookings:
-	@echo "Доступны параметры BOOKING_COUNT=<число> REVIEW_COUNT=<число>"
-	docker compose exec backend uv run python manage.py create_test_bookings \
-		--bookings=$(BOOKING_COUNT) --reviews=$(REVIEW_COUNT)
+	@echo "Доступны параметры BOOKING_COUNT=<число>"
+	docker compose exec backend uv run python manage.py create_test_bookings --bookings=$(BOOKING_COUNT) --with-reviews
+
+create-bookings-no-reviews:
+	@echo "Доступны параметры BOOKING_COUNT=<число>"
+	docker compose exec backend uv run python manage.py create_test_bookings --bookings=$(BOOKING_COUNT)
+
+create-reviews:
+	docker compose exec backend uv run python manage.py create_test_bookings --bookings=0 --with-reviews
 
 delete-bookings-all:
 	@echo "Доступен параметр BOOKING_LOOKUP=<параметр1=значение1,параметр2=значение2>"

@@ -17,7 +17,7 @@ class BookingListSerializer(serializers.ModelSerializer):
             'id', 'hotel_name', 'room_number', 'room_type_name',
             'check_in_date', 'check_out_date', 'days_count',
             'adults_count', 'children_count', 'pets_count',
-            'status', 'status_display', 'type', 'created_at',
+            'status', 'status_display', 'created_at',
         ]
 
 
@@ -44,7 +44,7 @@ class BookingCreateSerializer(serializers.ModelSerializer):
         model = Booking
         fields = [
             'room_id', 'check_in_date', 'check_out_date',
-            'adults_count', 'children_count', 'pets_count', 'type',
+            'adults_count', 'children_count', 'pets_count'
         ]
         read_only_fields = ['id']
 

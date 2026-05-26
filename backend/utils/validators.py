@@ -24,7 +24,7 @@ def validate_lookup_str(lookup_str: str) -> tuple[bool, Optional[str]]:
         return True, None
 
     parts = [part.strip() for part in lookup_str.strip().split(',')]
-    pattern = re.compile(r'^([a-zA-Z_][a-zA-Z0-9_]*)\s*=\s*(.*)$')
+    pattern = re.compile(r'^(\w*)\s*=\s*(.*)$')
 
     for part in parts:
         if not re.match(pattern, part):

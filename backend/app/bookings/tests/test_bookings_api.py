@@ -302,7 +302,6 @@ class MyBookingViewSetTest(APITestCase):
         self.assertEqual(response.data['pets_count'], self.active_booking.pets_count)
         self.assertEqual(response.data['status'], self.active_booking.status)
         self.assertEqual(response.data['status_display'], self.active_booking.get_status_display())
-        self.assertEqual(response.data['type'], self.active_booking.type)
         self.assertEqual(
             datetime.fromisoformat(response.data['created_at']),
             self.active_booking.created_at
@@ -459,7 +458,6 @@ class MyBookingViewSetTest(APITestCase):
         self.assertEqual(response.data['children_count'], self.active_booking.children_count)
         self.assertEqual(response.data['pets_count'], self.active_booking.pets_count)
         self.assertEqual(response.data['status'], Booking.Status.ACTIVE)
-        self.assertEqual(response.data['type'], self.active_booking.type)
         self.assertTrue(
             datetime.fromisoformat(response.data['created_at']) > self.active_booking.created_at
         )
@@ -576,7 +574,6 @@ class BookingCreateViewTest(APITestCase):
             'pets_count': 1,
             'check_in_date': date(2000, 1, 1),
             'check_out_date': date(2000, 1, 7),
-            'type': Booking.Type.NOT_GUARANTEED,
         }
 
     def test_unathenticated_cannot_create_booking(self):
@@ -597,7 +594,6 @@ class BookingCreateViewTest(APITestCase):
         self.assertEqual(
             date.fromisoformat(response.data['check_out_date']), self.booking_data['check_out_date']
         )
-        self.assertEqual(response.data['type'], self.booking_data['type'])
 
     def test_non_guest_cannot_create_booking(self):
         self.client.force_authenticate(self.no_role_user)

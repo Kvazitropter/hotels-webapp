@@ -25,3 +25,22 @@ dev = [
     "pytest-django",
     "ruff",
 ]
+
+[tool.coverage.run]
+omit = [
+    "*/migrations/*",
+    "*/settings*",
+    "manage.py",
+    "*/wsgi.py",
+    "*/asgi.py",
+    "*/admin.py",
+    "*/apps.py",
+    "conftest.py",
+    "*/tests/*",
+    "*/test_*.py",
+]
+
+[tool.coverage.report]
+exclude_also = [
+    'if settings.DEBUG',
+]
