@@ -1,0 +1,32 @@
+app_dir: /opt/hotels-webapp
+deploy_user: deploy
+
+allowed_ports:
+  - 22
+  - 80
+  - 443
+
+backend_image: ghcr.io/kotovann/hotels-backend:test
+frontend_image: ghcr.io/kotovann/hotels-frontend:test
+
+allowed_hosts: xn--80aq2aabd.xn--p1ai
+domain_name: xn--80aq2aabd.xn--p1ai
+frontend_url: http://xn--80aq2aabd.xn--p1ai
+
+backend_port: 8000
+frontend_port: 3000
+postgres_port: 5432
+postgres_host: 192.168.0.5
+
+postgres_backup_enabled: true
+postgres_backup_image: postgres:16-alpine
+postgres_backup_dir: "{{ app_dir }}/backups/postgres"
+postgres_backup_storage_days: 7
+postgres_backup_hour: "03"
+postgres_backup_minute: "20"
+
+email_host: smtp.timeweb.ru
+email_port: 587
+email_use_tls: true
+email_host_user: support@тутати.рф
+default_from_email: Служба поддержки <support@тутати.рф>
