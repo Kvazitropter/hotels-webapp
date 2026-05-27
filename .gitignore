@@ -6,3 +6,4 @@ build/
 .cache/
 *.log
 .venv
+deploy/ansible/vault_pswd

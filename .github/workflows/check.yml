@@ -1,6 +1,7 @@
 name: project check
 
 on:
+  workflow_call:
   pull_request:
   push:
     branches:
@@ -77,8 +78,17 @@ jobs:
       - name: Run migrations
         run: uv run python manage.py migrate --noinput
 
-      - name: Run backend tests
-        run: uv run python manage.py test
+      - name: Run backend tests + coverage
+        run: |
+          uv run coverage run --source=. manage.py test
+          uv run coverage xml -o coverage.xml
+          uv run coverage report
+
+      - name: Upload backend coverage artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: backend-coverage
+          path: backend/coverage.xml
 
   frontend:
     name: Frontend
@@ -106,3 +116,25 @@ jobs:
 
       - name: Build frontend
         run: npm run build
+
+  sonarqube:
+    name: SonarQube
+    runs-on: ubuntu-latest
+    needs: [backend, frontend]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download backend coverage artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: backend-coverage
+          path: backend
+
+      - name: SonarQube Scan
+        uses: SonarSource/sonarqube-scan-action@v8.1.0
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

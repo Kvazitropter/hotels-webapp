@@ -1,3 +1,9 @@
+[![project check](https://github.com/kotovann/hotels-webapp/actions/workflows/check.yml/badge.svg?branch=main)](https://github.com/kotovann/hotels-webapp/actions/workflows/check.yml)
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=kotovann_hotels-webapp&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=kotovann_hotels-webapp)
+
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=kotovann_hotels-webapp&metric=coverage)](https://sonarcloud.io/summary/new_code?id=kotovann_hotels-webapp)
+
 !Для запуска Docker используйте команды Makefile!
 
 ####  Первый запуск (с загрузкой фикстур):

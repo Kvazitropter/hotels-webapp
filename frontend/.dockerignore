@@ -4,4 +4,4 @@ dist/
 build/
 .git/
 .gitignore
-.env
+.env*
