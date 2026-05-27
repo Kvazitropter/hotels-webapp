@@ -181,10 +181,10 @@ class DeleteUsersCommandTest(TestCase):
             password='GoodPassword432+'
         )
 
-        self.admin.assign_role(role=User.Role.ADMIN)
-        self.moderator.assign_role(role=User.Role.MODERATOR)
-        self.guest1.assign_role(role=User.Role.GUEST)
-        self.guest2.assign_role(role=User.Role.GUEST)
+        Administrator.objects.create(user=self.admin)
+        Moderator.objects.create(user=self.moderator)
+        Guest.objects.create(user=self.guest1)
+        Guest.objects.create(user=self.guest2)
 
     def _call_command(self, user_lookup='', inputs=None):
         if inputs is None:

@@ -7,6 +7,7 @@ from django.utils import timezone
 from rest_framework.test import APITestCase
 from rest_framework import status
 
+from app.accounts.models import Administrator, Guest, Moderator
 from app.bookings.models import Booking, Review
 from app.hotels.models import Hotel, Room, RoomCategory, RoomType
 
@@ -66,8 +67,7 @@ class MyReviewViewSetTest(APITestCase):
             phone_number='+79111111111',
             password='GoodPassword432+'
         )
-        self.guest_user1.assign_role(role=User.Role.GUEST)
-        self.guest1 = self.guest_user1.guest
+        self.guest1 = Guest.objects.create(user=self.guest_user1)
         self.guest_user2 = User.objects.create_user(
             email='guest2@example.com',
             first_name='Guest',
@@ -75,8 +75,7 @@ class MyReviewViewSetTest(APITestCase):
             phone_number='+79222222222',
             password='GoodPassword432+',
         )
-        self.guest_user2.assign_role(User.Role.GUEST)
-        self.guest2 = self.guest_user2.guest
+        self.guest2 = Guest.objects.create(user=self.guest_user2)
         self.admin_user = User.objects.create_user(
             email='admin@example.com',
             first_name='Admin',
@@ -84,7 +83,7 @@ class MyReviewViewSetTest(APITestCase):
             phone_number='+79000000000',
             password='GoodPassword432+'
         )
-        self.admin_user.assign_role(role=User.Role.ADMIN)
+        self.admin = Administrator.objects.create(user=self.admin_user)
         self.moderator_user = User.objects.create_user(
             email='moderator@example.com',
             first_name='Moderator',
@@ -92,8 +91,7 @@ class MyReviewViewSetTest(APITestCase):
             phone_number='+79333333333',
             password='GoodPassword432+'
         )
-        self.moderator_user.assign_role(role=User.Role.MODERATOR)
-        self.moderator = self.moderator_user.moderator
+        self.moderator = Moderator.objects.create(user=self.moderator_user)
         self.no_role_user = User.objects.create_user(
             email='user@example.com',
             first_name='User',
@@ -197,7 +195,7 @@ class MyReviewViewSetTest(APITestCase):
 
     def _get_publish_url(self, pk):
         return reverse('review-publish', kwargs={'pk': pk})
- 
+
     def _get_reject_url(self, pk):
         return reverse('review-reject', kwargs={'pk': pk})
 
@@ -585,14 +583,14 @@ class MyReviewViewSetTest(APITestCase):
         self.assertIsNone(self.draft_review.moderated_by)
 
     def test_submit_selects_moderator_with_least_reviews_on_moderation(self):
-        self.no_role_user.assign_role(User.Role.MODERATOR)
+        Moderator.objects.create(user=self.no_role_user)
         self.client.force_authenticate(self.guest_user1)
         self.client.post(self._get_submit_url(self.draft_review.pk))
         self.draft_review.refresh_from_db()
         self.assertEqual(self.draft_review.moderated_by, self.no_role_user.moderator)
 
     def test_guest_cannot_submit_other_guest_review(self):
-        self.no_role_user.assign_role(User.Role.GUEST)
+        Guest.objects.create(user=self.no_role_user)
         self.no_role_user.refresh_from_db()
         self.client.force_authenticate(self.no_role_user)
         response = self.client.post(self._get_submit_url(self.draft_review.pk))

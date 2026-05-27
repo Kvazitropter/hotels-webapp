@@ -1,4 +1,4 @@
-from datetime import date, datetime, timedelta
+from datetime import date, datetime
 from decimal import Decimal
 
 from django.contrib.auth import get_user_model
@@ -6,7 +6,8 @@ from django.urls import reverse
 from rest_framework.test import APITestCase
 from rest_framework import status
 
-from app.bookings.models import Booking
+from app.accounts.models import Administrator, Guest, Moderator
+from app.bookings.models import Booking, CancelledBooking
 from app.hotels.models import Hotel, Room, RoomCategory, RoomType
 
 
@@ -65,8 +66,7 @@ class BookingViewSetTest(APITestCase):
             phone_number='+79111111111',
             password='GoodPassword432+'
         )
-        self.guest_user1.assign_role(role=User.Role.GUEST)
-        self.guest1 = self.guest_user1.guest
+        self.guest1 = Guest.objects.create(user=self.guest_user1)
         self.guest_user2 = User.objects.create_user(
             email='guest2@example.com',
             first_name='Guest',
@@ -74,8 +74,7 @@ class BookingViewSetTest(APITestCase):
             phone_number='+79222222222',
             password='GoodPassword432+',
         )
-        self.guest_user2.assign_role(User.Role.GUEST)
-        self.guest2 = self.guest_user2.guest
+        self.guest2 = Guest.objects.create(user=self.guest_user2)
         self.admin_user = User.objects.create_user(
             email='admin@example.com',
             first_name='Admin',
@@ -83,7 +82,7 @@ class BookingViewSetTest(APITestCase):
             phone_number='+79000000000',
             password='GoodPassword432+'
         )
-        self.admin_user.assign_role(role=User.Role.ADMIN)
+        self.admin = Administrator.objects.create(user=self.admin_user)
         self.moderator_user = User.objects.create_user(
             email='moderator@example.com',
             first_name='Moderator',
@@ -91,8 +90,7 @@ class BookingViewSetTest(APITestCase):
             phone_number='+79333333333',
             password='GoodPassword432+'
         )
-        self.moderator_user.assign_role(role=User.Role.MODERATOR)
-        self.moderator = self.moderator_user.moderator
+        self.moderator = Moderator.objects.create(user=self.moderator_user)
         self.no_role_user = User.objects.create_user(
             email='user@example.com',
             first_name='User',
@@ -101,6 +99,16 @@ class BookingViewSetTest(APITestCase):
             password='GoodPassword432+'
         )
 
+        self.active_booking = Booking.objects.create(
+            room=self.room,
+            guest=self.guest1,
+            adults_count=1,
+            children_count=1,
+            pets_count=1,
+            check_in_date=date(2020, 1, 8),
+            check_out_date=date(2020, 1, 17),
+            status=Booking.Status.ACTIVE
+        )
         self.moved_booking = Booking.objects.create(
             room=self.room,
             guest=self.guest1,
@@ -109,13 +117,9 @@ class BookingViewSetTest(APITestCase):
             pets_count=1,
             check_in_date=date(2020, 1, 1),
             check_out_date=date(2020, 1, 10),
-            status=Booking.Status.ACTIVE
+            status=Booking.Status.MOVED,
+            moved_to=self.active_booking
         )
-        self.moved_booking.move(
-            self.moved_booking.check_in_date + timedelta(days=7),
-            self.moved_booking.check_out_date + timedelta(days=7)
-        )
-        self.active_booking = self.moved_booking.moved_to
         self.closed_booking = Booking.objects.create(
             room=self.room,
             guest=self.guest1,
@@ -134,8 +138,15 @@ class BookingViewSetTest(APITestCase):
             pets_count=1,
             check_in_date=date(2000, 2, 1),
             check_out_date=date(2000, 2, 7),
+            status=Booking.Status.PENDING
         )
-        self.cancelled_booking.cancel('Причина')
+        CancelledBooking.objects.create(
+            booking=self.cancelled_booking,
+            cancellation_reason='Причина'
+        )
+        self.cancelled_booking.status = Booking.Status.CANCELLED
+        self.cancelled_booking.save(update_fields=['status'])
+        self.cancelled_booking.refresh_from_db()
         self.other_guest_booking = Booking.objects.create(
             room=self.room,
             guest=self.guest2,

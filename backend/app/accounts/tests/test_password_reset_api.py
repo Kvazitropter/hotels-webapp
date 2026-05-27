@@ -7,6 +7,8 @@ from django.utils.http import urlsafe_base64_encode
 from rest_framework import status
 from rest_framework.test import APITestCase
 
+from app.accounts.models import Guest
+
 
 User = get_user_model()
 
@@ -21,7 +23,7 @@ class PasswordResetRequestViewTest(APITestCase):
             phone_number='+79111111111',
             password='GoodPassword432+'
         )
-        self.user.assign_role(User.Role.GUEST)
+        Guest.objects.create(user=self.user)
 
     def test_valid_email_returns_200(self):
         response = self.client.post(self.url, {'email': self.user.email})
@@ -72,7 +74,7 @@ class PasswordResetConfirmViewTests(APITestCase):
             phone_number='+79111111111',
             password='OldPassword432+'
         )
-        self.user.assign_role(User.Role.GUEST)
+        Guest.objects.create(user=self.user)
         self.uid = urlsafe_base64_encode(force_bytes(self.user.pk))
         self.token = default_token_generator.make_token(self.user)
         self.new_password = 'NewPassword432+'

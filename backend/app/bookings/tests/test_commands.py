@@ -1,4 +1,4 @@
-from datetime import date, timedelta
+from datetime import date
 from decimal import Decimal
 from io import StringIO
 from unittest.mock import patch
@@ -66,8 +66,7 @@ class CreateTestBookingsCommandTest(TestCase):
             phone_number='+79111111111',
             password='GoodPassword432+'
         )
-        self.guest_user.assign_role(User.Role.GUEST)
-        self.guest = self.guest_user.guest
+        self.guest = Guest.objects.create(user=self.guest_user)
         self.moderator_user = User.objects.create_user(
             email='moderator@example.com',
             first_name='Moderator',
@@ -75,8 +74,7 @@ class CreateTestBookingsCommandTest(TestCase):
             phone_number='+79333333333',
             password='GoodPassword432+'
         )
-        self.moderator_user.assign_role(User.Role.MODERATOR)
-        self.moderator = self.moderator_user.moderator
+        self.moderator = Moderator.objects.create(user=self.moderator_user)
 
         self.out = StringIO()
 
@@ -322,8 +320,9 @@ class DeleteBookingsCommandTest(TestCase):
             phone_number='+79111111111',
             password='GoodPassword432+'
         )
-        self.guest_user.assign_role(User.Role.GUEST)
-        self.guest = self.guest_user.guest
+        self.guest = Guest.objects.create(
+            user=self.guest_user
+        )
         self.moderator_user = User.objects.create_user(
             email='moderator@example.com',
             first_name='Moderator',
@@ -331,27 +330,32 @@ class DeleteBookingsCommandTest(TestCase):
             phone_number='+79333333333',
             password='GoodPassword432+'
         )
-        self.moderator_user.assign_role(User.Role.MODERATOR)
-        self.moderator = self.moderator_user.moderator
+        self.moderator = Moderator.objects.create(user=self.moderator_user)
 
+        self.active_booking = Booking.objects.create(
+            room=self.room,
+            guest=self.guest,
+            adults_count=1,
+            children_count=1,
+            pets_count=1,
+            check_in_date=date(2020, 1, 8),
+            check_out_date=date(2020, 1, 17),
+            status=Booking.Status.ACTIVE
+        )
         self.moved_booking = Booking.objects.create(
             room=self.room,
-            guest=self.guest_user.guest,
+            guest=self.guest,
             adults_count=1,
             children_count=1,
             pets_count=1,
             check_in_date=date(2020, 1, 1),
             check_out_date=date(2020, 1, 10),
-            status=Booking.Status.ACTIVE
+            status=Booking.Status.MOVED,
+            moved_to=self.active_booking
         )
-        self.moved_booking.move(
-            self.moved_booking.check_in_date + timedelta(days=7),
-            self.moved_booking.check_out_date + timedelta(days=7)
-        )
-        self.active_booking = self.moved_booking.moved_to
         self.closed_booking = Booking.objects.create(
             room=self.room,
-            guest=self.guest_user.guest,
+            guest=self.guest,
             adults_count=1,
             children_count=1,
             pets_count=1,
@@ -361,14 +365,21 @@ class DeleteBookingsCommandTest(TestCase):
         )
         self.cancelled_booking = Booking.objects.create(
             room=self.room,
-            guest=self.guest_user.guest,
+            guest=self.guest,
             adults_count=1,
             children_count=1,
             pets_count=1,
             check_in_date=date(2000, 2, 1),
             check_out_date=date(2000, 2, 7),
+            status=Booking.Status.PENDING
         )
-        self.cancelled_booking.cancel('Причина')
+        CancelledBooking.objects.create(
+            booking=self.cancelled_booking,
+            cancellation_reason='Причина'
+        )
+        self.cancelled_booking.status = Booking.Status.CANCELLED
+        self.cancelled_booking.save(update_fields=['status'])
+        self.cancelled_booking.refresh_from_db()
 
         self.review = Review.objects.create(
             booking=self.closed_booking,

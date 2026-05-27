@@ -114,7 +114,7 @@ class Command(BaseCommand):
         before = before or (today + timedelta(days=self._DEFAULT_FUTURE_DAYS))
         relevant = sorted(
             (c_in, c_out) for c_in, c_out in booked
-            if c_in < before and c_out > later
+            if c_in < before or c_out > later
         )
         gaps = []
 
@@ -123,7 +123,8 @@ class Command(BaseCommand):
         else:
             gaps.append((later, relevant[0][0]))
             for (_, prev_out), (next_in, _) in zip(relevant, relevant[1:]):
-                gaps.append((prev_out, next_in))
+                if (next_in - prev_out).days >= 1:
+                    gaps.append((prev_out, next_in))
             gaps.append((relevant[-1][1], before))
 
         for gap_start, gap_end in gaps:
@@ -205,14 +206,13 @@ class Command(BaseCommand):
                     booking.cancel(generator.cancellation_reason())
                     cancelled_count -= 1
                 elif moved_count > 0:
-                    booked = booked_periods.setdefault(booking.room.pk, [])
+                    booked = booked_periods[booking.room.pk]
                     original_period = (booking.check_in_date, booking.check_out_date)
                     if original_period in booked:
                         booked.remove(original_period)
                     check_in, check_out = self._get_valid_dates(
-                        generator, booked, later=booking.check_in_date
+                        generator, booked, later=booking.check_out_date
                     )
-                    booked.append((check_in, check_out))
                     booking.move(check_in, check_out)
                     moved_count -= 1
                 if cancelled_count < 0 and moved_count < 0:

@@ -6,6 +6,7 @@ from django.core.exceptions import ValidationError
 from django.test import TestCase
 from django.utils import timezone
 
+from app.accounts.models import Guest, Moderator
 from app.bookings.models import Booking, CancelledBooking, Review
 from app.hotels.models import Hotel, Room, RoomCategory, RoomType
 
@@ -63,8 +64,7 @@ class BookingModelTest(TestCase):
             phone_number='+79333333333',
             password='GoodPassword432+'
         )
-        self.user.assign_role(role=User.Role.GUEST)
-        self.guest = self.user.guest
+        self.guest = Guest.objects.create(user=self.user)
 
         self.booking_data = {
             'room': self.room,
@@ -335,15 +335,14 @@ class ReviewModelTest(TestCase):
             number_on_floor=5,
             variant='A',
         )
-        self.user1 = User.objects.create_user(
+        self.guest_user = User.objects.create_user(
             email='guest@example.com',
             first_name='Guest',
             last_name='Test',
             phone_number='+79333333333',
             password='GoodPassword432+'
         )
-        self.user1.assign_role(role=User.Role.GUEST)
-        self.guest = self.user1.guest
+        self.guest = Guest.objects.create(user=self.guest_user)
         self.booking = Booking.objects.create(
             room=self.room,
             guest=self.user1.guest,
@@ -354,15 +353,14 @@ class ReviewModelTest(TestCase):
             check_out_date=date(2000, 1, 7),
             status=Booking.Status.CLOSED,
         )
-        self.user2 = User.objects.create_user(
+        self.moderator_user = User.objects.create_user(
             email='moderator@example.com',
             first_name='Moderator',
             last_name='Test',
             phone_number='+79222222222',
             password='GoodPassword432+'
         )
-        self.user2.assign_role(role=User.Role.MODERATOR)
-        self.moderator = self.user2.moderator
+        self.moderator = Moderator.objects.create(user=self.guest_user)
 
         self.review_data = {
             'booking': self.booking,

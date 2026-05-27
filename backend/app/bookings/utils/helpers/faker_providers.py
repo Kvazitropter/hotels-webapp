@@ -28,10 +28,16 @@ class BookingProvider(BaseProvider):
     def period(
         self, later: datetime | date | None = None, before: datetime | date | None = None
     ) -> tuple[date, date]:
-        check_in = self.generator.date_between_dates(later, before)
-        check_out = self.generator.date_between_dates(check_in, before)
-        if (check_out - check_in).days < 1:
-            return later, later + timedelta(days=1)
+        max_days = 30
+        if later and before:
+            check_in = self.generator.date_between_dates(later, before - timedelta(days=1))
+            max_days = min((before - check_in).days, 30)
+        elif before is not None:
+            check_in = self.generator.date_between_dates(before - timedelta(days=365), before)
+            max_days = min((before - check_in).days, 30)
+        else:
+            check_in = self.generator.date_between_dates(later, before)
+        check_out = check_in + timedelta(self.generator.random_int(min=1, max=max_days))
         return check_in, check_out
 
     def status(self) -> str:

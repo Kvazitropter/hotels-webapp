@@ -9,6 +9,9 @@ from rest_framework import status
 from rest_framework.test import APITestCase
 from rest_framework_simplejwt.tokens import RefreshToken
 
+from app.accounts.models import Administrator, Guest, Moderator
+
+
 User = get_user_model()
 
 
@@ -46,9 +49,9 @@ class MeViewTest(APITestCase):
             password='GoodPassword432+'
         )
 
-        self.admin.assign_role(role=User.Role.ADMIN)
-        self.moderator.assign_role(role=User.Role.MODERATOR)
-        self.guest.assign_role(role=User.Role.GUEST)
+        Administrator.objects.create(user=self.admin)
+        Moderator.objects.create(user=self.moderator)
+        Guest.objects.create(user=self.guest)
 
     def _set_pending(self, user, change_type, new_value):
         cache.set(f'contact_change_{user.pk}', {
