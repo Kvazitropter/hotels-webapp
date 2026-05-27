@@ -3,6 +3,8 @@ from django.urls import reverse
 from rest_framework.test import APITestCase
 from rest_framework import status
 
+from app.accounts.models import Administrator, Guest, Moderator
+
 
 User = get_user_model()
 
@@ -46,10 +48,10 @@ class GuestViewSetTest(APITestCase):
             password='GoodPassword432+'
         )
 
-        self.admin.assign_role(role=User.Role.ADMIN)
-        self.moderator.assign_role(role=User.Role.MODERATOR)
-        self.guest1.assign_role(role=User.Role.GUEST)
-        self.guest2.assign_role(role=User.Role.GUEST)
+        Administrator.objects.create(user=self.admin)
+        Moderator.objects.create(user=self.moderator)
+        Guest.objects.create(user=self.guest1)
+        Guest.objects.create(user=self.guest2)
 
     def _get_detail_url(self, guest_id):
         return reverse('guest-detail', kwargs={'pk': guest_id})

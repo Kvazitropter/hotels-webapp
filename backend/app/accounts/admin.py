@@ -78,7 +78,7 @@ class UserAdmin(BaseUserAdmin):
 
     @admin.display(description='Основная роль')
     def role(self, obj):
-        return obj.role
+        return obj.role.label
 
     def get_queryset(self, request):
         return super().get_queryset(request).prefetch_related('groups') \

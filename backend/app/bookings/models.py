@@ -20,9 +20,6 @@ class _BookingStatus(models.TextChoices):
     PENDING = 'P', 'В обработке'
 
 class Booking(models.Model):
-    class Type(models.TextChoices):
-        GUARANTEED = 'G', 'Гарантированное'
-        NOT_GUARANTEED = 'N', 'Негарантированное'
     Status = _BookingStatus
 
     guest = models.ForeignKey(
@@ -58,13 +55,6 @@ class Booking(models.Model):
         choices=Status.choices,
         default=Status.ACTIVE,
         verbose_name='Статус бронирования',
-    )
-    type = models.CharField(
-        max_length=2,
-        choices=Type.choices,
-        default=Type.GUARANTEED,
-        verbose_name='Тип бронирования',
-        help_text='С предоплатой или без (гарантированное/негарантированное)'
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
@@ -112,14 +102,15 @@ class Booking(models.Model):
         if not self.room.hotel.is_active:
             raise ValidationError('Нельзя забронировать номер в неактивном отеле')
 
-        overlapping = Booking.objects.filter(
-            room=self.room,
-            status=Booking.Status.ACTIVE,
-            check_in_date__lt=self.check_out_date,
-            check_out_date__gt=self.check_in_date,
-        ).exclude(pk=self.pk)
-        if overlapping.exists():
-            raise ValidationError('Номер уже забронирован на выбранные даты.')
+        if self.status in [Booking.Status.ACTIVE, Booking.Status.CLOSED]:
+            overlapping = Booking.objects.filter(
+                room=self.room,
+                status__in=[Booking.Status.ACTIVE, Booking.Status.CLOSED],
+                check_in_date__lt=self.check_out_date,
+                check_out_date__gt=self.check_in_date,
+            ).exclude(pk=self.pk)
+            if overlapping.exists():
+                raise ValidationError('Номер уже забронирован на выбранные даты.')
 
         if self.pets_count > 0 and not self.room.is_pets_allowed:
             raise ValidationError('В данном номере нельзя проживать с животными')
@@ -147,9 +138,11 @@ class Booking(models.Model):
     def cancel(self, reason: str) -> None:
         if self.status != Booking.Status.ACTIVE:
             raise ValueError('Нельзя отменить неактивное бронирование')
-        self.status = Booking.Status.CANCELLED
-        super(Booking, self).save(update_fields=['status'])
+        self.status = Booking.Status.PENDING
+        self.save(update_fields=['status'])
         CancelledBooking.objects.create(booking=self, cancellation_reason=reason)
+        self.status = Booking.Status.CANCELLED
+        self.save(update_fields=['status'])
 
     @transaction.atomic
     def move(self, new_check_in: date, new_check_out: date, **kwargs):
@@ -157,7 +150,7 @@ class Booking(models.Model):
             raise ValueError('Нельзя перенести неактивное бронирование')
 
         self.status = Booking.Status.PENDING
-        super(Booking, self).save(update_fields=['status'])
+        self.save(update_fields=['status'])
 
         new_booking = Booking.objects.create(
             guest=self.guest,
@@ -168,12 +161,11 @@ class Booking(models.Model):
             check_in_date=new_check_in,
             check_out_date=new_check_out,
             status=Booking.Status.ACTIVE,
-            type=self.type,
             **kwargs,
         )
         self.status = Booking.Status.MOVED
         self.moved_to = new_booking
-        super(Booking, self).save(update_fields=['status', 'moved_to'])
+        self.save(update_fields=['status', 'moved_to'])
 
     @property
     def days_count(self) -> int:
@@ -181,76 +173,6 @@ class Booking(models.Model):
 
     def __str__(self) -> str:
         return f'Бронирование ({self.check_in_date:%d.%m.%Y}, {self.check_out_date:%d.%m.%Y})'
-
-
-class _PaymentStatus(models.TextChoices):
-    OPEN = 'O', 'Ждет оплаты'
-    IRRELEVANT = 'I', 'Не актуально'
-    EXPIRED = 'E', 'Просрочен'
-    CLOSED = 'C', 'Оплачено'
-
-class BookingPayment(models.Model):
-    class Purpose(models.TextChoices):
-        PREPAY = 'PP', 'Предоплата'
-        FULL_PAYMENT = 'FP', 'Полная оплата бронирования'
-        EXTRA_PAY = 'EP', 'Доплата'
-        REFUND = 'RF', 'Возврат'
-        PENALTY = 'PN', 'Штраф'
-
-    Status = _PaymentStatus
-
-    booking = models.ForeignKey(
-        Booking,
-        on_delete=models.CASCADE,
-        related_name='payments',
-        verbose_name='Бронирование'
-    )
-    status = models.CharField(
-        max_length=1,
-        choices=Status.choices,
-        default=Status.OPEN,
-        verbose_name='Статус платежа'
-    )
-    amount = models.DecimalField(
-        max_digits=10,
-        decimal_places=2,
-        verbose_name='К оплате',
-    )
-    purpose = models.CharField(
-        max_length=3,
-        choices=Purpose.choices,
-        default=Purpose.PREPAY,
-        verbose_name='Назначение платежа'
-    )
-    created_at = models.DateTimeField(
-        auto_now_add=True,
-        verbose_name='Дата создания'
-    )
-    paid_at = models.DateTimeField(
-        null=True,
-        blank=True,
-        verbose_name='Дата оплаты'
-    )
-
-    class Meta:
-        db_table = 'booking_payment'
-        verbose_name = 'Платеж'
-        verbose_name_plural = 'Платежи'
-        ordering = ['-created_at', '-paid_at']
-        constraints = [
-            models.CheckConstraint(
-                condition=(
-                    models.Q(status=_PaymentStatus.CLOSED, paid_at__isnull=False) |
-                    models.Q(~models.Q(status=_PaymentStatus.CLOSED))
-                ),
-                name='booking_payment_paid_at_required',
-                violation_error_message=('При закрытии платежа'
-                    'необходимо указать дату оплаты')
-            ),
-        ]
-
-    def __str__(self):
-        return f'Оплата по {self.booking}, статус: {self.status}, сумма: {self.amount}'
 
 
 class CancelledBooking(models.Model):
@@ -285,7 +207,6 @@ class _ReviewStatus(models.TextChoices):
     ON_MODERATION = 'M', 'Ожидает проверки'
     REJECTED = 'R', 'Не прошел модерацию'
     ARCHIVED = 'A', 'Убран из публичного доступа'
-
 
 class Review(models.Model):
     Status = _ReviewStatus
@@ -386,6 +307,18 @@ class Review(models.Model):
         if self.status == Review.Status.PUBLISHED and not self.published_at:
             self.published_at = timezone.now()
         super().save(*args, **kwargs)
+
+    def publish(self, moderated_by: Moderator, published_at:timezone.datetime | None = None):
+        self.status = Review.Status.PUBLISHED
+        self.moderated_by = moderated_by
+        self.published_at = published_at or timezone.now()
+        self.save(update_fields=['status', 'moderated_by', 'published_at'])
+
+    def reject(self, moderated_by: Moderator, rejection_reason: str):
+        self.status = Review.Status.REJECTED
+        self.moderated_by = moderated_by
+        self.rejection_reason = rejection_reason
+        self.save(update_fields=['status', 'moderated_by', 'rejection_reason'])
 
     def __str__(self) -> str:
         return (

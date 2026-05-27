@@ -1,5 +1,6 @@
 from typing import Any, Optional
 
+from django.db import transaction
 from django.core.management.base import BaseCommand, CommandParser
 
 from app.bookings.models import Booking
@@ -23,7 +24,7 @@ class Command(BaseCommand):
 
         is_valid, error_msg = validate_lookup_str(booking_lookup)
         if not is_valid:
-            self.stderr.write(error_msg)
+            self.stdout.write(self.style.ERROR(error_msg))
             return
 
         booking_lookup_params = parse_lookup(booking_lookup)
@@ -38,12 +39,12 @@ class Command(BaseCommand):
             for field in wrong:
                 simular = suggestions.get(field, [])
                 if simular:
-                    self.stderr.write(
+                    self.stdout.write(self.style.ERROR(
                         f'Поле "{field}" не существует. '
                         f'Возможно, вы имели в виду: {", ".join(simular)}?'
-                    )
+                    ))
                 else:
-                    self.stderr.write(f'Поле "{field}" не существует.')
+                    self.stdout.write(self.style.ERROR(f'Поле "{field}" не существует.'))
             return
 
         self._delete_bookings(booking_lookup_params)
@@ -58,10 +59,14 @@ class Command(BaseCommand):
         for booking in bookings:
             self.stdout.write(self.style.WARNING(str(booking)))
 
-        confirm = input(self.style.NOTICE('Удалить перечисленные бронирования? [y/n]: '))
-        if confirm.lower() != 'y' and confirm.lower() != 'yes':
-            self.stdout.write('Отменено')
-            return
+        if booking_lookup_params:
+            confirm = input(self.style.NOTICE('Удалить перечисленные бронирования? [y/n]: '))
+            if confirm.lower() != 'y' and confirm.lower() != 'yes':
+                self.stdout.write('Отменено')
+                return
 
-        bookings.delete()
+        with transaction.atomic():
+            bookings.filter(status=Booking.Status.MOVED).delete()
+            bookings.delete()
+
         self.stdout.write(self.style.SUCCESS('Бронирования удалены'))

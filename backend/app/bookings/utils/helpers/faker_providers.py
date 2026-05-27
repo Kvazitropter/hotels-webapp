@@ -1,12 +1,12 @@
 from collections import OrderedDict
-from datetime import date, datetime, timedelta
-from decimal import Decimal
+from datetime import date
 from typing import Optional
 
+from django.utils.timezone import datetime, timedelta
 from faker import Faker
 from faker.providers import BaseProvider
 
-from app.bookings.models import Booking, BookingPayment, Review
+from app.bookings.models import Booking, Review
 
 
 class BookingProvider(BaseProvider):
@@ -14,7 +14,6 @@ class BookingProvider(BaseProvider):
 
     def __init__(self, generator: Faker):
         super().__init__(generator)
-        self._type_choices = Booking.Type.values
         self._status_choices = Booking.Status.values
 
     def adults_count(self) -> int:
@@ -26,23 +25,23 @@ class BookingProvider(BaseProvider):
     def pets_count(self) -> int:
         return self.generator.random_int(min=0, max=3)
 
-    def check_in_date(self, later_than: Optional[datetime]=None) -> date:
-        if later_than is None:
-            return self.generator.date_this_year()
-        days = self.generator.random_int(min=1, max=30)
-        return later_than + timedelta(days=days)
-
-    def check_out_date(self, later_than: Optional[datetime]=None) -> date:
-        if later_than is None:
-            return self.generator.date_this_year()
-        days = self.generator.random_int(min=1, max=30)
-        return later_than + timedelta(days=days)
+    def period(
+        self, later: datetime | date | None = None, before: datetime | date | None = None
+    ) -> tuple[date, date]:
+        max_days = 30
+        if later and before:
+            check_in = self.generator.date_between_dates(later, before - timedelta(days=1))
+            max_days = min((before - check_in).days, 30)
+        elif before is not None:
+            check_in = self.generator.date_between_dates(before - timedelta(days=365), before)
+            max_days = min((before - check_in).days, 30)
+        else:
+            check_in = self.generator.date_between_dates(later, before)
+        check_out = check_in + timedelta(self.generator.random_int(min=1, max=max_days))
+        return check_in, check_out
 
     def status(self) -> str:
         return self.generator.random_element(self._status_choices)
-
-    def type(self) -> str:
-        return self.generator.random_element(self._type_choices)
 
     def created_at(self) -> datetime:
         return self.generator.date_time_this_year()
@@ -60,8 +59,7 @@ class BookingProvider(BaseProvider):
 
     def booking(self) -> dict:
         created_at = self.created_at()
-        check_in_date = self.check_in_date(created_at)
-        check_out_date = self.check_out_date(check_in_date)
+        check_in_date, check_out_date = self.period(created_at)
         status = self.status()
         return {
             'adults_count': self.adults_count(),
@@ -70,45 +68,7 @@ class BookingProvider(BaseProvider):
             'check_in_date': check_in_date,
             'check_out_date': check_out_date,
             'status': status,
-            'type': self.type(),
             'created_at': created_at,
-        }
-
-
-class BookingPaymentProvider(BaseProvider):
-    '''Кастомный Faker-провайдер для генерации данных модели Review'''
-
-    def __init__(self, generator: Faker):
-        super().__init__(generator)
-        self._status_choices = BookingPayment.Status.values
-        self._purpose_choices = BookingPayment.Purpose.values
-
-    def status(self) -> str:
-        return self.generator.random_element(self._status_choices)
-
-    def amount(self) -> Decimal:
-        return Decimal(self.generator.random_int(min=300, max=30000))
-
-    def purpose(self) -> str:
-        return self.generator.random_element(self._purpose_choices)
-
-    def created_at(self) -> datetime:
-        return self.generator.date_time_this_year()
-
-    def paid_at(self, later_than: Optional[datetime]=None) -> datetime:
-        if later_than is None:
-            return self.generator.date_time_this_year()
-        days = self.generator.random_int(min=1, max=7)
-        return later_than + timedelta(days=days)
-
-    def booking_payment(self) -> dict:
-        created_at = self.created_at()
-        return {
-            'status': self.status(),
-            'amount': self.amount(),
-            'purpose': self.purpose(),
-            'created_at': created_at,
-            'paid_at': self.paid_at(created_at),
         }
 
 
@@ -156,7 +116,7 @@ class ReviewProvider(BaseProvider):
         status = self.status()
         published_at = None
         rejection_reason = None
-        if status == Review.Status.PUBLISHED:
+        if status in [Review.Status.PUBLISHED, Review.Status.ARCHIVED]:
             published_at = self.published_at(created_at)
         if status == Review.Status.REJECTED:
             rejection_reason = self.rejection_reason()

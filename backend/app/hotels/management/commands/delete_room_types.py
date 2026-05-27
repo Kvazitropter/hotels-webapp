@@ -23,7 +23,7 @@ class Command(BaseCommand):
 
         is_valid, error_msg = validate_lookup_str(room_type_lookup)
         if not is_valid:
-            self.stderr.write(error_msg)
+            self.stdout.write(self.style.ERROR(error_msg))
             return
 
         room_type_lookup_params = parse_lookup(room_type_lookup)
@@ -38,12 +38,12 @@ class Command(BaseCommand):
             for field in wrong:
                 simular = suggestions.get(field, [])
                 if simular:
-                    self.stderr.write(
+                    self.stdout.write(self.style.ERROR(
                         f'Поле "{field}" не существует. '
                         f'Возможно, вы имели в виду: {", ".join(simular)}?'
-                    )
+                    ))
                 else:
-                    self.stderr.write(f'Поле "{field}" не существует.')
+                    self.stdout.write(self.style.ERROR(f'Поле "{field}" не существует.'))
             return
 
         self._delete_room_types(room_type_lookup_params)
@@ -58,10 +58,11 @@ class Command(BaseCommand):
         for room_type in room_types:
             self.stdout.write(self.style.WARNING(str(room_type)))
 
-        confirm = input(self.style.NOTICE('Удалить перечисленные типы? [y/n]: '))
-        if confirm.lower() != 'y' and confirm.lower() != 'yes':
-            self.stdout.write('Отменено')
-            return
+        if room_type_lookup_params:
+            confirm = input(self.style.NOTICE('Удалить перечисленные типы? [y/n]: '))
+            if confirm.lower() != 'y' and confirm.lower() != 'yes':
+                self.stdout.write('Отменено')
+                return
 
         room_types.delete()
         self.stdout.write(self.style.SUCCESS('Типы удалены'))

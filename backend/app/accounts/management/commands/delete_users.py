@@ -27,7 +27,7 @@ class Command(BaseCommand):
 
         is_valid, error_msg = validate_lookup_str(user_lookup)
         if not is_valid:
-            self.stderr.write(error_msg)
+            self.stdout.write(self.style.ERROR(error_msg))
             return
 
         user_lookup_params = parse_lookup(user_lookup)
@@ -42,12 +42,12 @@ class Command(BaseCommand):
             for field in wrong:
                 simular = suggestions.get(field, [])
                 if simular:
-                    self.stderr.write(
+                    self.stdout.write(self.style.ERROR(
                         f'Поле "{field}" не существует. '
                         f'Возможно, вы имели в виду: {", ".join(simular)}?'
-                    )
+                    ))
                 else:
-                    self.stderr.write(f'Поле "{field}" не существует.')
+                    self.stdout.write(self.style.ERROR(f'Поле "{field}" не существует.'))
             return
 
         self._delete_users(user_lookup_params)
@@ -62,10 +62,11 @@ class Command(BaseCommand):
         for user in users:
             self.stdout.write(self.style.WARNING(str(user)))
 
-        confirm = input(self.style.NOTICE('Удалить перечисленных пользователей? [y/n]: '))
-        if confirm.lower() != 'y' and confirm.lower() != 'yes':
-            self.stdout.write('Отменено')
-            return
+        if user_lookup_params:
+            confirm = input(self.style.NOTICE('Удалить перечисленных пользователей? [y/n]: '))
+            if confirm.lower() != 'y' and confirm.lower() != 'yes':
+                self.stdout.write('Отменено')
+                return
 
         users.delete()
         self.stdout.write(self.style.SUCCESS('Пользователи удалены'))

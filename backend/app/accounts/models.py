@@ -99,7 +99,7 @@ class User(AbstractUser):
 
     @is_admin.setter
     def is_admin(self, _):
-        raise ValueError('Назначьте соответствующую роль через user.assign_role(role)')
+        raise ValueError('Назначьте роль через user.assign_role(User.Role.ADMIN)')
 
     @property
     def is_moderator(self) -> bool:
@@ -107,7 +107,7 @@ class User(AbstractUser):
 
     @is_moderator.setter
     def is_moderator(self, _):
-        raise ValueError('Назначьте соответствующую роль через user.assign_role(role)')
+        raise ValueError('Назначьте роль через user.assign_role(User.Role.MODERATOR)')
 
     @property
     def is_guest(self) -> bool:
@@ -115,7 +115,7 @@ class User(AbstractUser):
 
     @is_guest.setter
     def is_guest(self, _):
-        raise ValueError('Назначьте соответствующую роль через user.assign_role(role)')
+        raise ValueError('Назначьте роль через user.assign_role(User.Role.GUEST)')
 
     @property
     def is_superuser(self) -> bool:

@@ -1,11 +1,11 @@
 from django.apps import apps
 from django.db.models import Count, Q
-from rest_framework import generics, status, viewsets
+from rest_framework import status, viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
-from app.accounts.permissions import GuestOnly
+from app.accounts.permissions import AdminOnly, GuestOnly, ModeratorOnly
 from app.bookings.filters import BookingFilter, ReviewFilter
 from app.bookings.models import Booking, Review
 from app.bookings.serializers import (
@@ -21,27 +21,36 @@ from app.bookings.serializers import (
 )
 
 
-class BookingCreateView(generics.CreateAPIView):
-    permission_classes = [IsAuthenticated, GuestOnly]
-    serializer_class = BookingCreateSerializer
-
-
-class MyBookingViewSet(viewsets.ReadOnlyModelViewSet):
-    permission_classes = [IsAuthenticated, GuestOnly]
+class BookingViewSet(viewsets.ModelViewSet):
+    http_method_names = ['get', 'post']
     filterset_class = BookingFilter
     ordering_fields = ['check_in_date', 'created_at']
     ordering = ['-created_at']
 
     def get_queryset(self):
-        return Booking.objects.filter(guest__user=self.request.user) \
-            .select_related(
-                'room__hotel', 'room__room_type', 'cancellation', 'moved_to'
-            )
+        qs = Booking.objects.select_related(
+            'guest__user', 'room__hotel', 'room__room_type',
+            'cancellation', 'moved_to', 'moved_to__room__hotel'
+        )
+        if self.request.user.is_guest:
+            return qs.filter(guest__user=self.request.user)
+        return qs
+
+    def get_permissions(self):
+        if self.action == 'create':
+            return [IsAuthenticated(), GuestOnly()]
+        if self.action in ('retrieve', 'cancel', 'move'):
+            return [IsAuthenticated(), (AdminOnly|GuestOnly)()]
+        if self.action == 'list':
+            return [IsAuthenticated(), (AdminOnly|GuestOnly|ModeratorOnly)()]
+        return [IsAuthenticated(), AdminOnly()]
 
     def get_serializer_class(self):
-        if self.action == 'retrieve':
-            return BookingDetailSerializer
-        return BookingListSerializer
+        if self.action == 'create':
+            return BookingCreateSerializer
+        if self.action == 'list':
+            return BookingListSerializer
+        return BookingDetailSerializer
 
     @action(detail=True, methods=['post'])
     def cancel(self, request, pk=None):
@@ -75,21 +84,35 @@ class MyBookingViewSet(viewsets.ReadOnlyModelViewSet):
         )
 
 
-class MyReviewViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAuthenticated, GuestOnly]
+class ReviewViewSet(viewsets.ModelViewSet):
     http_method_names = ['get', 'post', 'patch', 'delete']
     filterset_class = ReviewFilter
     ordering_fields = ['published_at', 'created_at']
     ordering = ['-created_at']
 
     def get_queryset(self):
-        return Review.objects.filter(booking__guest__user=self.request.user) \
-            .select_related('booking__room__hotel', 'booking__room__room_type')
+        qs = Review.objects.select_related(
+            'booking__room__hotel', 'booking__room__room_type'
+        )
+        if self.request.user.is_guest:
+            return qs.filter(booking__guest__user=self.request.user)
+        return qs
+
+    def get_permissions(self):
+        if self.action in ('create', 'partial_update', 'submit'):
+            return [IsAuthenticated(), GuestOnly()]
+        if self.action in ('destroy', 'archive'):
+            return [IsAuthenticated(), (AdminOnly|GuestOnly)()]
+        if self.action in ('publish', 'reject'):
+            return [IsAuthenticated(), ModeratorOnly()]
+        if self.action in ('list', 'retrieve'):
+            return [IsAuthenticated(), (AdminOnly|GuestOnly|ModeratorOnly)()]
+        return [IsAuthenticated(), AdminOnly()]
 
     def get_serializer_class(self):
         if self.action == 'create':
             return ReviewCreateSerializer
-        if self.action in ('retrieve', 'submit', 'archive'):
+        if self.action in ('retrieve', 'submit', 'archive', 'publish', 'reject'):
             return ReviewDetailSerializer
         if self.action == 'partial_update':
             return ReviewUpdateSerializer
@@ -151,3 +174,22 @@ class MyReviewViewSet(viewsets.ModelViewSet):
             {'detail': 'Отзыв отправлен на модерацию.'},
             status=status.HTTP_200_OK
         )
+
+    @action(detail=True, methods=['post'])
+    def publish(self, request, pk=None):
+        review = self.get_object()
+        published_at = request.data.get('published_at')
+        review.publish(request.user.moderator, published_at)
+        return Response(ReviewDetailSerializer(review).data, status=status.HTTP_200_OK)
+
+    @action(detail=True, methods=['post'])
+    def reject(self, request, pk=None):
+        review = self.get_object()
+        reason = request.data.get('reason')
+        if not reason:
+            return Response(
+                {'detail': 'Необходимо указать причину отказа.'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        review.reject(request.user.moderator, reason)
+        return Response(ReviewDetailSerializer(review).data, status=status.HTTP_200_OK)
