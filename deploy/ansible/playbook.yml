@@ -1,0 +1,283 @@
+- name: Deploy HotelsWebApp
+  hosts: webservers
+  become: true
+  vars_files:
+    - group_vars/vault.yml
+
+  tasks:
+    - name: Install nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+        update_cache: true
+      tags:
+        - prepare
+        - nginx
+
+    - name: Install security tools
+      ansible.builtin.apt:
+        name:
+          - fail2ban
+          - unattended-upgrades
+        state: present
+        update_cache: true
+      tags:
+        - prepare
+        - security
+
+    - name: Install ufw
+      ansible.builtin.apt:
+        name: ufw
+        state: present
+        update_cache: true
+      tags:
+        - prepare
+        - security
+        - firewall
+
+    - name: Security upgrades
+      ansible.builtin.copy:
+        dest: /etc/apt/apt.conf.d/20auto-upgrades
+        owner: root
+        group: root
+        mode: "0644"
+        content: |
+          APT::Periodic::Update-Package-Lists "1";
+          APT::Periodic::Unattended-Upgrade "1";
+      tags:
+        - security
+
+    - name: fail2ban SSH
+      ansible.builtin.copy:
+        dest: /etc/fail2ban/jail.d/sshd.local
+        owner: root
+        group: root
+        mode: "0644"
+        content: |
+          [sshd]
+          enabled = true
+          port = 22
+          backend = systemd
+          maxretry = 5
+          findtime = 10m
+          bantime = 1h
+      notify:
+        - Restart fail2ban
+      tags:
+        - security
+
+    - name: Start fail2ban
+      ansible.builtin.service:
+        name: fail2ban
+        state: started
+        enabled: true
+      tags:
+        - security
+
+    - name: UFW incoming
+      community.general.ufw:
+        direction: incoming
+        policy: deny
+      tags:
+        - firewall
+        - security
+
+    - name: UFW outgoing
+      community.general.ufw:
+        direction: outgoing
+        policy: allow
+      tags:
+        - firewall
+        - security
+
+    - name: Allow ports
+      community.general.ufw:
+        rule: allow
+        port: "{{ item }}"
+        proto: tcp
+      loop: "{{ allowed_ports }}"
+      tags:
+        - firewall
+        - security
+
+    - name: UFW logging
+      community.general.ufw:
+        logging: "on"
+      tags:
+        - firewall
+        - security
+
+    - name: Enable UFW
+      community.general.ufw:
+        state: enabled
+      tags:
+        - firewall
+        - security
+
+    - name: Check Docker Engine
+      ansible.builtin.command: docker --version
+      changed_when: false
+      tags:
+        - prepare
+        - deploy
+
+    - name: Check Docker Compose plugin
+      ansible.builtin.command: docker compose version
+      changed_when: false
+      tags:
+        - prepare
+        - deploy
+
+    - name: Create app dirs
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: directory
+        owner: "{{ deploy_user }}"
+        group: "{{ deploy_user }}"
+        mode: "0755"
+      loop:
+        - "{{ app_dir }}"
+        - "{{ app_dir }}/backend"
+        - "{{ app_dir }}/media"
+      tags: deploy
+
+    - name: Copy prod compose
+      ansible.builtin.copy:
+        src: "{{ playbook_dir }}/../docker-compose.production.yml"
+        dest: "{{ app_dir }}/docker-compose.production.yml"
+        owner: "{{ deploy_user }}"
+        group: "{{ deploy_user }}"
+        mode: "0644"
+      tags: deploy
+
+    - name: Make main env
+      ansible.builtin.template:
+        src: "{{ playbook_dir }}/templates/main.env.production.j2"
+        dest: "{{ app_dir }}/.env.production"
+        owner: "{{ deploy_user }}"
+        group: "{{ deploy_user }}"
+        mode: "0600"
+      no_log: true
+      tags: deploy
+
+    - name: Make backend env
+      ansible.builtin.template:
+        src: "{{ playbook_dir }}/templates/backend.env.production.j2"
+        dest: "{{ app_dir }}/backend/.env.production"
+        owner: "{{ deploy_user }}"
+        group: "{{ deploy_user }}"
+        mode: "0600"
+      no_log: true
+      tags: deploy
+
+    - name: Disable default nginx site
+      ansible.builtin.file:
+        path: /etc/nginx/sites-enabled/default
+        state: absent
+      notify:
+        - Test nginx config
+        - Reload nginx
+      tags: nginx
+
+    - name: Make nginx config
+      ansible.builtin.template:
+        src: "{{ playbook_dir }}/templates/nginx.conf.j2"
+        dest: /etc/nginx/sites-available/hotels.conf
+        owner: root
+        group: root
+        mode: "0644"
+      notify:
+        - Test nginx config
+        - Reload nginx
+      tags: nginx
+
+    - name: Enable nginx config
+      ansible.builtin.file:
+        src: /etc/nginx/sites-available/hotels.conf
+        dest: /etc/nginx/sites-enabled/hotels.conf
+        state: link
+        owner: root
+        group: root
+      notify:
+        - Test nginx config
+        - Reload nginx
+      tags: nginx
+
+    - name: Start containers
+      community.docker.docker_compose_v2:
+        project_src: "{{ app_dir }}"
+        files:
+          - docker-compose.production.yml
+        env_files:
+          - .env.production
+        state: present
+        pull: always
+      tags: deploy
+
+    - name: Run migrations
+      community.docker.docker_compose_v2_exec:
+        project_src: "{{ app_dir }}"
+        env_files:
+          - .env.production
+        service: backend
+        command: uv run python manage.py migrate --noinput
+      tags: deploy
+
+    - name: Create db backup dir
+      ansible.builtin.file:
+        path: "{{ postgres_backup_dir }}"
+        state: directory
+        owner: root
+        group: root
+        mode: "0700"
+      when: postgres_backup_enabled | bool
+      tags: backup
+
+    - name: Check Docker for backups
+      ansible.builtin.command: docker --version
+      changed_when: false
+      when: postgres_backup_enabled | bool
+      tags: backup
+
+    - name: Pull db backup image
+      community.docker.docker_image:
+        name: "{{ postgres_backup_image }}"
+        source: pull
+      when: postgres_backup_enabled | bool
+      tags: backup
+
+    - name: Install db backup script
+      ansible.builtin.template:
+        src: "{{ playbook_dir }}/templates/postgres-backup.sh.j2"
+        dest: /usr/local/bin/hotels-postgres-backup
+        owner: root
+        group: root
+        mode: "0700"
+      no_log: true
+      when: postgres_backup_enabled | bool
+      tags: backup
+
+    - name: Schedule db backup
+      ansible.builtin.cron:
+        name: hotels postgres backup
+        user: root
+        minute: "{{ postgres_backup_minute }}"
+        hour: "{{ postgres_backup_hour }}"
+        job: /usr/local/bin/hotels-postgres-backup >> /var/log/hotels-postgres-backup.log 2>&1
+      when: postgres_backup_enabled | bool
+      tags: backup
+
+  handlers:
+    - name: Test nginx config
+      ansible.builtin.command: nginx -t
+      changed_when: false
+
+    - name: Reload nginx
+      ansible.builtin.service:
+        name: nginx
+        state: reloaded
+
+    - name: Restart fail2ban
+      ansible.builtin.service:
+        name: fail2ban
+        state: restarted
