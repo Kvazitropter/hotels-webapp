@@ -21,7 +21,7 @@ User = get_user_model()
 class Command(BaseCommand):
     help = 'Генерирует тестовые записи о бронировании'
     _DEFAULT_PAST_DAYS = 365 * 3
-    _DEFAULT_FUTURE_DAYS = 365 * 3
+    _DEFAULT_FUTURE_DAYS = 365 * 2
 
     def add_arguments(self, parser: CommandParser) -> None:
         parser.add_argument(
@@ -51,38 +51,40 @@ class Command(BaseCommand):
         bookings = self._create_bookings(
             BookingProvider(faker), rooms,
             guests, bookings_count
-        )
+        ) if bookings_count > 0 else []
 
         if not bookings:
             self.stdout.write(self.style.WARNING(
                 'Бронирования не были сгенерированы, переданное количество: '
-                f'"{bookings_count}".'  
+                f'"{bookings_count}".'
             ))
-
-            if with_reviews:
-                self.stdout.write(self.style.WARNING('Будут взяты существующие для отзывов'))
-                bookings = Booking.objects.all()
-                if not bookings.exists():
-                    self.stdout.write(self.style.ERROR('Нет доступных бронирований'))
-                    return
 
         if not with_reviews:
             return
 
+        if not bookings:
+            self.stdout.write(self.style.WARNING('Будут взяты существующие для отзывов'))
+            closed_bookings = Booking.objects.filter(
+                status=Booking.Status.CLOSED, review__isnull=True
+            )
+            if not closed_bookings.exists():
+                self.stdout.write(self.style.ERROR(
+                    'Нет доступных бронирований для создания отзывов'
+                ))
+                return
+        else:
+            closed_bookings = [b for b in bookings if b.status == Booking.Status.CLOSED]
+
         moderators = Moderator.objects.all()
-        closed_bookings = [
-            b for b in bookings
-            if b.status == Booking.Status.CLOSED and not hasattr(b, 'review')
-        ]
         reviews = self._create_reviews(ReviewProvider(faker), closed_bookings, moderators)
 
         if not reviews:
             self.stdout.write(self.style.WARNING('Отзывы не были сгенерированы'))
 
     def _get_status_distribution(self, count: int) -> dict:
-        active = round(count * 0.6)
+        active = max(round(count * 0.5), 1)
         remaining = count - active
-        closed = min(round(count * 0.2), remaining)
+        closed = min(round(count * 0.3), remaining)
         remaining -= closed
         cancelled = min(round(count * 0.1), remaining)
         remaining -= cancelled
@@ -127,7 +129,7 @@ class Command(BaseCommand):
         for gap_start, gap_end in gaps:
             try:
                 period = generator.period(gap_start, gap_end)
-                booked.append(generator.period(gap_start, gap_end))
+                booked.append(period)
                 return period
             except ValueError:
                 continue
@@ -204,9 +206,13 @@ class Command(BaseCommand):
                     cancelled_count -= 1
                 elif moved_count > 0:
                     booked = booked_periods.setdefault(booking.room.pk, [])
+                    original_period = (booking.check_in_date, booking.check_out_date)
+                    if original_period in booked:
+                        booked.remove(original_period)
                     check_in, check_out = self._get_valid_dates(
                         generator, booked, later=booking.check_in_date
                     )
+                    booked.append((check_in, check_out))
                     booking.move(check_in, check_out)
                     moved_count -= 1
                 if cancelled_count < 0 and moved_count < 0:
@@ -225,12 +231,12 @@ class Command(BaseCommand):
 
         for booking in bookings:
             review_data = generator.review()
-            if review_data['status'] != Review.Status.DRAFT:
-                if not moderators:
-                    review_data['status'] = Review.Status.DRAFT
-                    del review_data['published_at']
-                else:
-                    review_data['moderated_by'] = random.choice(moderators)
+            if not moderators:
+                review_data['status'] = Review.Status.DRAFT
+                review_data.pop('published_at', None)
+                review_data.pop('rejection_reason', None)
+            elif review_data['status'] != Review.Status.DRAFT:
+                review_data['moderated_by'] = random.choice(moderators)
             new_reviews.append(Review(booking=booking, **review_data))
 
         created_reviews = Review.objects.bulk_create(new_reviews)

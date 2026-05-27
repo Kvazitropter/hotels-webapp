@@ -1,993 +1,1802 @@
 [
 {
   "model": "bookings.booking",
-  "pk": 65,
+  "pk": 250,
   "fields": {
-    "guest": 7,
-    "room": 76,
-    "adults_count": 2,
+    "guest": 3,
+    "room": 306,
+    "adults_count": 6,
     "children_count": 0,
     "pets_count": 0,
-    "check_in_date": "2026-03-18",
-    "check_out_date": "2026-03-28",
-    "status": "M",
-    "type": "G",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
-    "moved_to": 95
-  }
-},
-{
-  "model": "bookings.booking",
-  "pk": 66,
-  "fields": {
-    "guest": 23,
-    "room": 54,
-    "adults_count": 5,
-    "children_count": 0,
-    "pets_count": 0,
-    "check_in_date": "2026-02-06",
-    "check_out_date": "2026-02-14",
+    "check_in_date": "2026-08-27",
+    "check_out_date": "2027-06-19",
     "status": "CA",
-    "type": "G",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
     "moved_to": null
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 67,
+  "pk": 251,
   "fields": {
-    "guest": 24,
-    "room": 85,
-    "adults_count": 1,
+    "guest": 13,
+    "room": 302,
+    "adults_count": 4,
     "children_count": 0,
-    "pets_count": 0,
-    "check_in_date": "2026-05-19",
-    "check_out_date": "2026-05-29",
-    "status": "A",
-    "type": "G",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
+    "pets_count": 1,
+    "check_in_date": "2026-06-28",
+    "check_out_date": "2027-06-29",
+    "status": "CA",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
     "moved_to": null
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 68,
-  "fields": {
-    "guest": 2,
-    "room": 100,
-    "adults_count": 9,
-    "children_count": 0,
-    "pets_count": 0,
-    "check_in_date": "2026-04-19",
-    "check_out_date": "2026-05-10",
-    "status": "A",
-    "type": "G",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
-    "moved_to": null
-  }
-},
-{
-  "model": "bookings.booking",
-  "pk": 69,
+  "pk": 252,
   "fields": {
     "guest": 5,
-    "room": 80,
-    "adults_count": 4,
-    "children_count": 5,
-    "pets_count": 0,
-    "check_in_date": "2026-02-06",
-    "check_out_date": "2026-02-14",
-    "status": "A",
-    "type": "G",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
-    "moved_to": null
-  }
-},
-{
-  "model": "bookings.booking",
-  "pk": 70,
-  "fields": {
-    "guest": 12,
-    "room": 68,
+    "room": 427,
     "adults_count": 2,
     "children_count": 0,
     "pets_count": 0,
-    "check_in_date": "2026-02-03",
-    "check_out_date": "2026-02-06",
-    "status": "A",
-    "type": "N",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
+    "check_in_date": "2026-08-10",
+    "check_out_date": "2026-09-17",
+    "status": "CA",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
     "moved_to": null
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 71,
+  "pk": 253,
   "fields": {
-    "guest": 20,
-    "room": 61,
-    "adults_count": 3,
-    "children_count": 5,
+    "guest": 11,
+    "room": 339,
+    "adults_count": 9,
+    "children_count": 1,
     "pets_count": 0,
-    "check_in_date": "2026-04-06",
-    "check_out_date": "2026-04-07",
-    "status": "A",
-    "type": "G",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
+    "check_in_date": "2026-10-03",
+    "check_out_date": "2028-03-06",
+    "status": "CA",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
     "moved_to": null
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 72,
+  "pk": 254,
   "fields": {
     "guest": 17,
-    "room": 82,
-    "adults_count": 2,
-    "children_count": 3,
+    "room": 425,
+    "adults_count": 5,
+    "children_count": 0,
     "pets_count": 0,
-    "check_in_date": "2026-05-17",
-    "check_out_date": "2026-05-24",
-    "status": "A",
-    "type": "G",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
+    "check_in_date": "2027-10-22",
+    "check_out_date": "2028-04-12",
+    "status": "CA",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
     "moved_to": null
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 73,
+  "pk": 255,
   "fields": {
     "guest": 18,
-    "room": 44,
+    "room": 434,
     "adults_count": 3,
     "children_count": 0,
     "pets_count": 0,
-    "check_in_date": "2026-01-15",
-    "check_out_date": "2026-01-29",
-    "status": "A",
-    "type": "N",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
-    "moved_to": null
+    "check_in_date": "2027-12-25",
+    "check_out_date": "2028-01-30",
+    "status": "M",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": 295
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 74,
+  "pk": 256,
   "fields": {
-    "guest": 24,
-    "room": 87,
-    "adults_count": 5,
+    "guest": 23,
+    "room": 395,
+    "adults_count": 1,
     "children_count": 0,
-    "pets_count": 0,
-    "check_in_date": "2026-02-20",
-    "check_out_date": "2026-03-07",
-    "status": "A",
-    "type": "G",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
-    "moved_to": null
+    "pets_count": 1,
+    "check_in_date": "2028-05-11",
+    "check_out_date": "2028-05-24",
+    "status": "M",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": 296
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 75,
+  "pk": 257,
   "fields": {
-    "guest": 10,
-    "room": 91,
+    "guest": 13,
+    "room": 332,
     "adults_count": 2,
     "children_count": 0,
-    "pets_count": 0,
-    "check_in_date": "2026-03-05",
-    "check_out_date": "2026-03-06",
-    "status": "A",
-    "type": "N",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
-    "moved_to": null
-  }
-},
-{
-  "model": "bookings.booking",
-  "pk": 76,
-  "fields": {
-    "guest": 4,
-    "room": 80,
-    "adults_count": 3,
-    "children_count": 4,
-    "pets_count": 0,
-    "check_in_date": "2026-03-19",
-    "check_out_date": "2026-03-21",
-    "status": "A",
-    "type": "N",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
-    "moved_to": null
-  }
-},
-{
-  "model": "bookings.booking",
-  "pk": 77,
-  "fields": {
-    "guest": 20,
-    "room": 55,
-    "adults_count": 3,
-    "children_count": 2,
-    "pets_count": 0,
-    "check_in_date": "2026-03-26",
-    "check_out_date": "2026-04-19",
-    "status": "A",
-    "type": "N",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
-    "moved_to": null
-  }
-},
-{
-  "model": "bookings.booking",
-  "pk": 78,
-  "fields": {
-    "guest": 16,
-    "room": 120,
-    "adults_count": 2,
-    "children_count": 1,
-    "pets_count": 2,
-    "check_in_date": "2026-04-30",
-    "check_out_date": "2026-05-13",
+    "pets_count": 1,
+    "check_in_date": "2027-03-12",
+    "check_out_date": "2028-01-31",
     "status": "M",
-    "type": "N",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
-    "moved_to": 97
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": 297
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 79,
+  "pk": 258,
   "fields": {
-    "guest": 20,
-    "room": 45,
-    "adults_count": 5,
-    "children_count": 0,
-    "pets_count": 0,
-    "check_in_date": "2026-02-13",
-    "check_out_date": "2026-02-16",
-    "status": "M",
-    "type": "N",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
-    "moved_to": 96
-  }
-},
-{
-  "model": "bookings.booking",
-  "pk": 80,
-  "fields": {
-    "guest": 15,
-    "room": 91,
+    "guest": 13,
+    "room": 410,
     "adults_count": 1,
     "children_count": 0,
     "pets_count": 0,
-    "check_in_date": "2026-02-20",
-    "check_out_date": "2026-03-05",
-    "status": "CA",
-    "type": "G",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
+    "check_in_date": "2027-11-26",
+    "check_out_date": "2028-04-25",
+    "status": "M",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": 298
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 259,
+  "fields": {
+    "guest": 18,
+    "room": 331,
+    "adults_count": 7,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2028-05-13",
+    "check_out_date": "2028-05-17",
+    "status": "M",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": 299
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 260,
+  "fields": {
+    "guest": 25,
+    "room": 428,
+    "adults_count": 1,
+    "children_count": 4,
+    "pets_count": 0,
+    "check_in_date": "2028-05-11",
+    "check_out_date": "2028-05-20",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
     "moved_to": null
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 81,
+  "pk": 261,
   "fields": {
-    "guest": 4,
-    "room": 63,
+    "guest": 10,
+    "room": 355,
+    "adults_count": 7,
+    "children_count": 0,
+    "pets_count": 2,
+    "check_in_date": "2027-07-05",
+    "check_out_date": "2027-09-18",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 262,
+  "fields": {
+    "guest": 28,
+    "room": 350,
+    "adults_count": 2,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2027-02-27",
+    "check_out_date": "2027-06-13",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 263,
+  "fields": {
+    "guest": 15,
+    "room": 445,
+    "adults_count": 10,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2026-07-01",
+    "check_out_date": "2027-06-17",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 264,
+  "fields": {
+    "guest": 23,
+    "room": 396,
+    "adults_count": 3,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2027-03-14",
+    "check_out_date": "2027-12-04",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 265,
+  "fields": {
+    "guest": 14,
+    "room": 347,
     "adults_count": 8,
     "children_count": 0,
     "pets_count": 0,
-    "check_in_date": "2026-03-31",
-    "check_out_date": "2026-04-06",
+    "check_in_date": "2026-10-24",
+    "check_out_date": "2027-06-24",
     "status": "A",
-    "type": "N",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
     "moved_to": null
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 82,
-  "fields": {
-    "guest": 25,
-    "room": 42,
-    "adults_count": 2,
-    "children_count": 0,
-    "pets_count": 0,
-    "check_in_date": "2026-03-09",
-    "check_out_date": "2026-03-12",
-    "status": "A",
-    "type": "N",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
-    "moved_to": null
-  }
-},
-{
-  "model": "bookings.booking",
-  "pk": 83,
-  "fields": {
-    "guest": 8,
-    "room": 55,
-    "adults_count": 6,
-    "children_count": 0,
-    "pets_count": 0,
-    "check_in_date": "2026-02-13",
-    "check_out_date": "2026-03-10",
-    "status": "A",
-    "type": "N",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
-    "moved_to": null
-  }
-},
-{
-  "model": "bookings.booking",
-  "pk": 84,
-  "fields": {
-    "guest": 16,
-    "room": 57,
-    "adults_count": 6,
-    "children_count": 0,
-    "pets_count": 0,
-    "check_in_date": "2026-03-03",
-    "check_out_date": "2026-03-20",
-    "status": "A",
-    "type": "G",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
-    "moved_to": null
-  }
-},
-{
-  "model": "bookings.booking",
-  "pk": 85,
-  "fields": {
-    "guest": 9,
-    "room": 33,
-    "adults_count": 4,
-    "children_count": 0,
-    "pets_count": 0,
-    "check_in_date": "2026-04-03",
-    "check_out_date": "2026-05-03",
-    "status": "CA",
-    "type": "N",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
-    "moved_to": null
-  }
-},
-{
-  "model": "bookings.booking",
-  "pk": 86,
-  "fields": {
-    "guest": 27,
-    "room": 33,
-    "adults_count": 4,
-    "children_count": 0,
-    "pets_count": 0,
-    "check_in_date": "2026-05-29",
-    "check_out_date": "2026-06-13",
-    "status": "A",
-    "type": "G",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
-    "moved_to": null
-  }
-},
-{
-  "model": "bookings.booking",
-  "pk": 87,
-  "fields": {
-    "guest": 5,
-    "room": 47,
-    "adults_count": 3,
-    "children_count": 4,
-    "pets_count": 0,
-    "check_in_date": "2026-01-07",
-    "check_out_date": "2026-01-13",
-    "status": "A",
-    "type": "G",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
-    "moved_to": null
-  }
-},
-{
-  "model": "bookings.booking",
-  "pk": 88,
+  "pk": 266,
   "fields": {
     "guest": 11,
-    "room": 76,
-    "adults_count": 2,
+    "room": 337,
+    "adults_count": 4,
     "children_count": 0,
     "pets_count": 0,
-    "check_in_date": "2026-04-16",
-    "check_out_date": "2026-05-04",
+    "check_in_date": "2028-03-29",
+    "check_out_date": "2028-05-23",
     "status": "A",
-    "type": "N",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
     "moved_to": null
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 89,
+  "pk": 267,
   "fields": {
-    "guest": 15,
-    "room": 92,
+    "guest": 1,
+    "room": 319,
+    "adults_count": 3,
+    "children_count": 0,
+    "pets_count": 1,
+    "check_in_date": "2027-04-12",
+    "check_out_date": "2028-03-23",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 268,
+  "fields": {
+    "guest": 5,
+    "room": 419,
+    "adults_count": 7,
+    "children_count": 1,
+    "pets_count": 0,
+    "check_in_date": "2027-06-28",
+    "check_out_date": "2028-05-01",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 269,
+  "fields": {
+    "guest": 29,
+    "room": 412,
+    "adults_count": 4,
+    "children_count": 1,
+    "pets_count": 0,
+    "check_in_date": "2028-02-18",
+    "check_out_date": "2028-04-26",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 270,
+  "fields": {
+    "guest": 30,
+    "room": 338,
+    "adults_count": 5,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2028-03-12",
+    "check_out_date": "2028-03-24",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 271,
+  "fields": {
+    "guest": 6,
+    "room": 396,
+    "adults_count": 3,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2026-10-19",
+    "check_out_date": "2027-02-16",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 272,
+  "fields": {
+    "guest": 8,
+    "room": 449,
+    "adults_count": 2,
+    "children_count": 0,
+    "pets_count": 3,
+    "check_in_date": "2026-10-14",
+    "check_out_date": "2027-03-25",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 273,
+  "fields": {
+    "guest": 22,
+    "room": 335,
+    "adults_count": 2,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2026-08-24",
+    "check_out_date": "2027-03-17",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 274,
+  "fields": {
+    "guest": 22,
+    "room": 420,
+    "adults_count": 1,
+    "children_count": 4,
+    "pets_count": 0,
+    "check_in_date": "2027-11-06",
+    "check_out_date": "2028-05-06",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 275,
+  "fields": {
+    "guest": 27,
+    "room": 314,
+    "adults_count": 3,
+    "children_count": 0,
+    "pets_count": 1,
+    "check_in_date": "2027-11-13",
+    "check_out_date": "2028-05-11",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 276,
+  "fields": {
+    "guest": 8,
+    "room": 334,
+    "adults_count": 7,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2026-09-15",
+    "check_out_date": "2027-04-12",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 277,
+  "fields": {
+    "guest": 26,
+    "room": 426,
+    "adults_count": 2,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2027-02-01",
+    "check_out_date": "2027-07-23",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 278,
+  "fields": {
+    "guest": 27,
+    "room": 360,
+    "adults_count": 4,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2026-06-07",
+    "check_out_date": "2027-12-25",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 279,
+  "fields": {
+    "guest": 9,
+    "room": 338,
     "adults_count": 1,
     "children_count": 0,
     "pets_count": 0,
-    "check_in_date": "2026-04-28",
-    "check_out_date": "2026-05-15",
-    "status": "CL",
-    "type": "G",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
+    "check_in_date": "2027-08-30",
+    "check_out_date": "2027-10-20",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
     "moved_to": null
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 90,
+  "pk": 280,
   "fields": {
-    "guest": 11,
-    "room": 44,
+    "guest": 2,
+    "room": 357,
+    "adults_count": 2,
+    "children_count": 1,
+    "pets_count": 0,
+    "check_in_date": "2024-01-14",
+    "check_out_date": "2026-05-26",
+    "status": "CL",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 281,
+  "fields": {
+    "guest": 16,
+    "room": 306,
+    "adults_count": 6,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2024-06-11",
+    "check_out_date": "2025-11-08",
+    "status": "CL",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 282,
+  "fields": {
+    "guest": 27,
+    "room": 351,
+    "adults_count": 2,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2023-07-18",
+    "check_out_date": "2024-12-25",
+    "status": "CL",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 283,
+  "fields": {
+    "guest": 30,
+    "room": 423,
+    "adults_count": 6,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2024-01-23",
+    "check_out_date": "2025-06-14",
+    "status": "CL",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 284,
+  "fields": {
+    "guest": 14,
+    "room": 345,
+    "adults_count": 4,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2024-01-03",
+    "check_out_date": "2025-05-21",
+    "status": "CL",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 285,
+  "fields": {
+    "guest": 4,
+    "room": 446,
+    "adults_count": 8,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2024-10-28",
+    "check_out_date": "2024-11-05",
+    "status": "CL",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 286,
+  "fields": {
+    "guest": 10,
+    "room": 397,
+    "adults_count": 2,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2024-10-19",
+    "check_out_date": "2025-03-15",
+    "status": "CL",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 287,
+  "fields": {
+    "guest": 4,
+    "room": 431,
     "adults_count": 3,
     "children_count": 0,
     "pets_count": 0,
-    "check_in_date": "2026-04-15",
-    "check_out_date": "2026-05-01",
+    "check_in_date": "2025-10-27",
+    "check_out_date": "2026-01-04",
     "status": "CL",
-    "type": "G",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
     "moved_to": null
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 91,
+  "pk": 288,
   "fields": {
-    "guest": 9,
-    "room": 31,
-    "adults_count": 9,
+    "guest": 10,
+    "room": 395,
+    "adults_count": 1,
+    "children_count": 0,
+    "pets_count": 2,
+    "check_in_date": "2024-06-13",
+    "check_out_date": "2025-12-21",
+    "status": "CL",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 289,
+  "fields": {
+    "guest": 5,
+    "room": 317,
+    "adults_count": 2,
     "children_count": 0,
     "pets_count": 0,
-    "check_in_date": "2026-02-04",
-    "check_out_date": "2026-02-21",
+    "check_in_date": "2025-11-06",
+    "check_out_date": "2026-03-25",
     "status": "CL",
-    "type": "G",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
     "moved_to": null
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 92,
+  "pk": 290,
   "fields": {
-    "guest": 25,
-    "room": 43,
+    "guest": 24,
+    "room": 431,
+    "adults_count": 3,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2023-06-05",
+    "check_out_date": "2023-10-13",
+    "status": "CL",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 291,
+  "fields": {
+    "guest": 11,
+    "room": 439,
+    "adults_count": 8,
+    "children_count": 0,
+    "pets_count": 3,
+    "check_in_date": "2024-09-25",
+    "check_out_date": "2025-10-21",
+    "status": "CL",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 292,
+  "fields": {
+    "guest": 21,
+    "room": 356,
     "adults_count": 2,
     "children_count": 1,
     "pets_count": 0,
-    "check_in_date": "2026-03-06",
-    "check_out_date": "2026-04-03",
+    "check_in_date": "2026-03-16",
+    "check_out_date": "2026-04-20",
     "status": "CL",
-    "type": "G",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
     "moved_to": null
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 93,
+  "pk": 293,
   "fields": {
-    "guest": 8,
-    "room": 47,
-    "adults_count": 9,
+    "guest": 23,
+    "room": 405,
+    "adults_count": 2,
+    "children_count": 3,
+    "pets_count": 0,
+    "check_in_date": "2023-11-10",
+    "check_out_date": "2024-11-17",
+    "status": "CL",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 294,
+  "fields": {
+    "guest": 6,
+    "room": 433,
+    "adults_count": 5,
     "children_count": 0,
     "pets_count": 0,
-    "check_in_date": "2026-05-05",
-    "check_out_date": "2026-05-10",
+    "check_in_date": "2025-12-15",
+    "check_out_date": "2026-04-08",
     "status": "CL",
-    "type": "G",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
+    "created_at": "2026-05-27T09:26:08.700Z",
+    "updated_at": "2026-05-27T09:26:08.700Z",
     "moved_to": null
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 94,
+  "pk": 295,
+  "fields": {
+    "guest": 18,
+    "room": 434,
+    "adults_count": 3,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2027-12-25",
+    "check_out_date": "2028-03-27",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.748Z",
+    "updated_at": "2026-05-27T09:26:08.748Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 296,
+  "fields": {
+    "guest": 23,
+    "room": 395,
+    "adults_count": 1,
+    "children_count": 0,
+    "pets_count": 1,
+    "check_in_date": "2028-05-16",
+    "check_out_date": "2028-05-24",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.763Z",
+    "updated_at": "2026-05-27T09:26:08.763Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 297,
   "fields": {
     "guest": 13,
-    "room": 29,
-    "adults_count": 5,
+    "room": 332,
+    "adults_count": 2,
     "children_count": 0,
-    "pets_count": 0,
-    "check_in_date": "2026-03-13",
-    "check_out_date": "2026-03-27",
-    "status": "CL",
-    "type": "N",
-    "created_at": "2026-05-04T14:23:22.860Z",
-    "updated_at": "2026-05-04T14:23:22.860Z",
+    "pets_count": 1,
+    "check_in_date": "2027-10-07",
+    "check_out_date": "2027-11-15",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.773Z",
+    "updated_at": "2026-05-27T09:26:08.774Z",
     "moved_to": null
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 95,
+  "pk": 298,
   "fields": {
-    "guest": 7,
-    "room": 76,
+    "guest": 13,
+    "room": 410,
+    "adults_count": 1,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2028-03-12",
+    "check_out_date": "2028-05-09",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.783Z",
+    "updated_at": "2026-05-27T09:26:08.783Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 299,
+  "fields": {
+    "guest": 18,
+    "room": 331,
+    "adults_count": 7,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2028-05-13",
+    "check_out_date": "2028-05-14",
+    "status": "A",
+    "created_at": "2026-05-27T09:26:08.792Z",
+    "updated_at": "2026-05-27T09:26:08.792Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 300,
+  "fields": {
+    "guest": 14,
+    "room": 413,
     "adults_count": 2,
     "children_count": 0,
     "pets_count": 0,
-    "check_in_date": "2026-02-13",
-    "check_out_date": "2026-03-06",
-    "status": "A",
-    "type": "G",
-    "created_at": "2026-05-04T14:23:22.875Z",
-    "updated_at": "2026-05-04T14:23:22.875Z",
+    "check_in_date": "2026-09-10",
+    "check_out_date": "2027-03-26",
+    "status": "CA",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
     "moved_to": null
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 96,
+  "pk": 301,
+  "fields": {
+    "guest": 13,
+    "room": 317,
+    "adults_count": 6,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2027-11-12",
+    "check_out_date": "2028-04-05",
+    "status": "CA",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 302,
+  "fields": {
+    "guest": 23,
+    "room": 430,
+    "adults_count": 5,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2026-08-14",
+    "check_out_date": "2026-08-20",
+    "status": "CA",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 303,
   "fields": {
     "guest": 20,
-    "room": 45,
+    "room": 347,
     "adults_count": 5,
     "children_count": 0,
     "pets_count": 0,
-    "check_in_date": "2026-01-06",
-    "check_out_date": "2026-01-19",
-    "status": "A",
-    "type": "N",
-    "created_at": "2026-05-04T14:23:22.881Z",
-    "updated_at": "2026-05-04T14:23:22.881Z",
+    "check_in_date": "2026-06-03",
+    "check_out_date": "2026-09-08",
+    "status": "CA",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
     "moved_to": null
   }
 },
 {
   "model": "bookings.booking",
-  "pk": 97,
+  "pk": 304,
   "fields": {
-    "guest": 16,
-    "room": 120,
+    "guest": 19,
+    "room": 403,
     "adults_count": 2,
-    "children_count": 1,
-    "pets_count": 2,
-    "check_in_date": "2026-04-08",
-    "check_out_date": "2026-04-30",
-    "status": "A",
-    "type": "N",
-    "created_at": "2026-05-04T14:23:22.886Z",
-    "updated_at": "2026-05-04T14:23:22.886Z",
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2027-09-29",
+    "check_out_date": "2028-03-18",
+    "status": "CA",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
     "moved_to": null
   }
 },
 {
-  "model": "bookings.bookingpayment",
+  "model": "bookings.booking",
+  "pk": 305,
+  "fields": {
+    "guest": 29,
+    "room": 348,
+    "adults_count": 5,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2026-07-13",
+    "check_out_date": "2027-10-12",
+    "status": "M",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": 345
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 306,
+  "fields": {
+    "guest": 10,
+    "room": 423,
+    "adults_count": 6,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2026-11-05",
+    "check_out_date": "2027-08-10",
+    "status": "M",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": 346
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 307,
+  "fields": {
+    "guest": 9,
+    "room": 304,
+    "adults_count": 6,
+    "children_count": 2,
+    "pets_count": 0,
+    "check_in_date": "2028-02-21",
+    "check_out_date": "2028-04-16",
+    "status": "M",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": 347
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 308,
+  "fields": {
+    "guest": 13,
+    "room": 322,
+    "adults_count": 7,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2027-11-08",
+    "check_out_date": "2028-02-09",
+    "status": "M",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": 348
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 309,
+  "fields": {
+    "guest": 6,
+    "room": 408,
+    "adults_count": 1,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2028-01-12",
+    "check_out_date": "2028-03-09",
+    "status": "M",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": 349
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 310,
+  "fields": {
+    "guest": 17,
+    "room": 317,
+    "adults_count": 4,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2026-08-09",
+    "check_out_date": "2027-07-23",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 311,
+  "fields": {
+    "guest": 10,
+    "room": 303,
+    "adults_count": 1,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2027-11-19",
+    "check_out_date": "2028-04-20",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 312,
+  "fields": {
+    "guest": 9,
+    "room": 393,
+    "adults_count": 3,
+    "children_count": 2,
+    "pets_count": 2,
+    "check_in_date": "2027-03-17",
+    "check_out_date": "2027-07-05",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 313,
+  "fields": {
+    "guest": 5,
+    "room": 414,
+    "adults_count": 7,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2026-09-15",
+    "check_out_date": "2027-12-06",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 314,
+  "fields": {
+    "guest": 17,
+    "room": 420,
+    "adults_count": 7,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2027-02-14",
+    "check_out_date": "2027-07-19",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 315,
+  "fields": {
+    "guest": 5,
+    "room": 309,
+    "adults_count": 4,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2028-02-18",
+    "check_out_date": "2028-04-22",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 316,
+  "fields": {
+    "guest": 22,
+    "room": 317,
+    "adults_count": 4,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2026-07-12",
+    "check_out_date": "2026-07-31",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 317,
+  "fields": {
+    "guest": 30,
+    "room": 399,
+    "adults_count": 3,
+    "children_count": 3,
+    "pets_count": 0,
+    "check_in_date": "2026-07-23",
+    "check_out_date": "2028-01-18",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 318,
+  "fields": {
+    "guest": 25,
+    "room": 430,
+    "adults_count": 5,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2026-11-23",
+    "check_out_date": "2026-11-29",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 319,
+  "fields": {
+    "guest": 20,
+    "room": 410,
+    "adults_count": 1,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2026-05-31",
+    "check_out_date": "2026-07-09",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 320,
+  "fields": {
+    "guest": 21,
+    "room": 307,
+    "adults_count": 3,
+    "children_count": 2,
+    "pets_count": 0,
+    "check_in_date": "2028-02-19",
+    "check_out_date": "2028-03-19",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 321,
+  "fields": {
+    "guest": 8,
+    "room": 440,
+    "adults_count": 1,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2028-04-14",
+    "check_out_date": "2028-05-20",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 322,
+  "fields": {
+    "guest": 29,
+    "room": 393,
+    "adults_count": 7,
+    "children_count": 0,
+    "pets_count": 1,
+    "check_in_date": "2026-09-10",
+    "check_out_date": "2027-05-30",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 323,
+  "fields": {
+    "guest": 30,
+    "room": 312,
+    "adults_count": 1,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2027-08-15",
+    "check_out_date": "2027-08-28",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 324,
+  "fields": {
+    "guest": 15,
+    "room": 438,
+    "adults_count": 3,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2028-01-26",
+    "check_out_date": "2028-02-15",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 325,
+  "fields": {
+    "guest": 5,
+    "room": 394,
+    "adults_count": 4,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2026-10-17",
+    "check_out_date": "2028-03-11",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 326,
+  "fields": {
+    "guest": 19,
+    "room": 313,
+    "adults_count": 6,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2027-01-05",
+    "check_out_date": "2027-05-04",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 327,
+  "fields": {
+    "guest": 10,
+    "room": 441,
+    "adults_count": 6,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2026-12-31",
+    "check_out_date": "2028-01-28",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 328,
+  "fields": {
+    "guest": 18,
+    "room": 325,
+    "adults_count": 8,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2026-08-16",
+    "check_out_date": "2026-11-29",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 329,
+  "fields": {
+    "guest": 30,
+    "room": 348,
+    "adults_count": 6,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2026-05-27",
+    "check_out_date": "2026-05-28",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 330,
+  "fields": {
+    "guest": 10,
+    "room": 413,
+    "adults_count": 2,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2025-03-17",
+    "check_out_date": "2025-05-27",
+    "status": "CL",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 331,
+  "fields": {
+    "guest": 28,
+    "room": 336,
+    "adults_count": 4,
+    "children_count": 1,
+    "pets_count": 2,
+    "check_in_date": "2025-06-07",
+    "check_out_date": "2026-03-12",
+    "status": "CL",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 332,
+  "fields": {
+    "guest": 27,
+    "room": 399,
+    "adults_count": 8,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2023-06-08",
+    "check_out_date": "2024-07-23",
+    "status": "CL",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 333,
+  "fields": {
+    "guest": 15,
+    "room": 425,
+    "adults_count": 4,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2024-05-05",
+    "check_out_date": "2024-10-11",
+    "status": "CL",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 334,
+  "fields": {
+    "guest": 23,
+    "room": 437,
+    "adults_count": 8,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2023-07-08",
+    "check_out_date": "2024-12-22",
+    "status": "CL",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 335,
+  "fields": {
+    "guest": 29,
+    "room": 391,
+    "adults_count": 6,
+    "children_count": 3,
+    "pets_count": 0,
+    "check_in_date": "2026-04-07",
+    "check_out_date": "2026-05-04",
+    "status": "CL",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 336,
+  "fields": {
+    "guest": 29,
+    "room": 421,
+    "adults_count": 3,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2024-10-20",
+    "check_out_date": "2025-04-12",
+    "status": "CL",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 337,
+  "fields": {
+    "guest": 2,
+    "room": 427,
+    "adults_count": 2,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2025-01-11",
+    "check_out_date": "2025-03-14",
+    "status": "CL",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 338,
+  "fields": {
+    "guest": 25,
+    "room": 413,
+    "adults_count": 2,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2023-05-28",
+    "check_out_date": "2023-05-29",
+    "status": "CL",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 339,
+  "fields": {
+    "guest": 10,
+    "room": 393,
+    "adults_count": 7,
+    "children_count": 0,
+    "pets_count": 1,
+    "check_in_date": "2024-12-03",
+    "check_out_date": "2025-09-10",
+    "status": "CL",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 340,
+  "fields": {
+    "guest": 23,
+    "room": 353,
+    "adults_count": 7,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2024-07-02",
+    "check_out_date": "2025-07-06",
+    "status": "CL",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 341,
+  "fields": {
+    "guest": 23,
+    "room": 347,
+    "adults_count": 7,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2025-11-17",
+    "check_out_date": "2026-05-06",
+    "status": "CL",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 342,
+  "fields": {
+    "guest": 5,
+    "room": 448,
+    "adults_count": 1,
+    "children_count": 0,
+    "pets_count": 1,
+    "check_in_date": "2024-02-12",
+    "check_out_date": "2025-04-26",
+    "status": "CL",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 343,
+  "fields": {
+    "guest": 6,
+    "room": 448,
+    "adults_count": 2,
+    "children_count": 0,
+    "pets_count": 1,
+    "check_in_date": "2023-06-16",
+    "check_out_date": "2023-06-18",
+    "status": "CL",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 344,
+  "fields": {
+    "guest": 13,
+    "room": 413,
+    "adults_count": 1,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2023-05-28",
+    "check_out_date": "2023-05-29",
+    "status": "CL",
+    "created_at": "2026-05-27T09:56:08.184Z",
+    "updated_at": "2026-05-27T09:56:08.184Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 345,
+  "fields": {
+    "guest": 29,
+    "room": 348,
+    "adults_count": 5,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2026-08-14",
+    "check_out_date": "2026-08-19",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.204Z",
+    "updated_at": "2026-05-27T09:56:08.204Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 346,
+  "fields": {
+    "guest": 10,
+    "room": 423,
+    "adults_count": 6,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2027-01-03",
+    "check_out_date": "2027-01-07",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.211Z",
+    "updated_at": "2026-05-27T09:56:08.211Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 347,
+  "fields": {
+    "guest": 9,
+    "room": 304,
+    "adults_count": 6,
+    "children_count": 2,
+    "pets_count": 0,
+    "check_in_date": "2028-04-22",
+    "check_out_date": "2028-04-29",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.218Z",
+    "updated_at": "2026-05-27T09:56:08.218Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 348,
+  "fields": {
+    "guest": 13,
+    "room": 322,
+    "adults_count": 7,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2028-05-13",
+    "check_out_date": "2028-05-20",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.225Z",
+    "updated_at": "2026-05-27T09:56:08.225Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.booking",
+  "pk": 349,
+  "fields": {
+    "guest": 6,
+    "room": 408,
+    "adults_count": 1,
+    "children_count": 0,
+    "pets_count": 0,
+    "check_in_date": "2028-01-18",
+    "check_out_date": "2028-02-28",
+    "status": "A",
+    "created_at": "2026-05-27T09:56:08.232Z",
+    "updated_at": "2026-05-27T09:56:08.232Z",
+    "moved_to": null
+  }
+},
+{
+  "model": "bookings.cancelledbooking",
+  "pk": 26,
+  "fields": {
+    "booking": 250,
+    "cancelled_at": "2026-05-27T09:26:08.713Z",
+    "cancellation_reason": "Не смогли прилететь из-за отмены рейса авиакомпанией. Перенесли отпуск на другие даты."
+  }
+},
+{
+  "model": "bookings.cancelledbooking",
+  "pk": 27,
+  "fields": {
+    "booking": 251,
+    "cancelled_at": "2026-05-27T09:26:08.722Z",
+    "cancellation_reason": "У ребёнка поднялась температура за день до выезда, врач не рекомендовал путешествие."
+  }
+},
+{
+  "model": "bookings.cancelledbooking",
+  "pk": 28,
+  "fields": {
+    "booking": 252,
+    "cancelled_at": "2026-05-27T09:26:08.726Z",
+    "cancellation_reason": "Нашли более выгодный вариант с завтраками включёнными. Извините за неудобства."
+  }
+},
+{
+  "model": "bookings.cancelledbooking",
+  "pk": 29,
+  "fields": {
+    "booking": 253,
+    "cancelled_at": "2026-05-27T09:26:08.730Z",
+    "cancellation_reason": "Поменялись рабочие графики, не можем уехать в указанные даты. Придётся перенести на осень."
+  }
+},
+{
+  "model": "bookings.cancelledbooking",
+  "pk": 30,
+  "fields": {
+    "booking": 254,
+    "cancelled_at": "2026-05-27T09:26:08.734Z",
+    "cancellation_reason": "Отель не подтвердил наличие двухместного номера с отдельными кроватями, что критично для нас."
+  }
+},
+{
+  "model": "bookings.cancelledbooking",
   "pk": 31,
   "fields": {
-    "booking": 65,
-    "status": "O",
-    "amount": "18045.00",
-    "purpose": "PN",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-03-26T07:24:28Z"
+    "booking": 300,
+    "cancelled_at": "2026-05-27T09:56:08.191Z",
+    "cancellation_reason": "Передумали ехать, нашли другой отель дешевле."
   }
 },
 {
-  "model": "bookings.bookingpayment",
+  "model": "bookings.cancelledbooking",
   "pk": 32,
   "fields": {
-    "booking": 66,
-    "status": "O",
-    "amount": "21239.00",
-    "purpose": "FP",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-03-01T19:35:17Z"
+    "booking": 301,
+    "cancelled_at": "2026-05-27T09:56:08.193Z",
+    "cancellation_reason": "У сотрудника не согласовали отпуск, пришлось сдвинуть даты."
   }
 },
 {
-  "model": "bookings.bookingpayment",
+  "model": "bookings.cancelledbooking",
   "pk": 33,
   "fields": {
-    "booking": 67,
-    "status": "I",
-    "amount": "23930.00",
-    "purpose": "RF",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-03-01T02:07:43Z"
+    "booking": 302,
+    "cancelled_at": "2026-05-27T09:56:08.195Z",
+    "cancellation_reason": "Заболели дети, поездка отменяется."
   }
 },
 {
-  "model": "bookings.bookingpayment",
+  "model": "bookings.cancelledbooking",
   "pk": 34,
   "fields": {
-    "booking": 68,
-    "status": "C",
-    "amount": "27480.00",
-    "purpose": "EP",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-02-08T06:13:05Z"
+    "booking": 303,
+    "cancelled_at": "2026-05-27T09:56:08.197Z",
+    "cancellation_reason": "Отель не подтвердил бронь в течение суток, нашли другой вариант."
   }
 },
 {
-  "model": "bookings.bookingpayment",
+  "model": "bookings.cancelledbooking",
   "pk": 35,
   "fields": {
-    "booking": 69,
-    "status": "E",
-    "amount": "23327.00",
-    "purpose": "RF",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-04-29T06:31:48Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 36,
-  "fields": {
-    "booking": 70,
-    "status": "I",
-    "amount": "28406.00",
-    "purpose": "EP",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-01-12T09:54:15Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 37,
-  "fields": {
-    "booking": 71,
-    "status": "C",
-    "amount": "19353.00",
-    "purpose": "FP",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-03-30T13:31:16Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 38,
-  "fields": {
-    "booking": 72,
-    "status": "I",
-    "amount": "27202.00",
-    "purpose": "PP",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-02-04T14:51:20Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 39,
-  "fields": {
-    "booking": 73,
-    "status": "C",
-    "amount": "5634.00",
-    "purpose": "FP",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-01-31T10:23:00Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 40,
-  "fields": {
-    "booking": 74,
-    "status": "C",
-    "amount": "27189.00",
-    "purpose": "PN",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-02-18T07:42:12Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 41,
-  "fields": {
-    "booking": 75,
-    "status": "C",
-    "amount": "17426.00",
-    "purpose": "PP",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-02-18T16:18:20Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 42,
-  "fields": {
-    "booking": 76,
-    "status": "O",
-    "amount": "10454.00",
-    "purpose": "PN",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-02-16T01:03:15Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 43,
-  "fields": {
-    "booking": 77,
-    "status": "E",
-    "amount": "13641.00",
-    "purpose": "FP",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-04-02T10:55:32Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 44,
-  "fields": {
-    "booking": 78,
-    "status": "E",
-    "amount": "25351.00",
-    "purpose": "RF",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-04-13T11:23:22Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 45,
-  "fields": {
-    "booking": 79,
-    "status": "E",
-    "amount": "24239.00",
-    "purpose": "PP",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-01-14T15:41:12Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 46,
-  "fields": {
-    "booking": 80,
-    "status": "E",
-    "amount": "26684.00",
-    "purpose": "PP",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-05-05T12:12:10Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 47,
-  "fields": {
-    "booking": 81,
-    "status": "I",
-    "amount": "18537.00",
-    "purpose": "PN",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-04-17T17:47:24Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 48,
-  "fields": {
-    "booking": 82,
-    "status": "C",
-    "amount": "11334.00",
-    "purpose": "RF",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-03-17T07:41:13Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 49,
-  "fields": {
-    "booking": 83,
-    "status": "E",
-    "amount": "27923.00",
-    "purpose": "RF",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-01-22T06:45:34Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 50,
-  "fields": {
-    "booking": 84,
-    "status": "O",
-    "amount": "15599.00",
-    "purpose": "RF",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-03-22T08:31:52Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 51,
-  "fields": {
-    "booking": 85,
-    "status": "C",
-    "amount": "17295.00",
-    "purpose": "RF",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-02-19T11:35:56Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 52,
-  "fields": {
-    "booking": 86,
-    "status": "I",
-    "amount": "3402.00",
-    "purpose": "FP",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-03-01T14:54:48Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 53,
-  "fields": {
-    "booking": 87,
-    "status": "O",
-    "amount": "13891.00",
-    "purpose": "PN",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-04-18T02:01:49Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 54,
-  "fields": {
-    "booking": 88,
-    "status": "I",
-    "amount": "29365.00",
-    "purpose": "EP",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-01-27T14:24:18Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 55,
-  "fields": {
-    "booking": 89,
-    "status": "C",
-    "amount": "11474.00",
-    "purpose": "FP",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-01-17T12:59:35Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 56,
-  "fields": {
-    "booking": 90,
-    "status": "O",
-    "amount": "9917.00",
-    "purpose": "PN",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-01-16T11:41:36Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 57,
-  "fields": {
-    "booking": 91,
-    "status": "I",
-    "amount": "13037.00",
-    "purpose": "PN",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-01-17T10:34:48Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 58,
-  "fields": {
-    "booking": 92,
-    "status": "I",
-    "amount": "7726.00",
-    "purpose": "PN",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-01-16T00:27:04Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 59,
-  "fields": {
-    "booking": 93,
-    "status": "C",
-    "amount": "25377.00",
-    "purpose": "PP",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-04-09T06:34:06Z"
-  }
-},
-{
-  "model": "bookings.bookingpayment",
-  "pk": 60,
-  "fields": {
-    "booking": 94,
-    "status": "I",
-    "amount": "3007.00",
-    "purpose": "EP",
-    "created_at": "2026-05-04T14:23:22.895Z",
-    "paid_at": "2026-04-29T17:04:10Z"
-  }
-},
-{
-  "model": "bookings.cancelledbooking",
-  "pk": 7,
-  "fields": {
-    "booking": 66,
-    "cancelled_at": "2026-05-04T14:23:22.866Z",
-    "cancellation_reason": "Провал легко вообще багровый страсть ведь. Вскакивать намерение изредка пасть социалистический написать а.\nНастать умолять невозможно песенка построить пропадать.\nПередо костер нервно смелый. Поезд пламя песня."
-  }
-},
-{
-  "model": "bookings.cancelledbooking",
-  "pk": 8,
-  "fields": {
-    "booking": 85,
-    "cancelled_at": "2026-05-04T14:23:22.867Z",
-    "cancellation_reason": "Сутки приятель команда написать предоставить премьера танцевать.\nКидать вздрогнуть развитый запустить чем видимо лапа. Полевой четко космос грустный присесть ставить. Штаб покидать термин разнообразный головной жить."
-  }
-},
-{
-  "model": "bookings.cancelledbooking",
-  "pk": 9,
-  "fields": {
-    "booking": 80,
-    "cancelled_at": "2026-05-04T14:23:22.868Z",
-    "cancellation_reason": "Головка покидать мгновение лапа пасть. Пастух ботинок что устройство. Командование банк зато блин привлекать решение. Мусор чем пламя человечек решение дьявол."
+    "booking": 304,
+    "cancelled_at": "2026-05-27T09:56:08.198Z",
+    "cancellation_reason": "Поменялись планы на работе, командировка на эти даты."
   }
 },
 {
   "model": "bookings.review",
-  "pk": 3,
+  "pk": 46,
   "fields": {
-    "booking": 94,
-    "rating": 4,
-    "comment": "Забирать ныне монета что развитый набор бетонный. Демократия монета порог слишком. Предоставить сравнение рассуждение жестокий покидать. Передо полевой вытаскивать еврейский ответить слишком фонарик.\nПятеро манера каюта. Заведение угроза задрать грустный спасть пятеро жидкий.\nПоявление торговля академик казнь картинка освобождение. Сходить избегать металл мальчишка хлеб возникновение бак. Правый результат сынок налево что.\nДеньги жестокий разнообразный кидать зеленый перебивать покинуть разуметься. Падаль приходить блин затянуться. Возникновение школьный космос задрать очко поймать передо.\nСомнительный боец сбросить инвалид чувство остановить. Ботинок налево сопровождаться печатать упорно.\nРазуметься экзамен банда упор новый. Смертельный цепочка понятный угодный танцевать соответствие.\nТерапия порт зарплата поймать.\nЗадержать хотеть песня выраженный. Избегать парень висеть ломать. Достоинство шлем господь монета.\nПомимо ответить запеть идея задержать металл хлеб равнодушный. За грустный соответствие развитый кузнец отметить. Тюрьма пространство ботинок головка идея мальчишка.\nПересечь услать разнообразный руководитель юный вряд аж а. Ломать крутой механический торопливый демократия.\nПадаль легко потянуться а посвятить блин. Издали освободить промолчать изображать.\nПосвятить печатать гулять нервно. Актриса встать пасть поздравлять неожиданно социалистический чем школьный. Мучительно потянуться теория дружно другой.\nЗадержать плавно июнь. Протягивать наступать сверкать заплакать следовательно тревога. Означать человечек хлеб увеличиваться вариант мотоцикл плавно конструкция.\nРай ярко одиннадцать прелесть механический появление. Пропасть грудь славный очутиться.\nПодробность спичка единый вздрогнуть. Постоянный остановить запеть издали возникновение коммунизм сходить о.\nСовещание печатать жить означать даль пастух а. Умолять освобождение увеличиваться палец трубка уронить. Каюта песня невозможно голубчик. Миллиард через желание покинуть важный стакан.\nЖелание вперед поймать сынок дорогой карман выразить. Выраженный порог близко госпожа ход поговорить похороны.\nОтметить засунуть призыв. Дыхание интеллектуальный желание снимать банк.\nОзначать потянуться пропадать легко.\nКарандаш медицина миф заложить правильный выраженный. Инструкция очко а соответствие исследование.\nРис сходить блин падаль. Штаб крутой задрать хозяйка строительство заявление. Что недостаток наслаждение наступать запретить.\nПередо четко вскинуть свежий спалить. Правление вздрогнуть эпоха костер военный.\nОтметить растеряться ребятишки набор народ понятный степь. Одиннадцать исследование боец лететь мелочь тусклый легко.\nИзредка печатать цвет набор. Кузнец развитый четко неожиданно. Головка плавно при инструкция приходить похороны горький.\nЧетыре функция металл руководитель четыре мучительно. Интеллектуальный пасть вряд посидеть о багровый. Господь военный близко скользить.\nПрежний мера четко место. Провинция бетонный падать куча.\nМонета подземный аж экзамен командование при. Тревога разнообразный редактор.",
-    "created_at": "2026-05-04T14:24:39.613Z",
+    "booking": 280,
+    "rating": 2,
+    "comment": "К сожалению, отдых не оправдал ожиданий. Номер был грязным, в ванной не работал душ, а персонал реагировал очень медленно. Завтраки скудные, выбор блюд минимальный. Расположение далеко от пляжа, хотя в описании обещали близость. Больше не приедем.",
+    "created_at": "2026-05-27T09:26:08.852Z",
     "status": "M",
     "moderated_by": 1,
     "rejection_reason": null,
@@ -996,58 +1805,408 @@
 },
 {
   "model": "bookings.review",
-  "pk": 4,
+  "pk": 47,
   "fields": {
-    "booking": 93,
+    "booking": 281,
     "rating": 5,
-    "comment": "Командующий спалить горький назначить витрина торопливый дрогнуть уничтожение. Дружно житель запретить пропадать. Разуметься господь чувство отражение соответствие дорогой.\nМера пространство ремень горький человечек. Расстегнуть мучительно хотеть четко через.\nНаписать мера роскошный монета. Ложиться выгнать металл запеть монета. Угроза функция житель процесс решение около команда важный.\nУмирать жить аж сходить более вытаскивать. Фонарик совет головка. Бок порт степь иной князь.\nЦепочка район интеллектуальный уничтожение желание. Провал скрытый мимо триста дурацкий расстройство.\nЖелание порядок торопливый каюта. Металл решетка настать песня нажать тревога.\nСопровождаться полевой рот крыса сынок пламя кольцо. Коллектив валюта мелочь нервно. Заработать увеличиваться развернуться пламя очередной.\nСходить вряд поймать тысяча угроза вряд терапия. Мягкий металл рот рай.\nСовещание число равнодушный кпсс сходить поздравлять протягивать трубка. Славный рай материя самостоятельно поговорить горький инструкция механический.\nСпешить потянуться сынок монета. Четко покидать важный видимо художественный цвет.\nОтражение штаб непривычный труп. Палец приличный покидать новый передо устройство присесть. Мимо штаб оборот господь уточнить порт палец. Добиться падать лапа бабочка.\nДрогнуть подземный запустить провинция уничтожение кидать. Горький передо избегать ученый легко бабочка. Применяться уничтожение спорт светило наткнуться необычный решение.\nГосподь роса перебивать мелькнуть около поймать бак инфекция. Освобождение затянуться счастье еврейский услать результат дурацкий. Кидать разнообразный ботинок да указанный указанный.\nПоявление райком коммунизм призыв поговорить. Ребятишки лиловый совещание премьера труп идея налоговый. Потрясти встать неожиданный одиннадцать самостоятельно возникновение.\nМедицина развернуться непривычный товар выраженный правление. О товар изучить о приходить лететь. Степь миф приличный командующий вздрагивать о передо. Спорт житель командир ход единый.\nДальний инфекция господь господь медицина доставать. Помолчать тысяча триста палата ответить тревога ложиться.\nОтражение пастух заложить мимо упор. Появление низкий смертельный.\nДружно боец естественный смертельный при лапа о. Конференция отъезд белье салон граница художественный выражаться. Пробовать механический засунуть оставить более.\nУничтожение рот поздравлять голубчик тесно растеряться ремень покидать. Настать собеседник хозяйка сынок предоставить. Парень серьезный изредка результат очутиться угроза кузнец. Ленинград парень ставить эффект манера полевой.\nГраница висеть а фонарик растеряться стакан. Радость цель при проход. Издали присесть запустить другой сверкать тысяча.\nЗеленый плавно мальчишка факультет хозяйка да выражаться. Плясать кожа дремать функция миллиард.\nПокинуть вчера расстройство намерение смертельный. Бровь бетонный дорогой человечек инструкция сбросить. Поговорить ленинград кольцо советовать вперед.",
-    "created_at": "2026-05-04T14:24:39.613Z",
+    "comment": "Всё было замечательно! Очень приветливый персонал, чистый и уютный номер с отличным видом на море. Питание разнообразное и вкусное, особенно понравились местные блюда. Территория ухоженная, бассейн тёплый. Обязательно вернёмся сюда ещё раз. Спасибо за прекрасный отдых!",
+    "created_at": "2026-05-27T09:26:08.852Z",
+    "status": "M",
+    "moderated_by": 4,
+    "rejection_reason": null,
+    "published_at": null
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 48,
+  "fields": {
+    "booking": 282,
+    "rating": 5,
+    "comment": "",
+    "created_at": "2026-05-27T09:26:08.852Z",
+    "status": "M",
+    "moderated_by": 5,
+    "rejection_reason": null,
+    "published_at": null
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 49,
+  "fields": {
+    "booking": 283,
+    "rating": 2,
+    "comment": "Очень разочарованы. Фотографии в описании не соответствуют реальности. Номер старый, мебель поломанная, кондиционер шумит и плохо охлаждает. Пляж далеко, до него нужно идти через дорогу. Wi-Fi почти не ловит. За такую цену ожидали гораздо лучшего качества. Не советуем.",
+    "created_at": "2026-05-27T09:26:08.852Z",
+    "status": "A",
+    "moderated_by": 5,
+    "rejection_reason": null,
+    "published_at": "2026-03-14T13:08:45.983Z"
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 50,
+  "fields": {
+    "booking": 284,
+    "rating": 5,
+    "comment": "Превосходный отель! Всё на высшем уровне: чистота, обслуживание, питание. Отдельное спасибо администратору Наталье — помогла с экскурсиями и дала отличные советы. Номер с видом на бассейн просто сказка. Завтраки очень сытные и вкусные. Обязательно приедем ещё!",
+    "created_at": "2026-05-27T09:26:08.852Z",
     "status": "P",
     "moderated_by": 4,
     "rejection_reason": null,
-    "published_at": "2026-05-06T05:52:38Z"
+    "published_at": "2026-03-05T20:13:24.796Z"
   }
 },
 {
   "model": "bookings.review",
-  "pk": 5,
+  "pk": 51,
   "fields": {
-    "booking": 92,
+    "booking": 285,
     "rating": 5,
-    "comment": "Неудобно адвокат покидать умолять трубка ремень тусклый. Прощение рай обида премьера валюта пламя. Ярко мягкий неожиданный солнце процесс казнь неправда.\nПолевой недостаток место угроза. Дорогой собеседник выраженный развитый домашний. Еврейский слишком возможно ныне второй.\nВыраженный приличный конференция. Потянуться багровый вообще совещание наступать.\nОсвобождение услать оборот степь теория дальний. Скользить голубчик анализ невыносимый деньги.\nБочок багровый желание.\nКоммунизм приличный научить выраженный прежний. Кидать сынок поставить поймать. Цвет волк жестокий научить магазин рис ложиться.\nРасстегнуть посидеть пасть миф тревога. Тяжелый нож металл руководитель. Сбросить металл триста команда освободить механический.\nАнализ космос совещание лиловый кольцо изредка. Миф вариант монета кузнец умирать перебивать интеллектуальный. Господь господь сопровождаться уточнить.\nРазуметься возбуждение уронить. Разуметься художественный торопливый возможно более возбуждение свежий. Кпсс возможно коллектив выдержать хозяйка слишком скользить пятеро. Рассуждение танцевать левый умирать достоинство дорогой.\nТюрьма покидать дремать правильный медицина. Поставить ход магазин неудобно командование. Куча актриса металл ночь свежий деньги научить иной.\nВоенный решетка желание носок кидать некоторый полностью кузнец. Полюбить левый стакан пробовать космос назначить близко.\nМеталл солнце запретить запеть. Счастье тесно коробка умирать мучительно спалить командование.\nСмелый предоставить танцевать чувство. Серьезный угроза следовательно инвалид гулять советовать каюта.\nГоловка прощение вчера ученый назначить. Совет беспомощный князь ленинград сохранять. Ныне военный при.\nВывести непривычный пространство разуметься. Карандаш валюта спорт. Пятеро бригада развернуться сходить еврейский забирать выгнать.\nСмеяться демократия выраженный совещание каюта рассуждение. Возможно дорогой серьезный освобождение видимо песенка космос. Тревога лиловый запеть присесть зачем актриса еврейский.\nГрудь устройство невыносимый одиннадцать. Костер зеленый степь инструкция. Смелый протягивать приличный крыса.\nАж социалистический снимать горький вообще.\nПарень мрачно головка карман хозяйка.\nСлавный способ ночь командир правление. Салон призыв медицина выраженный приятель изредка механический. Смертельный поколение прежде поймать художественный развернуться.\nСобеседник непривычный пересечь порог цепочка аж некоторый. Упор каюта остановить природа. Освобождение волк лиловый новый.\nЗато господь вздрагивать бабочка умолять. Деньги анализ пересечь бровь растеряться набор потом еврейский.\nДремать аллея команда счастье тысяча умолять. Правление поговорить приличный проход потом.\nНервно народ коричневый вперед художественный премьера факультет пятеро. Интеллектуальный растеряться инфекция трубка некоторый кузнец торопливый.\nМусор теория полевой протягивать порог. Носок возникновение выкинуть запеть применяться. Упорно палата серьезный невозможно.\nГорький блин призыв славный дыхание магазин. Выраженный предоставить граница выкинуть изредка.",
-    "created_at": "2026-05-04T14:24:39.613Z",
-    "status": "A",
-    "moderated_by": 3,
-    "rejection_reason": null,
-    "published_at": "2026-05-06T05:52:39Z"
-  }
-},
-{
-  "model": "bookings.review",
-  "pk": 6,
-  "fields": {
-    "booking": 91,
-    "rating": 5,
-    "comment": "Лапа теория природа. Приличный поговорить художественный бок направо. Инструкция изучить налево товар какой процесс.\nЗаложить миф ночь выдержать. О командование одиннадцать полевой хлеб.\nШлем изба премьера мальчишка карман голубчик. Желание посидеть возмутиться пламя. Актриса падаль дыхание строительство.\nКакой конструкция мелочь печатать следовательно цель мера. Тесно что монета ночь. Правление снимать что столетие перебивать тяжелый.\nСмертельный песенка тюрьма вытаскивать спешить покидать указанный. Совет нажать порода.\nСобеседник ученый степь миллиард. Вариант житель провал более основание. Развернуться решение госпожа белье цвет.\nВажный интернет направо салон очередной задержать предоставить. Понятный вздрогнуть витрина механический. Монета выразить правильный видимо коллектив ремень.\nКартинка изучить дрогнуть социалистический цвет.\nСверкающий расстегнуть разнообразный лететь. Белье передо встать применяться заведение терапия.\nХотеть войти единый советовать изменение набор холодно. Еврейский совет бегать смеяться боец. Пятеро деньги еврейский одиннадцать теория.\nКидать лиловый прошептать ленинград указанный освободить умирать. Легко карандаш картинка поймать. Другой материя рот ход банк тесно равнодушный палец.\nВскинуть академик ныне болото. Остановить команда монета рай передо. Костер карман скользить сынок упорно.\nГосподь непривычный изображать слишком триста славный доставать. Товар вскакивать виднеться прежде еврейский ложиться спичка. Подробность очередной хозяйка товар тута развитый вывести за.\nНервно сутки упорно означать заплакать бровь труп. Развитый успокоиться мгновение команда спалить увеличиваться.\nВозмутиться результат степь шлем.\nБагровый возможно горький возможно тута коллектив за. Сынок ведь тесно темнеть ученый. Рабочий заплакать школьный.\nПоезд кпсс мучительно трясти. Невыносимый единый строительство четыре разуметься. Горький песня премьера неудобно выраженный направо обида функция. Неправда нож подземный строительство передо.\nСерьезный хотеть вытаскивать угроза следовательно. Мягкий указанный эпоха издали разуметься уронить слать. Пол академик танцевать прелесть совещание банда устройство.\nГоловной кожа металл потом демократия. Голубчик крутой премьера секунда подземный.\nТовар приятель коробка бабочка. Угроза процесс сомнительный четко рай смертельный результат. Горький роскошный изучить трясти ремень.\nМелькнуть полоска нажать цель.\nИздали мрачно другой правление смертельный командир основание. Выразить теория затянуться неправда банк. Степь угроза район мера неожиданно миллиард умолять идея.\nДьявол витрина следовательно сомнительный крутой подробность. Сопровождаться нож голубчик. Поздравлять интеллектуальный соответствие тюрьма витрина серьезный руководитель.\nТысяча пламя песня. Ныне умолять разуметься указанный домашний.\nПонятный издали природа. Носок миллиард решение ломать жестокий вообще заработать. Призыв салон страсть. Слишком через помимо коллектив ночь бетонный рассуждение.",
-    "created_at": "2026-05-04T14:24:39.613Z",
-    "status": "P",
-    "moderated_by": 2,
-    "rejection_reason": null,
-    "published_at": "2026-03-14T11:17:40Z"
-  }
-},
-{
-  "model": "bookings.review",
-  "pk": 7,
-  "fields": {
-    "booking": 90,
-    "rating": 5,
-    "comment": "Полоска князь ныне. Степь металл командование сопровождаться изменение наступать потрясти. Житель солнце дьявол.\nПотом строительство адвокат господь сравнение деньги ложиться поставить. Чувство устройство трясти. Уничтожение дорогой премьера строительство магазин способ плод. Призыв горький солнце один желание провал приятель поговорить.\nЕврейский актриса банда мотоцикл идея вчера редактор инвалид. Проход назначить монета вскинуть бочок посидеть.\nМеталл экзамен предоставить выраженный что. Горький карандаш коричневый.\nСпалить около вытаскивать устройство развернуться. Зарплата падать госпожа монета факультет.\nПлод плавно счастье устройство.\nДа ставить белье освободить правый. Один поезд художественный важный пламя хотеть.\nПолевой наткнуться набор. Точно карман мимо похороны изображать около упорно.\nНедостаток возмутиться иной волк. Виднеться возмутиться рай результат трубка покидать фонарик. За редактор вскинуть демократия.\nКонференция очко карман засунуть точно актриса. Художественный рис господь пространство спорт плод четко выгнать. Палка дыхание место означать расстегнуть дальний. Человечек какой запретить умолять интернет космос.\nБак ломать металл еврейский за соответствие. Ведь равнодушный войти правильный инфекция неожиданный подземный.\nКазнь картинка выражение магазин. Миф тревога сохранять интернет.\nВозмутиться сравнение возникновение наступать костер. Сбросить сынок лапа остановить следовательно промолчать спалить правильный.\nНеобычный потом забирать. Пропадать банк желание инфекция поставить.\nБабочка полевой исследование заложить выбирать прежний. Потрясти иной налево наступать магазин.\nПрисесть коричневый коричневый. Разводить бригада мрачно дыхание. Лиловый соответствие бригада вскинуть совещание упорно дружно сверкающий.\nПрежде домашний вскакивать госпожа. Житель ребятишки написать заявление инструкция головной ответить. Тусклый лететь спичка передо функция.\nБелье умолять монета возможно грудь строительство. Боец смеяться проход.\nБолее выраженный невыносимый предоставить салон порядок мусор свежий. Манера покидать промолчать. Чувство строительство природа понятный теория табак. Пропаганда затянуться через.\nМусор указанный бок соответствие совет термин отъезд серьезный. Назначить дошлый торопливый армейский уронить выкинуть. Солнце вывести монета. Поздравлять пламя вздрагивать жидкий.\nПокинуть ответить неправда ложиться пасть предоставить спасть. Функция кпсс виднеться непривычный достоинство предоставить бетонный. Сверкающий расстройство дьявол господь полюбить мелькнуть потом порог.\nПрелесть степь функция витрина идея строительство. Построить подземный уронить приятель коммунизм редактор.\nЗеленый какой ребятишки. Развернуться равнодушный ночь предоставить.\nНастать основание кузнец четко интернет правый что. Конференция правление означать хозяйка спорт госпожа пропадать. Решетка лететь гулять недостаток прелесть металл.\nИюнь плясать привлекать правый. Эффект наслаждение дорогой за равнодушный. Сбросить выдержать экзамен отъезд издали зачем.",
-    "created_at": "2026-05-04T14:24:39.613Z",
+    "comment": "Всё прошло отлично. Большой светлый номер, удобная кровать, тихо ночью. Рядом есть магазины и кафе. Пляж чистый, вода тёплая. Понравилось, что на территории есть зона барбекю. Не хватило только фена в номере, но это мелочи. В целом рекомендую.",
+    "created_at": "2026-05-27T09:26:08.852Z",
     "status": "D",
     "moderated_by": null,
     "rejection_reason": null,
     "published_at": null
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 52,
+  "fields": {
+    "booking": 286,
+    "rating": 4,
+    "comment": "Хороший отель, но есть нюансы. Понравилось: бассейн, вежливый персонал, вкусные ужины. Не понравилось: медленный лифт, иногда не хватало горячей воды, и в номере было немного пыльно. В целом отдых удался, но над некоторыми моментами стоит поработать. Оценку ставлю 4.",
+    "created_at": "2026-05-27T09:26:08.852Z",
+    "status": "P",
+    "moderated_by": 2,
+    "rejection_reason": null,
+    "published_at": "2026-05-03T14:55:22.158Z"
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 53,
+  "fields": {
+    "booking": 287,
+    "rating": 5,
+    "comment": "Потрясающее место для романтического отдыха! Номер люкс с джакузи — отдельный восторг. Вид на горы и море невероятный. Ресторан при отеле — пальчики оближешь. Персонал очень тактичный и внимательный. Заходите на мой канал TravelBlog, там больше идей для приятного отдыха",
+    "created_at": "2026-05-27T09:26:08.852Z",
+    "status": "R",
+    "moderated_by": 2,
+    "rejection_reason": "Скрытая реклама, ссылка на сторонний ресурс",
+    "published_at": null
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 54,
+  "fields": {
+    "booking": 288,
+    "rating": 2,
+    "comment": "Не рекомендую. Заселили на час позже, в номере было холодно и сыро. Окна выходят на стройку, шум с утра до вечера. Питание однообразное и невкусное. На просьбу поменять номер ответили отказом. Ужасный сервис, испорченные выходные. Больше ни ногой.",
+    "created_at": "2026-05-27T09:26:08.852Z",
+    "status": "P",
+    "moderated_by": 1,
+    "rejection_reason": null,
+    "published_at": "2026-03-08T09:38:12.225Z"
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 55,
+  "fields": {
+    "booking": 289,
+    "rating": 4,
+    "comment": "Довольно хороший вариант для своей цены. Номер компактный, но чистый, есть всё необходимое. Расположение удобное — до центра минут 15 пешком. Понравилось, что можно было пользоваться кухней. Из минусов: слышимость из коридора и иногда перебои с горячей водой. В целом на твёрдую четвёрку.",
+    "created_at": "2026-05-27T09:26:08.852Z",
+    "status": "P",
+    "moderated_by": 5,
+    "rejection_reason": null,
+    "published_at": "2026-05-25T06:03:24.414Z"
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 56,
+  "fields": {
+    "booking": 290,
+    "rating": 4,
+    "comment": "Хороший отель, но без изысков. Понравился бассейн и сауна. Завтраки скромные, но сытные. Номера просторные, однако мебель немного устаревшая. Персонал дружелюбный, всегда готов помочь. Если не ждать роскоши — отличный вариант для недорогого отдыха. Оценку снизила за шум от дороги.",
+    "created_at": "2026-05-27T09:26:08.852Z",
+    "status": "P",
+    "moderated_by": 5,
+    "rejection_reason": null,
+    "published_at": "2026-05-22T15:30:18.745Z"
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 57,
+  "fields": {
+    "booking": 291,
+    "rating": 2,
+    "comment": "Очень плохо. Номер выглядит как после боя: ободранные стены, сломанная сантехника, грязный ковёр. Полотенца не меняли все три дня. На ресепшене грубят. Wi-Fi платный и не работает. Никому не советую, деньги на ветер. Хозяевам стоит серьёзно заняться отелем.",
+    "created_at": "2026-05-27T09:26:08.852Z",
+    "status": "D",
+    "moderated_by": null,
+    "rejection_reason": null,
+    "published_at": null
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 58,
+  "fields": {
+    "booking": 292,
+    "rating": 2,
+    "comment": "Разочарование. Номер не соответствовал заявленному: вместо вида на море дали вид на стену. Кондиционер капал на кровать. В ресторане отравились салатом — два дня мучились. На претензии не реагируют. Абсолютно не рекомендую, испорченный отпуск.",
+    "created_at": "2026-05-27T09:26:08.852Z",
+    "status": "D",
+    "moderated_by": null,
+    "rejection_reason": null,
+    "published_at": null
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 59,
+  "fields": {
+    "booking": 293,
+    "rating": 4,
+    "comment": "Неплохой отель для командировки. Тихо, чистый номер, удобная кровать для работы. Завтрак шведский стол, нормально. Из минусов: слабый интернет в номере (хорошо ловил только в лобби) и отсутствие розеток рядом с кроватью. Но в целом достойный вариант за свои деньги.",
+    "created_at": "2026-05-27T09:26:08.852Z",
+    "status": "P",
+    "moderated_by": 1,
+    "rejection_reason": null,
+    "published_at": "2026-04-14T00:12:11.752Z"
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 60,
+  "fields": {
+    "booking": 294,
+    "rating": 5,
+    "comment": "Лучший отдых за последние годы! Очень красивый отель с современным дизайном, большая зелёная территория. Номера просторные, чистые, с удобной мебелью. Питание — бомба: огромный выбор, всё свежее и вкусное. Персонал улыбчивый и профессиональный. Спа-центр отличный. Вернёмся обязательно!",
+    "created_at": "2026-05-27T09:26:08.852Z",
+    "status": "M",
+    "moderated_by": 1,
+    "rejection_reason": null,
+    "published_at": null
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 61,
+  "fields": {
+    "booking": 330,
+    "rating": 4,
+    "comment": "Норм в целом, в Золотые берега за ту же цену можно снять лучше",
+    "created_at": "2026-05-27T09:56:08.297Z",
+    "status": "R",
+    "moderated_by": 5,
+    "rejection_reason": "Комментарий содержит рекламу другого отеля",
+    "published_at": null
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 62,
+  "fields": {
+    "booking": 331,
+    "rating": 2,
+    "comment": "Номер был грязный, в ванной плесень. Завтрак отвратительный, кофе как вода. Персонал грубый. Больше не приедем.",
+    "created_at": "2026-05-27T09:56:08.297Z",
+    "status": "P",
+    "moderated_by": 3,
+    "rejection_reason": null,
+    "published_at": "2026-02-04T15:24:36.146Z"
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 63,
+  "fields": {
+    "booking": 332,
+    "rating": 5,
+    "comment": "всё супер! очень понравился бассейн и номер просторный. персонал вежливый. отдельное спасибо администратору. вернёмся обязательно!",
+    "created_at": "2026-05-27T09:56:08.297Z",
+    "status": "P",
+    "moderated_by": 2,
+    "rejection_reason": null,
+    "published_at": "2026-02-04T15:16:36.146Z"
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 64,
+  "fields": {
+    "booking": 333,
+    "rating": 2,
+    "comment": "Не советую. Фото не соответствуют реальности. Номер маленький и душный. Рядом стройка, шумно. Дорого за такое качество.",
+    "created_at": "2026-05-27T09:56:08.297Z",
+    "status": "M",
+    "moderated_by": 1,
+    "rejection_reason": null,
+    "published_at": null
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 65,
+  "fields": {
+    "booking": 334,
+    "rating": 5,
+    "comment": "Отличный отель! Чисто, уютно, персонал приветливый. Понравилось расположение, вкусные завтраки. Рекомендую.",
+    "created_at": "2026-05-27T09:56:08.297Z",
+    "status": "P",
+    "moderated_by": 4,
+    "rejection_reason": null,
+    "published_at": "2026-01-24T07:59:39.583Z"
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 66,
+  "fields": {
+    "booking": 335,
+    "rating": 2,
+    "comment": "Ужас. В номере тараканы, постель грязная. Кондиционер не работал, на ресепшене сказали, что до нас работал. Деньги не вернули. Очень плохо.",
+    "created_at": "2026-05-27T09:56:08.297Z",
+    "status": "P",
+    "moderated_by": 3,
+    "rejection_reason": null,
+    "published_at": "2026-05-16T08:58:06.932Z"
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 67,
+  "fields": {
+    "booking": 336,
+    "rating": 3,
+    "comment": "Норм отель, но за свои деньги. Номер просторный, но мебель старая. Завтрак как в столовке. В целом терпимо, но не более.",
+    "created_at": "2026-05-27T09:56:08.297Z",
+    "status": "R",
+    "moderated_by": 2,
+    "rejection_reason": "Комментарий содержит рекламу другого отеля",
+    "published_at": null
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 68,
+  "fields": {
+    "booking": 337,
+    "rating": 4,
+    "comment": "Хорошо, но без восторгов. Чисто, тихо, рядом магазин. Не хватило фена и нормального интернета. Персонал вежливый. Четверка.",
+    "created_at": "2026-05-27T09:56:08.297Z",
+    "status": "P",
+    "moderated_by": 3,
+    "rejection_reason": null,
+    "published_at": "2026-05-27T22:07:53.161Z"
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 69,
+  "fields": {
+    "booking": 338,
+    "rating": 4,
+    "comment": "Очень даже не плохо! Бассейн чистый, территория ухоженая. Номер убирали каждый день. Минус далековато до пляжа, но ничего, прогулка не лишняя. Спасибо!",
+    "created_at": "2026-05-27T09:56:08.297Z",
+    "status": "P",
+    "moderated_by": 1,
+    "rejection_reason": null,
+    "published_at": "2026-05-11T02:09:40.007Z"
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 70,
+  "fields": {
+    "booking": 339,
+    "rating": 3,
+    "comment": "Так се, средне. Номер обшарпанный, персонал дураки с кривыми руками . Завтрак отдельно платный, невкусный. Больше не поеду.",
+    "created_at": "2026-05-27T09:56:08.297Z",
+    "status": "R",
+    "moderated_by": 1,
+    "rejection_reason": "Отзыв содержит оскорбления в адрес персонала",
+    "published_at": null
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 71,
+  "fields": {
+    "booking": 340,
+    "rating": 2,
+    "comment": "фууууууууууууу ужасно. в номере воняет. хозяева жадные. не берите тут ничего. я расстроен.",
+    "created_at": "2026-05-27T09:56:08.297Z",
+    "status": "P",
+    "moderated_by": 4,
+    "rejection_reason": null,
+    "published_at": "2026-05-29T00:17:24.500Z"
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 72,
+  "fields": {
+    "booking": 341,
+    "rating": 4,
+    "comment": "Неплохой вариант для командировки. Тихо, есть где поесть рядом. Номер чистый, но маловат. Интернет летает. Спасибо.",
+    "created_at": "2026-05-27T09:56:08.297Z",
+    "status": "M",
+    "moderated_by": 1,
+    "rejection_reason": null,
+    "published_at": null
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 73,
+  "fields": {
+    "booking": 342,
+    "rating": 2,
+    "comment": "Кошмар. Соседи шумели всю ночь, администратор не помог. В номере холодно, одеяло тонкое. Посуда грязная. Очень плохо.",
+    "created_at": "2026-05-27T09:56:08.297Z",
+    "status": "P",
+    "moderated_by": 5,
+    "rejection_reason": null,
+    "published_at": "2026-02-14T12:39:13.469Z"
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 74,
+  "fields": {
+    "booking": 343,
+    "rating": 3,
+    "comment": "Обычный отель, ничего особенного. Плюс: удобная кровать. Минус: плохая звукоизоляция. В целом за свою цену норм.",
+    "created_at": "2026-05-27T09:56:08.297Z",
+    "status": "P",
+    "moderated_by": 4,
+    "rejection_reason": null,
+    "published_at": "2026-04-16T19:25:29.878Z"
+  }
+},
+{
+  "model": "bookings.review",
+  "pk": 75,
+  "fields": {
+    "booking": 344,
+    "rating": 5,
+    "comment": "ЛУЧШИЙ ОТЕЛЬ!!! Всё супер: чисто, красиво, персонал классный. Бассейн с подогревом. Огромный выбор еды. Спасибо за отдых!",
+    "created_at": "2026-05-27T09:56:08.297Z",
+    "status": "P",
+    "moderated_by": 3,
+    "rejection_reason": null,
+    "published_at": "2026-04-05T22:22:47.066Z"
   }
 }
 ]

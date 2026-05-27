@@ -1,18 +1,13 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from app.bookings.views import (
-    BookingCreateView,
-    MyBookingViewSet,
-    MyReviewViewSet
-)
+from app.bookings.views import BookingViewSet, ReviewViewSet
 
 
 router = DefaultRouter()
-router.register(r'me/bookings', MyBookingViewSet, basename='my-booking')
-router.register(r'me/reviews', MyReviewViewSet, basename='my-review')
+router.register(r'bookings', BookingViewSet, basename='booking')
+router.register(r'reviews', ReviewViewSet, basename='review')
 
 urlpatterns = [
-    path('bookings/', BookingCreateView.as_view(), name='create-booking'),
-    path(r'', include(router.urls)),
+    path(r'me/', include(router.urls)),
 ]

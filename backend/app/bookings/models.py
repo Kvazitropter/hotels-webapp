@@ -138,9 +138,11 @@ class Booking(models.Model):
     def cancel(self, reason: str) -> None:
         if self.status != Booking.Status.ACTIVE:
             raise ValueError('Нельзя отменить неактивное бронирование')
-        self.status = Booking.Status.CANCELLED
-        super(Booking, self).save(update_fields=['status'])
+        self.status = Booking.Status.PENDING
+        self.save(update_fields=['status'])
         CancelledBooking.objects.create(booking=self, cancellation_reason=reason)
+        self.status = Booking.Status.CANCELLED
+        self.save(update_fields=['status'])
 
     @transaction.atomic
     def move(self, new_check_in: date, new_check_out: date, **kwargs):
@@ -148,7 +150,7 @@ class Booking(models.Model):
             raise ValueError('Нельзя перенести неактивное бронирование')
 
         self.status = Booking.Status.PENDING
-        super(Booking, self).save(update_fields=['status'])
+        self.save(update_fields=['status'])
 
         new_booking = Booking.objects.create(
             guest=self.guest,
@@ -163,7 +165,7 @@ class Booking(models.Model):
         )
         self.status = Booking.Status.MOVED
         self.moved_to = new_booking
-        super(Booking, self).save(update_fields=['status', 'moved_to'])
+        self.save(update_fields=['status', 'moved_to'])
 
     @property
     def days_count(self) -> int:
@@ -305,6 +307,18 @@ class Review(models.Model):
         if self.status == Review.Status.PUBLISHED and not self.published_at:
             self.published_at = timezone.now()
         super().save(*args, **kwargs)
+
+    def publish(self, moderated_by: Moderator, published_at:timezone.datetime | None = None):
+        self.status = Review.Status.PUBLISHED
+        self.moderated_by = moderated_by
+        self.published_at = published_at or timezone.now()
+        self.save(update_fields=['status', 'moderated_by', 'published_at'])
+
+    def reject(self, moderated_by: Moderator, rejection_reason: str):
+        self.status = Review.Status.REJECTED
+        self.moderated_by = moderated_by
+        self.rejection_reason = rejection_reason
+        self.save(update_fields=['status', 'moderated_by', 'rejection_reason'])
 
     def __str__(self) -> str:
         return (

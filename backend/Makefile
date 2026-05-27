@@ -61,7 +61,6 @@ list-commands:
 	@echo   create-moderators           - Создать тестовых модераторов (USER_COUNT)
 	@echo   create-admins               - Создать тестовых администраторов (USER_COUNT)
 	@echo   create-users                - Создать пользователей с указанной ролью (USER_COUNT, ROLE_NAME)
-	@echo   gen-users                   - Создать набор пользователей (30 гостей, 5 модераторов, 2 админа)
 	@echo   delete-all-users            - Удалить ВСЕХ пользователей
 	@echo   delete-users                - Удалить пользователей по фильтру (USER_LOOKUP)
 	@echo   create-hotels               - Сгенерировать отели и номера (HOTEL_NAME, HOTEL_COUNT, ROOM_TYPE_COUNT, ROOM_PER_HOTEL)
@@ -72,7 +71,6 @@ list-commands:
 	@echo   delete-hotels-all           - Удалить все отели и типы номеров
 	@echo   create-bookings             - Сгенерировать бронирования и отзывы (BOOKING_COUNT, REVIEW_COUNT)
 	@echo   delete-bookings-all         - Удалить все бронирования и отзывы (BOOKING_LOOKUP)
-	@echo   gen-test-data               - Создать полный набор тестовых данных (пользователи, отели, бронирования)
 	@echo   list-commands               - Показать эту справку
 
 migrate:
@@ -137,8 +135,6 @@ create-users:
 	docker compose exec backend uv run python manage.py create_test_users --role --help
 	docker compose exec backend uv run python manage.py create_test_users --users $(USER_COUNT) --role $(ROLE_NAME)
 
-gen-users: USER_COUNT=30 create-guests USER_COUNT=5 create-moderators USER_COUNT=2 create-admins
-
 delete-all-users:
 	docker compose exec backend uv run python manage.py delete_users
 
@@ -160,7 +156,7 @@ create-room-types:
 create-rooms:
 	@echo "Доступны параметры HOTEL_NAME=<название сети> ROOM_PER_HOTEL=<число> WITHOUT_PHOTO='--without-photos'"
 	docker compose exec backend uv run python manage.py create_test_hotels --name=$(HOTEL_NAME) \
-		--hotel-count=0 --room-type-count=0 --room-per-hotel=$(ROOM_PER_HOTEL) $(WITHOUT_PHOTO)
+		--hotel-count=0 --room-type-count=0 --room-per-hotel=$(ROOM_PER_HOTEL) --photo-per-room $(PHOTO_PER_ROOM)
 
 delete-hotels:
 	@echo "Доступен параметр HOTEL_LOOKUP=<параметр1=значение1,параметр2=значение2>"
@@ -169,8 +165,6 @@ delete-hotels:
 delete-room-types:
 	@echo "Доступен параметр ROOM_TYPE_LOOKUP=<параметр1=значение1,параметр2=значение2>"
 	docker compose exec backend uv run python manage.py delete_room_types --room-type-lookup=$(ROOM_TYPE_LOOKUP)
-
-delete-hotels-all: delete-hotels delete-room-types
 
 # Бронирование
 create-bookings:
@@ -187,5 +181,3 @@ create-reviews:
 delete-bookings-all:
 	@echo "Доступен параметр BOOKING_LOOKUP=<параметр1=значение1,параметр2=значение2>"
 	docker compose exec backend uv run python manage.py delete_bookings --booking-lookup=$(BOOKING_LOOKUP)
-
-gen-test-data: gen-users create-hotels create-bookings
