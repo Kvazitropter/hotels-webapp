@@ -6,15 +6,15 @@ from app.hotels.models import Hotel, RoomCategory, RoomType, Room, RoomPhoto
 class RoomPhotoInline(admin.TabularInline):
     model = RoomPhoto
     extra = 0
-    fields = ['photo', 'photo_preview', 'order_number']
+    fields = ['photo_url', 'photo_preview', 'order_number']
     readonly_fields = ['photo_preview']
 
     @admin.display(description='Превью')
     def photo_preview(self, obj):
-        if obj.photo:
+        if obj.photo_url:
             return format_html(
                 '<img src="{}" style="height:60px;border-radius:4px">',
-                obj.photo.url
+                obj.photo_url
             )
         return '-'
 
@@ -77,6 +77,7 @@ class RoomCategoryAdmin(admin.ModelAdmin):
         'min_rooms', 'requires_kitchen', 'required_bathroom_type',
     ]
     list_filter = ['requires_kitchen', 'required_bathroom_type']
+    ordering = ['-min_area', '-min_rooms', 'tier']
     fieldsets = (
         ('Категория', {
             'fields': ('tier',),
@@ -105,6 +106,7 @@ class RoomTypeAdmin(admin.ModelAdmin):
     list_per_page = 30
     list_filter = ['category', 'has_balcony', 'has_kitchen', 'bathroom_type']
     search_fields = ['name', 'description']
+    ordering = ['-category__min_area', '-category__min_rooms', 'category__tier', '-size', 'name']
     autocomplete_fields = ['category']
     fieldsets = (
         ('Основная информация', {
@@ -139,6 +141,7 @@ class RoomAdmin(admin.ModelAdmin):
         'hotel', 'room_type', 'room_type__category',
         'is_pets_allowed', 'is_smoking_allowed',
     ]
+    ordering = ['hotel__name', 'floor', 'number_on_floor', 'variant']
     readonly_fields = ['room_number']
     search_fields = ['room_type__name', 'hotel__name']
     autocomplete_fields = ['hotel', 'room_type']
@@ -185,18 +188,19 @@ class RoomPhotoAdmin(admin.ModelAdmin):
     list_display = ['get_room_number', 'photo_preview', 'order_number']
     list_per_page = 30
     search_fields = ['room__room_type__name', 'room__hotel__name']
+    ordering = ['room__hotel__name', 'room__floor', 'room__number_on_floor', 'room__variant']
     fieldsets = (
         ('Загрузка фото', {
-            'fields': ('room', 'photo', 'order_number'),
+            'fields': ('room', 'photo_url', 'order_number'),
         }),
     )
 
     @admin.display(description='Превью')
     def photo_preview(self, obj):
-        if obj.photo:
+        if obj.photo_url:
             return format_html(
                 '<img src="{}" style="height:60px;border-radius:4px">',
-                obj.photo.url
+                obj.photo_url
             )
         return '-'
 

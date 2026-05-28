@@ -1,13 +1,9 @@
 from datetime import time
-from io import BytesIO
 import random
 from typing import Optional
 
-from django.core.files.images import ImageFile
-from django.core.files.uploadedfile import SimpleUploadedFile
 from faker import Faker
 from faker.providers import BaseProvider
-from PIL import Image
 
 from app.hotels.models import RoomCategory, Hotel
 
@@ -233,22 +229,14 @@ class RoomProvider(BaseProvider):
 class RoomPhotoProvider(BaseProvider):
     '''Кастомный Faker-провайдер для генерации данных модели RoomPhoto'''
 
-    def photo(self) -> ImageFile:
-        filename = f'test_photo_{self.generator.random_number(digits=3)}'
-        img = Image.new('RGB', (800, 600), color=self.generator.color_rgb())
-        buffer = BytesIO()
-        img.save(buffer, format='JPEG')
-        return SimpleUploadedFile(
-            name=f'{filename}.jpg',
-            content=buffer.getvalue(),
-            content_type='image/jpeg',
-        )
+    def photo_url(self) -> str:
+        return self.generator.url()
 
     def order_number(self) -> int:
         return self.generator.random_int(min=1, max=10)
 
     def room_photo(self) -> dict:
         return {
-            'photo': self.photo(),
+            'photo_url': self.photo_url(),
             'order_number': self.order_number(),
         }

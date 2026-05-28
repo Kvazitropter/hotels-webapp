@@ -2,7 +2,7 @@ from datetime import time
 
 from django.db import models, transaction
 from django.core.exceptions import ValidationError
-from django.core.validators import MinValueValidator, MaxValueValidator, RegexValidator, FileExtensionValidator
+from django.core.validators import MinValueValidator, MaxValueValidator, RegexValidator
 from phonenumber_field.modelfields import PhoneNumberField
 
 from app.hotels.managers import RoomManager
@@ -348,22 +348,14 @@ class Room(models.Model):
 def _photo_path(instance, filename) -> str:
     return f'hotels/{instance.room.hotel_id}/rooms/{instance.room_id}/{filename}'
 
-
 class RoomPhoto(models.Model):
     room = models.ForeignKey(
         'hotels.Room',
         on_delete=models.CASCADE,
         related_name='photos',
     )
-    photo = models.ImageField(
-        upload_to=_photo_path,
-        validators=[
-            FileExtensionValidator(
-                allowed_extensions=['png', 'jpg', 'jpeg', 'webp'],
-                message='Формат файла не поддерживается'
-            )
-        ],
-        verbose_name='Фото',
+    photo_url = models.URLField(
+        verbose_name='Фото URL',
     )
     order_number = models.PositiveSmallIntegerField(
         verbose_name='Порядковый номер',

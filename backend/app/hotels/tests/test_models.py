@@ -1,7 +1,6 @@
 from decimal import Decimal
 
 from django.core.exceptions import ValidationError
-from django.core.files.uploadedfile import SimpleUploadedFile
 from django.db import IntegrityError, transaction
 from django.test import TestCase
 
@@ -354,32 +353,27 @@ class RoomPhotoModelTests(TestCase):
             number_on_floor=5,
             variant='A',
         )
-        self.image_content = b'fake image data'
-        self.image = SimpleUploadedFile(
-            'test.jpg', self.image_content, content_type='image/jpeg'
-        )
+        self.photo_url = 'http://test-photo'
 
     def test_create_room_photo_success(self):
         photo = RoomPhoto.objects.create(
-            room=self.room, photo=self.image, order_number=1
+            room=self.room, photo_url=self.photo_url, order_number=1
         )
         self.assertEqual(photo.room, self.room)
-        self.assertTrue(
-            photo.photo.name.startswith(f'hotels/{self.hotel.id}/rooms/{self.room.id}/')
-        )
+        self.assertEqual(photo.photo_url, self.photo_url)
         self.assertEqual(photo.order_number, 1)
 
-    def test_invalid_file_extension_raises_validation_error(self):
-        text_file = SimpleUploadedFile('test.txt', b'content', content_type='text/plain')
-        photo = RoomPhoto(room=self.room, photo=text_file, order_number=1)
-        with self.assertRaises(ValidationError):
-            photo.full_clean()
-
     def test_ordering_on_create_shifts_existing_photos(self):
-        photo1 = RoomPhoto.objects.create(room=self.room, photo=self.image, order_number=1)
-        photo2 = RoomPhoto.objects.create(room=self.room, photo=self.image, order_number=2)
+        photo1 = RoomPhoto.objects.create(
+            room=self.room, photo_url=self.photo_url, order_number=1
+        )
+        photo2 = RoomPhoto.objects.create(
+            room=self.room, photo_url=self.photo_url, order_number=2
+        )
 
-        photo_new = RoomPhoto.objects.create(room=self.room, photo=self.image, order_number=1)
+        photo_new = RoomPhoto.objects.create(
+            room=self.room, photo_url=self.photo_url, order_number=1
+        )
         photo1.refresh_from_db()
         photo2.refresh_from_db()
         self.assertEqual(photo_new.order_number, 1)
@@ -387,9 +381,15 @@ class RoomPhotoModelTests(TestCase):
         self.assertEqual(photo2.order_number, 3)
 
     def test_ordering_on_update_when_increasing_order(self):
-        photo1 = RoomPhoto.objects.create(room=self.room, photo=self.image, order_number=1)
-        photo2 = RoomPhoto.objects.create(room=self.room, photo=self.image, order_number=2)
-        photo3 = RoomPhoto.objects.create(room=self.room, photo=self.image, order_number=3)
+        photo1 = RoomPhoto.objects.create(
+            room=self.room, photo_url=self.photo_url, order_number=1
+        )
+        photo2 = RoomPhoto.objects.create(
+            room=self.room, photo_url=self.photo_url, order_number=2
+        )
+        photo3 = RoomPhoto.objects.create(
+            room=self.room, photo_url=self.photo_url, order_number=3
+        )
 
         photo1.order_number = 3
         photo1.save()
@@ -402,9 +402,15 @@ class RoomPhotoModelTests(TestCase):
         self.assertEqual(photo3.order_number, 2)
 
     def test_ordering_on_update_when_decreasing_order(self):
-        photo1 = RoomPhoto.objects.create(room=self.room, photo=self.image, order_number=1)
-        photo2 = RoomPhoto.objects.create(room=self.room, photo=self.image, order_number=2)
-        photo3 = RoomPhoto.objects.create(room=self.room, photo=self.image, order_number=3)
+        photo1 = RoomPhoto.objects.create(
+            room=self.room, photo_url=self.photo_url, order_number=1
+        )
+        photo2 = RoomPhoto.objects.create(
+            room=self.room, photo_url=self.photo_url, order_number=2
+        )
+        photo3 = RoomPhoto.objects.create(
+            room=self.room, photo_url=self.photo_url, order_number=3
+        )
 
         photo3.order_number = 1
         photo3.save()
@@ -417,9 +423,15 @@ class RoomPhotoModelTests(TestCase):
         self.assertEqual(photo2.order_number, 3)
 
     def test_deleting_photo_shifts_higher_order_numbers_down(self):
-        photo1 = RoomPhoto.objects.create(room=self.room, photo=self.image, order_number=1)
-        photo2 = RoomPhoto.objects.create(room=self.room, photo=self.image, order_number=2)
-        photo3 = RoomPhoto.objects.create(room=self.room, photo=self.image, order_number=3)
+        photo1 = RoomPhoto.objects.create(
+            room=self.room, photo_url=self.photo_url, order_number=1
+        )
+        photo2 = RoomPhoto.objects.create(
+            room=self.room, photo_url=self.photo_url, order_number=2
+        )
+        photo3 = RoomPhoto.objects.create(
+            room=self.room, photo_url=self.photo_url, order_number=3
+        )
 
         photo2.delete()
         photo1.refresh_from_db()

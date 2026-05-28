@@ -212,9 +212,9 @@
   "fields": {
     "name": "Стандарт (первая категория)",
     "category": 6,
-    "description": "Уютный номер первой категории площадью 106 м² с одной спальней. Рассчитан на размещение до 3 гостей. В номере: две односпальные или одна двуспальная кровать, санузел с ванной, телевизор, холодильник. Без кухни и балкона. Подходит для коротких деловых поездок или ночлега.",
-    "size": 106,
-    "standard_capacity": 3,
+    "description": "Уютный номер первой категории площадью 14 м². Рассчитан на размещение до 2 гостей. Двуспальная кровать, санузел с ванной, телевизор, холодильник. Без кухни и балкона. Подходит для коротких деловых поездок или ночлега.",
+    "size": 14,
+    "standard_capacity": 2,
     "bedroom_count": 1,
     "living_room_count": 0,
     "bathroom_count": 1,
@@ -229,11 +229,11 @@
   "fields": {
     "name": "Апартаменты с нестандартной планировкой",
     "category": 2,
-    "description": "Необычные апартаменты с планировкой: 5 спален и 5 гостиных! Общая площадь 97 м² — пространство разделено на множество уютных зон. Подойдут для шумной компании или творческого коллектива до 3 гостей. Две ванные комнаты. Полностью оборудованная кухня. Без балкона, но из окон открывается вид на тихий двор.",
+    "description": "Апартаменты с оригинальной планировкой площадью 97 м². Две просторные спальни и гостиная с обеденной зоной. Подойдут для компании до 4 гостей. Две ванные комнаты. Полностью оборудованная кухня. Без балкона, но из окон открывается вид на тихий двор.",
     "size": 97,
-    "standard_capacity": 3,
-    "bedroom_count": 5,
-    "living_room_count": 5,
+    "standard_capacity": 4,
+    "bedroom_count": 2,
+    "living_room_count": 1,
     "bathroom_count": 2,
     "bathroom_type": "F",
     "has_kitchen": true,
@@ -246,11 +246,11 @@
   "fields": {
     "name": "Люкс с панорамными окнами",
     "category": 3,
-    "description": "Элегантный люкс площадью 106 м² с пятью спальнями и пятью гостиными — уникальное предложение для размещения до 4 гостей. Просторная ванная комната с джакузи. Огромные панорамные окна. Кухни нет, но есть зона для завтраков и мини-бар. Без балкона. Идеально для романтического отдыха или небольших торжеств.",
+    "description": "Элегантный люкс площадью 106 м² с двумя спальнями и гостиной. Предназначен для размещения до 4 гостей. Просторная ванная комната с джакузи. Огромные панорамные окна. Кухни нет, но есть зона для завтраков и мини-бар. Без балкона. Идеально для романтического отдыха или небольших торжеств.",
     "size": 106,
     "standard_capacity": 4,
-    "bedroom_count": 5,
-    "living_room_count": 5,
+    "bedroom_count": 2,
+    "living_room_count": 1,
     "bathroom_count": 1,
     "bathroom_type": "F",
     "has_kitchen": false,
@@ -263,12 +263,12 @@
   "fields": {
     "name": "Эконом (третья категория) частичный санузел",
     "category": 8,
-    "description": "Экономичный номер третьей категории площадью 73 м² с тремя спальнями и тремя гостиными. Рассчитан на 4 гостей. Две ванные комнаты с частичным сантехническим оснащением (душ, раковина, туалет). Без кухни и балкона. Расположение в тихом районе. Подходит для неприхотливых путешественников.",
-    "size": 73,
-    "standard_capacity": 4,
-    "bedroom_count": 3,
-    "living_room_count": 3,
-    "bathroom_count": 2,
+    "description": "Экономичный номер третьей категории площадью 18 м². Одна спальня с дополнительным спальным местом, рассчитан на 2 гостей. Ванная комната с частичным сантехническим оснащением (душ, раковина, туалет). Без кухни и балкона. Расположение в тихом районе. Подходит для неприхотливых путешественников.",
+    "size": 18,
+    "standard_capacity": 2,
+    "bedroom_count": 1,
+    "living_room_count": 0,
+    "bathroom_count": 1,
     "bathroom_type": "P",
     "has_kitchen": false,
     "has_balcony": false
@@ -280,11 +280,11 @@
   "fields": {
     "name": "Люкс для двоих",
     "category": 3,
-    "description": "Роскошный люкс для двоих площадью 144 м². Одна просторная спальня, гостиная объединена со спальной зоной. Ванная комната с гидромассажной ванной. Огромные окна. Без кухни и балкона, но есть капсульная кофемашина и мини-холодильник. Отличный вариант для медового месяца.",
-    "size": 144,
+    "description": "Роскошный люкс для двоих площадью 40 м². Одна просторная спальня и отдельная гостиная. Ванная комната с гидромассажной ванной. Большие окна. Без кухни и балкона, но есть капсульная кофемашина и мини-холодильник. Отличный вариант для медового месяца.",
+    "size": 40,
     "standard_capacity": 2,
     "bedroom_count": 1,
-    "living_room_count": 0,
+    "living_room_count": 1,
     "bathroom_count": 1,
     "bathroom_type": "F",
     "has_kitchen": false,
@@ -297,9 +297,9 @@
   "fields": {
     "name": "Джуниор сюит с балконом",
     "category": 4,
-    "description": "Уютный джуниор сюит площадью 177 м². Одна комната, совмещающая спальню и гостиную. Рассчитан на размещение до 8 гостей (дополнительные места — раскладные диваны). Есть балкон. Ванная комната с душем. Без кухни. Идеально для большой компании, ценящей простор и свежий воздух.",
-    "size": 177,
-    "standard_capacity": 8,
+    "description": "Уютный джуниор сюит площадью 35 м². Одна комната, совмещающая спальню и гостиную. Рассчитан на размещение 2 гостей. Есть балкон. Ванная комната с душем. Без кухни. Идеально для пары, ценящей простор и свежий воздух.",
+    "size": 35,
+    "standard_capacity": 2,
     "bedroom_count": 1,
     "living_room_count": 0,
     "bathroom_count": 1,
@@ -312,14 +312,14 @@
   "model": "hotels.roomtype",
   "pk": 48,
   "fields": {
-    "name": "Вторая категория (мини-капсулы)",
+    "name": "Вторая категория (стандартный)",
     "category": 7,
-    "description": "Компактный номер второй категории площадью всего 9 м² с пятью спальнями! Очень необычная планировка — крошечные капсульные комнаты для максимальной экономии пространства. Подходит для группы студентов или рюкзачников до 3 человек. Две ванные комнаты (полный санузел). Без кухни и балкона. Расположен на верхнем этаже.",
+    "description": "Компактный номер второй категории площадью 9 м². Одна спальня с двуспальной кроватью, рассчитан на 2 гостей. Ванная комната с полным санузлом. Без кухни и балкона. Расположен на верхнем этаже. Идеально для тех, кому нужно просто переночевать в комфорте.",
     "size": 9,
-    "standard_capacity": 3,
-    "bedroom_count": 5,
+    "standard_capacity": 2,
+    "bedroom_count": 1,
     "living_room_count": 0,
-    "bathroom_count": 2,
+    "bathroom_count": 1,
     "bathroom_type": "F",
     "has_kitchen": false,
     "has_balcony": false
@@ -331,10 +331,10 @@
   "fields": {
     "name": "Студия с кухней",
     "category": 5,
-    "description": "Светлая студия площадью 63 м² с четырьмя спальными местами (раскладной диван и две отдельные кровати). Четыре отдельные спальни? На самом деле это открытое пространство, зонированное перегородками. Маленькая кухня-ниша с плитой и холодильником. Две ванные комнаты. Без балкона. Вид во двор. Отличный выбор для длительного проживания.",
+    "description": "Светлая студия площадью 63 м² с двумя спальными местами. Открытое пространство, зонированное на спальную и жилую зоны. Маленькая кухня-ниша с плитой и холодильником. Две ванные комнаты. Без балкона. Вид во двор. Отличный выбор для длительного проживания.",
     "size": 63,
     "standard_capacity": 4,
-    "bedroom_count": 4,
+    "bedroom_count": 1,
     "living_room_count": 0,
     "bathroom_count": 2,
     "bathroom_type": "F",
@@ -348,11 +348,11 @@
   "fields": {
     "name": "Сюит премиум-класса с балконом",
     "category": 1,
-    "description": "Эксклюзивный сюит премиум-класса площадью 119 м². Одна большая спальня, гостиная с панорамными окнами. Балкон. Ванная комната с джакузи и тропическим душем. Без кухни, но есть мини-бар и зона для чая. Рассчитан на 2 гостей. Идеально для деловых людей и пар.",
+    "description": "Эксклюзивный сюит премиум-класса площадью 119 м². Две спальни и гостиная с панорамными окнами. Балкон с видом на город. Ванная комната с джакузи и тропическим душем. Без кухни, но есть мини-бар и зона для чая. Рассчитан на 2 гостей. Идеально для деловых людей и пар.",
     "size": 119,
     "standard_capacity": 2,
-    "bedroom_count": 1,
-    "living_room_count": 0,
+    "bedroom_count": 2,
+    "living_room_count": 1,
     "bathroom_count": 1,
     "bathroom_type": "F",
     "has_kitchen": false,
@@ -365,11 +365,11 @@
   "fields": {
     "name": "Четвёртая категория (частичный санузел)",
     "category": 9,
-    "description": "Бюджетный номер четвёртой категории площадью 152 м² (необычно большой для эконома). Одна спальня и одна гостиная. Рассчитан на 4 гостей (дополнительные кровати). Ванная комната с частичными удобствами (душ, туалет, раковина). Без кухни и балкона. Подходит для тех, кто ценит простор, но не требует полного сервиса.",
-    "size": 152,
-    "standard_capacity": 4,
+    "description": "Бюджетный номер четвёртой категории площадью 16 м². Одна спальня, рассчитан на 2 гостей. Ванная комната с частичными удобствами (душ, туалет, раковина). Без кухни и балкона. Подходит для тех, кто ищет доступное жильё с базовым комфортом.",
+    "size": 16,
+    "standard_capacity": 2,
     "bedroom_count": 1,
-    "living_room_count": 1,
+    "living_room_count": 0,
     "bathroom_count": 1,
     "bathroom_type": "P",
     "has_kitchen": false,
@@ -382,11 +382,11 @@
   "fields": {
     "name": "Сюит для одного гостя",
     "category": 1,
-    "description": "Роскошный сюит для одного гостя площадью 75 м². Четыре спальни? Для одного человека — невероятный простор. Гостиная, кабинет, большая спальня и гостевая спальня. Одна ванная комната с полным набором. Балкон с видом на город. Без кухни. Отлично подходит для требовательного solo-путешественника.",
+    "description": "Роскошный сюит для одного гостя площадью 75 м². Две спальни и гостиная — идеальный простор для solo-путешественника. Ванная комната с полным набором. Балкон с видом на город. Без кухни. Отлично подходит для требовательного гостя.",
     "size": 75,
     "standard_capacity": 1,
-    "bedroom_count": 4,
-    "living_room_count": 0,
+    "bedroom_count": 2,
+    "living_room_count": 1,
     "bathroom_count": 1,
     "bathroom_type": "F",
     "has_kitchen": false,
@@ -399,11 +399,11 @@
   "fields": {
     "name": "Стандарт (первая категория) с балконом",
     "category": 6,
-    "description": "Просторный стандартный номер первой категории площадью 112 м². Три спальни, гостиная зона. Рассчитан на 8 гостей (семья или компания). Балкон. Одна ванная комната. Без кухни. В номере: три двуспальные кровати, два дивана, телевизор, холодильник. Хороший вариант для группового туризма.",
-    "size": 112,
-    "standard_capacity": 8,
-    "bedroom_count": 3,
-    "living_room_count": 1,
+    "description": "Стандартный номер первой категории площадью 18 м² с одной спальней. Рассчитан на 3 гостей (двуспальная кровать и раскладное кресло). Балкон. Одна ванная комната. Без кухни. Телевизор, холодильник, кондиционер. Хороший вариант для коротких поездок.",
+    "size": 18,
+    "standard_capacity": 3,
+    "bedroom_count": 1,
+    "living_room_count": 0,
     "bathroom_count": 1,
     "bathroom_type": "F",
     "has_kitchen": false,
@@ -416,11 +416,11 @@
   "fields": {
     "name": "Просторная студия на одного",
     "category": 5,
-    "description": "Небольшая студия на 1 гостя площадью 193 м² — очень просторно! Фактически это две спальни и две гостиные в открытой планировке. Полностью оборудованная кухня. Одна ванная комната. Без балкона. Идеально для длительного проживания одного человека или пары, любящей готовить.",
-    "size": 193,
+    "description": "Уютная студия на 1 гостя площадью 30 м². Одна спальная зона в открытой планировке. Полностью оборудованная кухня. Одна ванная комната. Без балкона. Идеально для длительного проживания одного человека, любящего готовить.",
+    "size": 30,
     "standard_capacity": 1,
-    "bedroom_count": 2,
-    "living_room_count": 2,
+    "bedroom_count": 1,
+    "living_room_count": 0,
     "bathroom_count": 1,
     "bathroom_type": "F",
     "has_kitchen": true,
@@ -433,11 +433,11 @@
   "fields": {
     "name": "Третья категория (частичный санузел)",
     "category": 8,
-    "description": "Номер третьей категории площадью 130 м² с четырьмя спальнями и двумя гостиными. Рассчитан на 3 гостей (несоответствие площадей — из-за большого количества комнат). Одна ванная комната с частичными удобствами. Без кухни и балкона. Расположен на верхних этажах. Подходит для бюджетных путешественников, ценящих тишину.",
-    "size": 130,
-    "standard_capacity": 3,
-    "bedroom_count": 4,
-    "living_room_count": 2,
+    "description": "Номер третьей категории площадью 12 м² с одной спальней. Рассчитан на 2 гостей. Ванная комната с частичными удобствами (душ, раковина, туалет). Без кухни и балкона. Расположен на верхних этажах. Подходит для бюджетных путешественников, ценящих тишину.",
+    "size": 12,
+    "standard_capacity": 2,
+    "bedroom_count": 1,
+    "living_room_count": 0,
     "bathroom_count": 1,
     "bathroom_type": "P",
     "has_kitchen": false,
@@ -450,12 +450,12 @@
   "fields": {
     "name": "Третья категория (компактный)",
     "category": 8,
-    "description": "Компактный номер третьей категории площадью 22 м² с тремя спальнями и гостиной — очень плотная планировка. Рассчитан на 6 гостей. Три ванные комнаты с частичными удобствами (только душевые кабины). Без кухни и балкона. Вариант для неприхотливых групп, которым нужно только переночевать.",
+    "description": "Компактный номер третьей категории площадью 22 м² с одной спальней и гостиной. Рассчитан на 3 гостей (раскладной диван в гостиной). Одна ванная комната с частичными удобствами (душевая кабина, туалет). Без кухни и балкона. Вариант для неприхотливых гостей, которым нужно только переночевать.",
     "size": 22,
-    "standard_capacity": 6,
-    "bedroom_count": 3,
+    "standard_capacity": 3,
+    "bedroom_count": 1,
     "living_room_count": 1,
-    "bathroom_count": 3,
+    "bathroom_count": 1,
     "bathroom_type": "P",
     "has_kitchen": false,
     "has_balcony": false
@@ -467,11 +467,11 @@
   "fields": {
     "name": "Студия с кухней (большая компания)",
     "category": 5,
-    "description": "Просторная студия площадью 95 м² с четырьмя спальнями и тремя гостиными — по сути, полноценная квартира. Рассчитана на 7 гостей. Полностью оборудованная кухня. Одна ванная комната. Без балкона. Центральное расположение. Подходит для больших компаний, желающих быть в центре событий.",
-    "size": 95,
-    "standard_capacity": 7,
-    "bedroom_count": 4,
-    "living_room_count": 3,
+    "description": "Просторная студия площадью 40 м². Одна спальная зона с раскладными диванами — рассчитана на 4 гостей. Полностью оборудованная кухня. Одна ванная комната. Без балкона. Центральное расположение. Подходит для компаний, желающих быть в центре событий.",
+    "size": 40,
+    "standard_capacity": 4,
+    "bedroom_count": 1,
+    "living_room_count": 0,
     "bathroom_count": 1,
     "bathroom_type": "F",
     "has_kitchen": true,
@@ -484,9 +484,9 @@
   "fields": {
     "name": "Апартаменты с кухней",
     "category": 2,
-    "description": "Комфортабельные апартаменты площадью 156 м² с двумя спальнями и гостиной. Рассчитаны на 8 гостей (дополнительные спальные места — раскладные диваны). Полностью оборудованная кухня, две ванные комнаты. Без балкона. Окна выходят на оживлённую улицу с магазинами и кафе. Отличный выбор для семейного отдыха.",
-    "size": 156,
-    "standard_capacity": 8,
+    "description": "Комфортабельные апартаменты площадью 65 м² с двумя спальнями и гостиной. Рассчитаны на 5 гостей (дополнительные спальные места — раскладные диваны). Полностью оборудованная кухня, две ванные комнаты. Без балкона. Окна выходят на оживлённую улицу с магазинами и кафе. Отличный выбор для семейного отдыха.",
+    "size": 65,
+    "standard_capacity": 5,
     "bedroom_count": 2,
     "living_room_count": 1,
     "bathroom_count": 2,
@@ -501,12 +501,12 @@
   "fields": {
     "name": "Стандарт (первая категория) с тремя спальнями",
     "category": 6,
-    "description": "Стандартный номер первой категории площадью 156 м² с тремя спальнями и тремя ванными комнатами. Рассчитан на 5 гостей. Без гостиной — только спальни и коридор. Без кухни и балкона. Расположен в тихом квартале. В номере: кондиционер, телевизор, Wi-Fi. Подходит для группы друзей или семьи, которым важны отдельные спальни.",
-    "size": 156,
-    "standard_capacity": 5,
-    "bedroom_count": 3,
+    "description": "Стандартный номер первой категории площадью 20 м² с одной спальней. Рассчитан на 3 гостей. Без гостиной и кухни. Без балкона. Расположен в тихом квартале. Кондиционер, телевизор, Wi-Fi. Подходит для небольших групп, которым важна экономичность.",
+    "size": 20,
+    "standard_capacity": 3,
+    "bedroom_count": 1,
     "living_room_count": 0,
-    "bathroom_count": 3,
+    "bathroom_count": 1,
     "bathroom_type": "F",
     "has_kitchen": false,
     "has_balcony": false
@@ -518,12 +518,12 @@
   "fields": {
     "name": "Апартаменты с четырьмя санузлами",
     "category": 2,
-    "description": "Просторные апартаменты площадью 69 м² с четырьмя спальнями и четырьмя гостиными — уникальная планировка. Рассчитаны на 7 гостей. Полностью оборудованная кухня, четыре ванные комнаты. Без балкона. Идеально для большой компании, желающей жить все вместе, но с максимальным комфортом.",
+    "description": "Просторные апартаменты площадью 69 м² с двумя спальнями и гостиной. Рассчитаны на 4 гостей. Полностью оборудованная кухня, две ванные комнаты. Без балкона. Идеально для компании, желающей жить вместе с максимальным комфортом.",
     "size": 69,
-    "standard_capacity": 7,
-    "bedroom_count": 4,
-    "living_room_count": 4,
-    "bathroom_count": 4,
+    "standard_capacity": 4,
+    "bedroom_count": 2,
+    "living_room_count": 1,
+    "bathroom_count": 2,
     "bathroom_type": "F",
     "has_kitchen": true,
     "has_balcony": false
@@ -535,7 +535,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 55,
-    "bed_count": 4,
+    "bed_count": 2,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "19114.17",
@@ -551,7 +551,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 51,
-    "bed_count": 7,
+    "bed_count": 2,
     "is_pets_allowed": true,
     "is_smoking_allowed": true,
     "price_per_night": "12020.72",
@@ -567,7 +567,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 51,
-    "bed_count": 1,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "8799.85",
@@ -583,7 +583,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 51,
-    "bed_count": 8,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "10255.18",
@@ -599,7 +599,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 51,
-    "bed_count": 6,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "18625.97",
@@ -615,7 +615,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 56,
-    "bed_count": 6,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "9134.33",
@@ -631,7 +631,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 57,
-    "bed_count": 9,
+    "bed_count": 4,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "11318.24",
@@ -647,7 +647,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 53,
-    "bed_count": 1,
+    "bed_count": 3,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "13560.29",
@@ -663,7 +663,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 55,
-    "bed_count": 4,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "3254.85",
@@ -695,7 +695,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 45,
-    "bed_count": 10,
+    "bed_count": 2,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "11591.35",
@@ -711,7 +711,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 45,
-    "bed_count": 1,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "3437.91",
@@ -727,7 +727,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 48,
-    "bed_count": 6,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "19694.57",
@@ -743,7 +743,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 57,
-    "bed_count": 3,
+    "bed_count": 4,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "6790.50",
@@ -759,7 +759,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 42,
-    "bed_count": 10,
+    "bed_count": 2,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "13180.87",
@@ -775,7 +775,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 51,
-    "bed_count": 10,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "13590.59",
@@ -791,7 +791,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 43,
-    "bed_count": 6,
+    "bed_count": 4,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "11082.63",
@@ -807,7 +807,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 50,
-    "bed_count": 7,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "1657.14",
@@ -823,7 +823,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 49,
-    "bed_count": 3,
+    "bed_count": 4,
     "is_pets_allowed": true,
     "is_smoking_allowed": true,
     "price_per_night": "17507.44",
@@ -839,7 +839,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 49,
-    "bed_count": 3,
+    "bed_count": 5,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "2358.13",
@@ -855,7 +855,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 47,
-    "bed_count": 7,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "1374.27",
@@ -871,7 +871,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 59,
-    "bed_count": 9,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "14013.30",
@@ -903,7 +903,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 58,
-    "bed_count": 2,
+    "bed_count": 6,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "6872.64",
@@ -919,7 +919,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 51,
-    "bed_count": 8,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "13301.56",
@@ -935,7 +935,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 51,
-    "bed_count": 4,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "12233.41",
@@ -951,7 +951,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 60,
-    "bed_count": 8,
+    "bed_count": 4,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "10785.15",
@@ -967,7 +967,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 56,
-    "bed_count": 4,
+    "bed_count": 3,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "13109.60",
@@ -983,7 +983,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 52,
-    "bed_count": 2,
+    "bed_count": 1,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "15360.44",
@@ -999,7 +999,7 @@
   "fields": {
     "hotel": 16,
     "room_type": 46,
-    "bed_count": 7,
+    "bed_count": 2,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "19938.16",
@@ -1015,7 +1015,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 56,
-    "bed_count": 7,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "13185.49",
@@ -1031,7 +1031,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 56,
-    "bed_count": 3,
+    "bed_count": 4,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "4363.07",
@@ -1047,7 +1047,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 49,
-    "bed_count": 5,
+    "bed_count": 4,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "19541.55",
@@ -1063,7 +1063,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 50,
-    "bed_count": 10,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "19705.61",
@@ -1095,7 +1095,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 50,
-    "bed_count": 9,
+    "bed_count": 3,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "10115.29",
@@ -1143,7 +1143,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 51,
-    "bed_count": 10,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "11814.97",
@@ -1191,7 +1191,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 56,
-    "bed_count": 8,
+    "bed_count": 4,
     "is_pets_allowed": true,
     "is_smoking_allowed": true,
     "price_per_night": "1517.77",
@@ -1207,7 +1207,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 56,
-    "bed_count": 9,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "5549.76",
@@ -1223,7 +1223,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 49,
-    "bed_count": 1,
+    "bed_count": 4,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "11817.21",
@@ -1239,7 +1239,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 50,
-    "bed_count": 4,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "10031.88",
@@ -1255,7 +1255,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 59,
-    "bed_count": 5,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "19400.47",
@@ -1271,7 +1271,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 44,
-    "bed_count": 8,
+    "bed_count": 4,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "16472.21",
@@ -1287,7 +1287,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 48,
-    "bed_count": 6,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "5755.23",
@@ -1303,7 +1303,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 51,
-    "bed_count": 9,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "3633.94",
@@ -1351,7 +1351,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 56,
-    "bed_count": 5,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "16966.26",
@@ -1367,7 +1367,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 56,
-    "bed_count": 7,
+    "bed_count": 4,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "4614.02",
@@ -1383,7 +1383,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 56,
-    "bed_count": 5,
+    "bed_count": 3,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "8206.64",
@@ -1399,7 +1399,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 56,
-    "bed_count": 9,
+    "bed_count": 3,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "17581.42",
@@ -1431,7 +1431,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 56,
-    "bed_count": 7,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "18687.73",
@@ -1447,7 +1447,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 54,
-    "bed_count": 8,
+    "bed_count": 1,
     "is_pets_allowed": true,
     "is_smoking_allowed": true,
     "price_per_night": "4908.32",
@@ -1463,7 +1463,7 @@
   "fields": {
     "hotel": 17,
     "room_type": 54,
-    "bed_count": 9,
+    "bed_count": 1,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "18738.30",
@@ -1495,7 +1495,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 47,
-    "bed_count": 7,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "1009.66",
@@ -1511,7 +1511,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 51,
-    "bed_count": 5,
+    "bed_count": 2,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "9567.57",
@@ -1527,7 +1527,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 51,
-    "bed_count": 3,
+    "bed_count": 2,
     "is_pets_allowed": true,
     "is_smoking_allowed": true,
     "price_per_night": "10620.95",
@@ -1543,7 +1543,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 55,
-    "bed_count": 6,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "9209.73",
@@ -1559,7 +1559,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 58,
-    "bed_count": 7,
+    "bed_count": 5,
     "is_pets_allowed": true,
     "is_smoking_allowed": true,
     "price_per_night": "12806.21",
@@ -1575,7 +1575,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 54,
-    "bed_count": 6,
+    "bed_count": 1,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "18225.57",
@@ -1591,7 +1591,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 41,
-    "bed_count": 3,
+    "bed_count": 6,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "13950.96",
@@ -1607,7 +1607,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 47,
-    "bed_count": 7,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "14128.93",
@@ -1639,7 +1639,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 46,
-    "bed_count": 9,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "15130.20",
@@ -1671,7 +1671,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 42,
-    "bed_count": 1,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "16265.81",
@@ -1687,7 +1687,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 49,
-    "bed_count": 2,
+    "bed_count": 4,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "15160.94",
@@ -1703,7 +1703,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 52,
-    "bed_count": 4,
+    "bed_count": 1,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "4903.27",
@@ -1719,7 +1719,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 45,
-    "bed_count": 3,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "3007.16",
@@ -1735,7 +1735,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 51,
-    "bed_count": 9,
+    "bed_count": 2,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "3433.37",
@@ -1767,7 +1767,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 59,
-    "bed_count": 6,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "14535.47",
@@ -1783,7 +1783,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 59,
-    "bed_count": 5,
+    "bed_count": 4,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "6465.72",
@@ -1799,7 +1799,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 45,
-    "bed_count": 8,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "1198.58",
@@ -1815,7 +1815,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 46,
-    "bed_count": 3,
+    "bed_count": 2,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "15708.92",
@@ -1831,7 +1831,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 54,
-    "bed_count": 4,
+    "bed_count": 1,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "6543.16",
@@ -1847,7 +1847,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 46,
-    "bed_count": 10,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "18801.32",
@@ -1863,7 +1863,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 44,
-    "bed_count": 10,
+    "bed_count": 4,
     "is_pets_allowed": true,
     "is_smoking_allowed": true,
     "price_per_night": "8226.48",
@@ -1895,7 +1895,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 51,
-    "bed_count": 10,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "19460.33",
@@ -1911,7 +1911,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 45,
-    "bed_count": 5,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "4165.87",
@@ -1927,7 +1927,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 45,
-    "bed_count": 7,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "985.03",
@@ -1943,7 +1943,7 @@
   "fields": {
     "hotel": 18,
     "room_type": 49,
-    "bed_count": 3,
+    "bed_count": 4,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "17996.89",
@@ -1975,7 +1975,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 48,
-    "bed_count": 10,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "7458.29",
@@ -1991,7 +1991,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 48,
-    "bed_count": 9,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "14892.03",
@@ -2007,7 +2007,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 56,
-    "bed_count": 7,
+    "bed_count": 3,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "11550.61",
@@ -2023,7 +2023,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 43,
-    "bed_count": 8,
+    "bed_count": 4,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "4528.43",
@@ -2039,7 +2039,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 50,
-    "bed_count": 1,
+    "bed_count": 2,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "19383.42",
@@ -2055,7 +2055,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 50,
-    "bed_count": 3,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "3250.17",
@@ -2071,7 +2071,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 49,
-    "bed_count": 2,
+    "bed_count": 4,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "7390.84",
@@ -2103,7 +2103,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 46,
-    "bed_count": 8,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "15873.66",
@@ -2119,7 +2119,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 59,
-    "bed_count": 2,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "3736.58",
@@ -2135,7 +2135,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 57,
-    "bed_count": 9,
+    "bed_count": 4,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "3983.89",
@@ -2151,7 +2151,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 57,
-    "bed_count": 6,
+    "bed_count": 5,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "18126.03",
@@ -2199,7 +2199,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 53,
-    "bed_count": 8,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "14424.24",
@@ -2215,7 +2215,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 42,
-    "bed_count": 9,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "12550.92",
@@ -2231,7 +2231,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 44,
-    "bed_count": 10,
+    "bed_count": 4,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "14795.42",
@@ -2247,7 +2247,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 51,
-    "bed_count": 1,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "5975.73",
@@ -2263,7 +2263,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 53,
-    "bed_count": 2,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "15144.11",
@@ -2279,7 +2279,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 58,
-    "bed_count": 1,
+    "bed_count": 5,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "10117.91",
@@ -2295,7 +2295,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 58,
-    "bed_count": 8,
+    "bed_count": 6,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "19156.10",
@@ -2311,7 +2311,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 60,
-    "bed_count": 10,
+    "bed_count": 4,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "16638.70",
@@ -2327,7 +2327,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 54,
-    "bed_count": 2,
+    "bed_count": 1,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "13268.42",
@@ -2343,7 +2343,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 42,
-    "bed_count": 8,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "8341.83",
@@ -2359,7 +2359,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 42,
-    "bed_count": 1,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "11763.33",
@@ -2375,7 +2375,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 52,
-    "bed_count": 4,
+    "bed_count": 1,
     "is_pets_allowed": true,
     "is_smoking_allowed": true,
     "price_per_night": "16283.96",
@@ -2407,7 +2407,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 43,
-    "bed_count": 7,
+    "bed_count": 5,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "10341.58",
@@ -2423,7 +2423,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 53,
-    "bed_count": 10,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "8941.31",
@@ -2439,7 +2439,7 @@
   "fields": {
     "hotel": 19,
     "room_type": 53,
-    "bed_count": 7,
+    "bed_count": 4,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "9271.06",
@@ -2455,7 +2455,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 60,
-    "bed_count": 3,
+    "bed_count": 4,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "800.65",
@@ -2471,7 +2471,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 45,
-    "bed_count": 3,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "2423.40",
@@ -2487,7 +2487,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 51,
-    "bed_count": 7,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "11926.73",
@@ -2503,7 +2503,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 51,
-    "bed_count": 1,
+    "bed_count": 2,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "10713.42",
@@ -2519,7 +2519,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 45,
-    "bed_count": 5,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "17086.82",
@@ -2535,7 +2535,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 47,
-    "bed_count": 10,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "11374.37",
@@ -2567,7 +2567,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 55,
-    "bed_count": 8,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "18311.89",
@@ -2583,7 +2583,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 56,
-    "bed_count": 2,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "13117.84",
@@ -2599,7 +2599,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 52,
-    "bed_count": 5,
+    "bed_count": 1,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "2550.19",
@@ -2615,7 +2615,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 52,
-    "bed_count": 3,
+    "bed_count": 1,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "18810.37",
@@ -2631,7 +2631,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 43,
-    "bed_count": 3,
+    "bed_count": 4,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "1567.62",
@@ -2663,7 +2663,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 41,
-    "bed_count": 3,
+    "bed_count": 7,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "7107.47",
@@ -2679,7 +2679,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 41,
-    "bed_count": 9,
+    "bed_count": 6,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "18175.76",
@@ -2695,7 +2695,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 56,
-    "bed_count": 8,
+    "bed_count": 3,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "18238.93",
@@ -2711,7 +2711,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 51,
-    "bed_count": 8,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "8398.81",
@@ -2727,7 +2727,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 46,
-    "bed_count": 3,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "12156.43",
@@ -2743,7 +2743,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 42,
-    "bed_count": 10,
+    "bed_count": 2,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "17780.28",
@@ -2759,7 +2759,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 42,
-    "bed_count": 1,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "14222.67",
@@ -2791,7 +2791,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 46,
-    "bed_count": 1,
+    "bed_count": 2,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "12392.35",
@@ -2807,7 +2807,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 55,
-    "bed_count": 6,
+    "bed_count": 2,
     "is_pets_allowed": true,
     "is_smoking_allowed": true,
     "price_per_night": "3770.54",
@@ -2823,7 +2823,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 55,
-    "bed_count": 7,
+    "bed_count": 2,
     "is_pets_allowed": true,
     "is_smoking_allowed": false,
     "price_per_night": "14860.20",
@@ -2839,7 +2839,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 45,
-    "bed_count": 10,
+    "bed_count": 2,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "18464.45",
@@ -2855,7 +2855,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 45,
-    "bed_count": 8,
+    "bed_count": 3,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "8817.29",
@@ -2871,7 +2871,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 54,
-    "bed_count": 8,
+    "bed_count": 1,
     "is_pets_allowed": false,
     "is_smoking_allowed": true,
     "price_per_night": "12818.33",
@@ -2919,7 +2919,7 @@
   "fields": {
     "hotel": 20,
     "room_type": 52,
-    "bed_count": 7,
+    "bed_count": 1,
     "is_pets_allowed": false,
     "is_smoking_allowed": false,
     "price_per_night": "18511.46",
@@ -2927,6 +2927,1356 @@
     "floor": 9,
     "number_on_floor": 3,
     "variant": "A"
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 601,
+  "fields": {
+    "room": 331,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Delmar_hotel_room_sea_side.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 602,
+  "fields": {
+    "room": 391,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Cool_Corner_Room_%285574721196%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 603,
+  "fields": {
+    "room": 301,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Memmelsdorf_3_Kronen_%283%29.JPG",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 604,
+  "fields": {
+    "room": 421,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/MC_%E6%BE%B3%E9%96%80_Macau_%E8%B7%AF%E6%B0%B9_Cotai_Strip_%E5%90%9B%E6%82%85%E9%85%92%E5%BA%97_Grand_Hyatt_Hotel_room_November_2019_SS2_16.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 605,
+  "fields": {
+    "room": 361,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/29._Bonner_Stammtisch%2C_Petersberg_%28Hotel-Suite_1.OG%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 606,
+  "fields": {
+    "room": 302,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Haruhay_resort_Mactan_Cebu_Philippines_-_room.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 607,
+  "fields": {
+    "room": 362,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Haruhay_resort_Mactan_Cebu_Philippines_-_room.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 608,
+  "fields": {
+    "room": 303,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Haruhay_resort_Mactan_Cebu_Philippines_-_room.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 609,
+  "fields": {
+    "room": 304,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Haruhay_resort_Mactan_Cebu_Philippines_-_room.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 610,
+  "fields": {
+    "room": 392,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Cool_Corner_Room_%285574721196%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 611,
+  "fields": {
+    "room": 332,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Delmar_hotel_room_sea_side.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 612,
+  "fields": {
+    "room": 422,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Our_hotel_room_%2813357515743%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 613,
+  "fields": {
+    "room": 423,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Haruhay_resort_Mactan_Cebu_Philippines_-_room.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 614,
+  "fields": {
+    "room": 424,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Haruhay_resort_Mactan_Cebu_Philippines_-_room.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 615,
+  "fields": {
+    "room": 363,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Haruhay_resort_Mactan_Cebu_Philippines_-_room.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 616,
+  "fields": {
+    "room": 393,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Delmar_hotel_room_sea_side.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 617,
+  "fields": {
+    "room": 305,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Haruhay_resort_Mactan_Cebu_Philippines_-_room.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 618,
+  "fields": {
+    "room": 333,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Interior_of_hotel_Hanasaari.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 619,
+  "fields": {
+    "room": 334,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/2011-07-28-Hotel_Katajanokka-by-RalfR-02.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 620,
+  "fields": {
+    "room": 335,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/2011-07-28-Hotel_Katajanokka-by-RalfR-02.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 621,
+  "fields": {
+    "room": 394,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Palace_Grand_Hotel_Varese_04.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 622,
+  "fields": {
+    "room": 364,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Memmelsdorf_3_Kronen_%283%29.JPG",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 623,
+  "fields": {
+    "room": 395,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/2011-07-28-Hotel_Katajanokka-by-RalfR-02.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 624,
+  "fields": {
+    "room": 365,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/MC_%E6%BE%B3%E9%96%80_Macau_%E8%B7%AF%E6%B0%B9_Cotai_Strip_%E5%90%9B%E6%82%85%E9%85%92%E5%BA%97_Grand_Hyatt_Hotel_room_November_2019_SS2_13.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 625,
+  "fields": {
+    "room": 336,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/2011-07-28-Hotel_Katajanokka-by-RalfR-02.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 626,
+  "fields": {
+    "room": 337,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Interior_of_hotel_Hanasaari.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 627,
+  "fields": {
+    "room": 366,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Kimpton_Hotel_Monaco_Salt_Lake_City%2C_room_interior.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 628,
+  "fields": {
+    "room": 396,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/2011-07-28-Hotel_Katajanokka-by-RalfR-02.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 629,
+  "fields": {
+    "room": 397,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Interior_of_hotel_Hanasaari.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 630,
+  "fields": {
+    "room": 367,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Interior_of_the_sebel_hotel.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 631,
+  "fields": {
+    "room": 338,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Interior_of_hotel_Hanasaari.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 632,
+  "fields": {
+    "room": 398,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/A_bedroom_of_the_Grand_Hotel_Campo_dei_Fiori.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 633,
+  "fields": {
+    "room": 368,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/29._Bonner_Stammtisch%2C_Petersberg_%28Hotel-Suite_1.OG%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 634,
+  "fields": {
+    "room": 369,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Memmelsdorf_3_Kronen_%283%29.JPG",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 635,
+  "fields": {
+    "room": 399,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/A_bedroom_of_the_Grand_Hotel_Campo_dei_Fiori.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 636,
+  "fields": {
+    "room": 370,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/A_bedroom_of_the_Grand_Hotel_Campo_dei_Fiori.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 637,
+  "fields": {
+    "room": 400,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Bedroom_hotel_interior_with_open_door_window._%2851536308276%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 638,
+  "fields": {
+    "room": 401,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Heritage_Machan_Tree_house_hotel_in_Lonavala%2C_India_-_2008.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 639,
+  "fields": {
+    "room": 402,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Heritage_Machan_Tree_house_hotel_in_Lonavala%2C_India_-_2008.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 640,
+  "fields": {
+    "room": 403,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Memmelsdorf_3_Kronen_%283%29.JPG",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 641,
+  "fields": {
+    "room": 404,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Kimpton_Hotel_Monaco_Salt_Lake_City%2C_room_interior.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 642,
+  "fields": {
+    "room": 405,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Hall._Hotel_Brosundet._Alesund._Norway.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 643,
+  "fields": {
+    "room": 425,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Our_hotel_room_%2813357515743%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 644,
+  "fields": {
+    "room": 371,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Delmar_hotel_room_sea_side.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 645,
+  "fields": {
+    "room": 339,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Haruhay_resort_Mactan_Cebu_Philippines_-_room.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 646,
+  "fields": {
+    "room": 306,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Delmar_hotel_room_sea_side.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 647,
+  "fields": {
+    "room": 406,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/CrownePlaza_Interior_Melbourne.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 648,
+  "fields": {
+    "room": 426,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/29._Bonner_Stammtisch%2C_Petersberg_%28Hotel-Suite_1.OG%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 649,
+  "fields": {
+    "room": 340,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Delmar_hotel_room_sea_side.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 650,
+  "fields": {
+    "room": 307,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Heritage_Machan_Tree_house_hotel_in_Lonavala%2C_India_-_2008.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 651,
+  "fields": {
+    "room": 372,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/CrownePlaza_Interior_Melbourne.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 652,
+  "fields": {
+    "room": 407,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/2011-07-28-Hotel_Katajanokka-by-RalfR-01.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 653,
+  "fields": {
+    "room": 308,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Hall._Hotel_Brosundet._Alesund._Norway.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 654,
+  "fields": {
+    "room": 341,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Delmar_hotel_room_sea_side.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 655,
+  "fields": {
+    "room": 408,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Haruhay_resort_Mactan_Cebu_Philippines_-_room.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 656,
+  "fields": {
+    "room": 373,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Interior_of_hotel_Hanasaari.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 657,
+  "fields": {
+    "room": 427,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/29._Bonner_Stammtisch%2C_Petersberg_%28Hotel-Suite_1.OG%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 658,
+  "fields": {
+    "room": 342,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Delmar_hotel_room_sea_side.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 659,
+  "fields": {
+    "room": 374,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/2011-07-28-Hotel_Katajanokka-by-RalfR-03.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 660,
+  "fields": {
+    "room": 409,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Hall._Hotel_Brosundet._Alesund._Norway.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 661,
+  "fields": {
+    "room": 428,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Memmelsdorf_3_Kronen_%283%29.JPG",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 662,
+  "fields": {
+    "room": 309,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Memmelsdorf_3_Kronen_%283%29.JPG",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 663,
+  "fields": {
+    "room": 310,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Cool_Corner_Room_%285574721196%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 664,
+  "fields": {
+    "room": 410,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/MC_%E6%BE%B3%E9%96%80_Macau_%E8%B7%AF%E6%B0%B9_Cotai_Strip_%E5%90%9B%E6%82%85%E9%85%92%E5%BA%97_Grand_Hyatt_Hotel_room_November_2019_SS2_13.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 665,
+  "fields": {
+    "room": 375,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Our_hotel_room_%2813357515743%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 666,
+  "fields": {
+    "room": 343,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Delmar_hotel_room_sea_side.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 667,
+  "fields": {
+    "room": 376,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Haruhay_resort_Mactan_Cebu_Philippines_-_room.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 668,
+  "fields": {
+    "room": 411,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/MC_%E6%BE%B3%E9%96%80_Macau_%E8%B7%AF%E6%B0%B9_Cotai_Strip_%E5%90%9B%E6%82%85%E9%85%92%E5%BA%97_Grand_Hyatt_Hotel_room_November_2019_SS2_13.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 669,
+  "fields": {
+    "room": 344,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Interior_of_hotel_Hanasaari.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 670,
+  "fields": {
+    "room": 412,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/MC_%E6%BE%B3%E9%96%80_Macau_%E8%B7%AF%E6%B0%B9_Cotai_Strip_%E5%90%9B%E6%82%85%E9%85%92%E5%BA%97_Grand_Hyatt_Hotel_room_November_2019_SS2_16.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 671,
+  "fields": {
+    "room": 377,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/A_bedroom_of_the_Grand_Hotel_Campo_dei_Fiori.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 672,
+  "fields": {
+    "room": 345,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/2011-07-28-Hotel_Katajanokka-by-RalfR-02.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 673,
+  "fields": {
+    "room": 378,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Bedroom_hotel_interior_with_open_door_window._%2851536308276%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 674,
+  "fields": {
+    "room": 346,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Bedroom_hotel_interior_with_open_door_window._%2851536308276%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 675,
+  "fields": {
+    "room": 413,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Kimpton_Hotel_Monaco_Salt_Lake_City%2C_room_interior.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 676,
+  "fields": {
+    "room": 414,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/CrownePlaza_Interior_Melbourne.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 677,
+  "fields": {
+    "room": 379,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Bedroom_hotel_interior_with_open_door_window._%2851536308276%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 678,
+  "fields": {
+    "room": 415,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/CrownePlaza_Interior_Melbourne.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 679,
+  "fields": {
+    "room": 380,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Our_hotel_room_%2813357515743%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 680,
+  "fields": {
+    "room": 416,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/2011-07-28-Hotel_Katajanokka-by-RalfR-03.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 681,
+  "fields": {
+    "room": 417,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Hall._Hotel_Brosundet._Alesund._Norway.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 682,
+  "fields": {
+    "room": 418,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Palace_Grand_Hotel_Varese_04.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 683,
+  "fields": {
+    "room": 419,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Hall._Hotel_Brosundet._Alesund._Norway.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 684,
+  "fields": {
+    "room": 420,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Hall._Hotel_Brosundet._Alesund._Norway.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 685,
+  "fields": {
+    "room": 311,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Our_hotel_room_%2813357515743%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 686,
+  "fields": {
+    "room": 347,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/2011-07-28-Hotel_Katajanokka-by-RalfR-01.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 687,
+  "fields": {
+    "room": 381,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/A_bedroom_of_the_Grand_Hotel_Campo_dei_Fiori.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 688,
+  "fields": {
+    "room": 429,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Delmar_hotel_room_sea_side.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 689,
+  "fields": {
+    "room": 430,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/2011-07-28-Hotel_Katajanokka-by-RalfR-03.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 690,
+  "fields": {
+    "room": 348,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Cool_Corner_Room_%285574721196%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 691,
+  "fields": {
+    "room": 312,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Our_hotel_room_%2813357515743%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 692,
+  "fields": {
+    "room": 382,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Kimpton_Hotel_Monaco_Salt_Lake_City%2C_room_interior.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 693,
+  "fields": {
+    "room": 349,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Haruhay_resort_Mactan_Cebu_Philippines_-_room.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 694,
+  "fields": {
+    "room": 313,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Cool_Corner_Room_%285574721196%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 695,
+  "fields": {
+    "room": 431,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/2011-07-28-Hotel_Katajanokka-by-RalfR-03.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 696,
+  "fields": {
+    "room": 383,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/A_bedroom_of_the_Grand_Hotel_Campo_dei_Fiori.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 697,
+  "fields": {
+    "room": 384,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/2011-07-28-Hotel_Katajanokka-by-RalfR-01.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 698,
+  "fields": {
+    "room": 314,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Heritage_Machan_Tree_house_hotel_in_Lonavala%2C_India_-_2008.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 699,
+  "fields": {
+    "room": 432,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Palace_Grand_Hotel_Varese_04.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 700,
+  "fields": {
+    "room": 350,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Haruhay_resort_Mactan_Cebu_Philippines_-_room.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 701,
+  "fields": {
+    "room": 351,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/2011-07-28-Hotel_Katajanokka-by-RalfR-02.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 702,
+  "fields": {
+    "room": 385,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/2011-07-28-Hotel_Katajanokka-by-RalfR-01.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 703,
+  "fields": {
+    "room": 352,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Delmar_hotel_room_sea_side.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 704,
+  "fields": {
+    "room": 353,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Delmar_hotel_room_sea_side.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 705,
+  "fields": {
+    "room": 386,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Haruhay_resort_Mactan_Cebu_Philippines_-_room.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 706,
+  "fields": {
+    "room": 387,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Our_hotel_room_%2813357515743%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 707,
+  "fields": {
+    "room": 388,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Our_hotel_room_%2813357515743%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 708,
+  "fields": {
+    "room": 389,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Interior_of_hotel_Hanasaari.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 709,
+  "fields": {
+    "room": 390,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Bedroom_hotel_interior_with_open_door_window._%2851536308276%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 710,
+  "fields": {
+    "room": 354,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Delmar_hotel_room_sea_side.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 711,
+  "fields": {
+    "room": 315,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/CrownePlaza_Interior_Melbourne.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 712,
+  "fields": {
+    "room": 433,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Interior_of_the_sebel_hotel.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 713,
+  "fields": {
+    "room": 355,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Delmar_hotel_room_sea_side.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 714,
+  "fields": {
+    "room": 356,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Delmar_hotel_room_sea_side.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 715,
+  "fields": {
+    "room": 316,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Haruhay_resort_Mactan_Cebu_Philippines_-_room.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 716,
+  "fields": {
+    "room": 434,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Interior_of_the_sebel_hotel.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 717,
+  "fields": {
+    "room": 357,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Delmar_hotel_room_sea_side.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 718,
+  "fields": {
+    "room": 435,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Interior_of_the_sebel_hotel.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 719,
+  "fields": {
+    "room": 317,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Palace_Grand_Hotel_Varese_04.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 720,
+  "fields": {
+    "room": 358,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Kimpton_Hotel_Monaco_Salt_Lake_City%2C_room_interior.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 721,
+  "fields": {
+    "room": 318,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/14/2011-07-28-Hotel_Katajanokka-by-RalfR-02.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 722,
+  "fields": {
+    "room": 359,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Kimpton_Hotel_Monaco_Salt_Lake_City%2C_room_interior.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 723,
+  "fields": {
+    "room": 360,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Bedroom_hotel_interior_with_open_door_window._%2851536308276%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 724,
+  "fields": {
+    "room": 319,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Interior_of_hotel_Hanasaari.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 725,
+  "fields": {
+    "room": 436,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Delmar_hotel_room_sea_side.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 726,
+  "fields": {
+    "room": 320,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Interior_of_hotel_Hanasaari.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 727,
+  "fields": {
+    "room": 437,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Haruhay_resort_Mactan_Cebu_Philippines_-_room.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 728,
+  "fields": {
+    "room": 438,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/A_bedroom_of_the_Grand_Hotel_Campo_dei_Fiori.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 729,
+  "fields": {
+    "room": 321,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/29._Bonner_Stammtisch%2C_Petersberg_%28Hotel-Suite_1.OG%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 730,
+  "fields": {
+    "room": 322,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Bedroom_hotel_interior_with_open_door_window._%2851536308276%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 731,
+  "fields": {
+    "room": 439,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/CrownePlaza_Interior_Melbourne.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 732,
+  "fields": {
+    "room": 323,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/MC_%E6%BE%B3%E9%96%80_Macau_%E8%B7%AF%E6%B0%B9_Cotai_Strip_%E5%90%9B%E6%82%85%E9%85%92%E5%BA%97_Grand_Hyatt_Hotel_room_November_2019_SS2_13.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 733,
+  "fields": {
+    "room": 324,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/20/MC_%E6%BE%B3%E9%96%80_Macau_%E8%B7%AF%E6%B0%B9_Cotai_Strip_%E5%90%9B%E6%82%85%E9%85%92%E5%BA%97_Grand_Hyatt_Hotel_room_November_2019_SS2_13.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 734,
+  "fields": {
+    "room": 440,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/CrownePlaza_Interior_Melbourne.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 735,
+  "fields": {
+    "room": 325,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Haruhay_resort_Mactan_Cebu_Philippines_-_room.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 736,
+  "fields": {
+    "room": 441,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/d/db/Interior_of_the_sebel_hotel.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 737,
+  "fields": {
+    "room": 326,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Haruhay_resort_Mactan_Cebu_Philippines_-_room.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 738,
+  "fields": {
+    "room": 327,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/b/b7/MC_%E6%BE%B3%E9%96%80_Macau_%E8%B7%AF%E6%B0%B9_Cotai_Strip_%E5%90%9B%E6%82%85%E9%85%92%E5%BA%97_Grand_Hyatt_Hotel_room_November_2019_SS2_16.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 739,
+  "fields": {
+    "room": 442,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/A_bedroom_of_the_Grand_Hotel_Campo_dei_Fiori.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 740,
+  "fields": {
+    "room": 443,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Memmelsdorf_3_Kronen_%283%29.JPG",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 741,
+  "fields": {
+    "room": 328,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Delmar_hotel_room_sea_side.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 742,
+  "fields": {
+    "room": 329,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/2011-07-28-Hotel_Katajanokka-by-RalfR-03.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 743,
+  "fields": {
+    "room": 444,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Memmelsdorf_3_Kronen_%283%29.JPG",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 744,
+  "fields": {
+    "room": 330,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/1/1d/A_bedroom_of_the_Grand_Hotel_Campo_dei_Fiori.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 745,
+  "fields": {
+    "room": 445,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Our_hotel_room_%2813357515743%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 746,
+  "fields": {
+    "room": 446,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/09/Our_hotel_room_%2813357515743%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 747,
+  "fields": {
+    "room": 447,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/4/41/Kimpton_Hotel_Monaco_Salt_Lake_City%2C_room_interior.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 748,
+  "fields": {
+    "room": 448,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Cool_Corner_Room_%285574721196%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 749,
+  "fields": {
+    "room": 449,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Cool_Corner_Room_%285574721196%29.jpg",
+    "order_number": 1
+  }
+},
+{
+  "model": "hotels.roomphoto",
+  "pk": 750,
+  "fields": {
+    "room": 450,
+    "photo_url": "https://upload.wikimedia.org/wikipedia/commons/0/00/2011-07-28-Hotel_Katajanokka-by-RalfR-03.jpg",
+    "order_number": 1
   }
 }
 ]

@@ -25,7 +25,7 @@ class RoomTypeSerializer(serializers.ModelSerializer):
 class RoomPhotoSerializer(serializers.ModelSerializer):
     class Meta:
         model = RoomPhoto
-        fields = ['id', 'photo', 'order_number']
+        fields = ['id', 'photo_url', 'order_number']
 
 
 class RoomListSerializer(serializers.ModelSerializer):

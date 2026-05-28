@@ -1,7 +1,6 @@
 from decimal import Decimal
 
 from django.contrib.auth import get_user_model
-from django.core.files.uploadedfile import SimpleUploadedFile
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
@@ -92,12 +91,12 @@ class HotelsAPITestCase(APITestCase):
         )
         self.photo_1 = RoomPhoto.objects.create(
             room=self.standard_room,
-            photo=SimpleUploadedFile('photo1.jpg', b'img1', content_type='image/jpeg'),
+            photo_url='http://test-photo1',
             order_number=1,
         )
         self.photo_2 = RoomPhoto.objects.create(
             room=self.standard_room,
-            photo=SimpleUploadedFile('photo2.jpg', b'img2', content_type='image/jpeg'),
+            photo_url='http://test-photo2',
             order_number=2,
         )
         self.user = User.objects.create_user(

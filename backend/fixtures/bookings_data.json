@@ -5,7 +5,7 @@
   "fields": {
     "guest": 3,
     "room": 306,
-    "adults_count": 6,
+    "adults_count": 3,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2026-08-27",
@@ -22,7 +22,7 @@
   "fields": {
     "guest": 13,
     "room": 302,
-    "adults_count": 4,
+    "adults_count": 1,
     "children_count": 0,
     "pets_count": 1,
     "check_in_date": "2026-06-28",
@@ -56,8 +56,8 @@
   "fields": {
     "guest": 11,
     "room": 339,
-    "adults_count": 9,
-    "children_count": 1,
+    "adults_count": 2,
+    "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2026-10-03",
     "check_out_date": "2028-03-06",
@@ -73,7 +73,7 @@
   "fields": {
     "guest": 17,
     "room": 425,
-    "adults_count": 5,
+    "adults_count": 1,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2027-10-22",
@@ -158,8 +158,8 @@
   "fields": {
     "guest": 18,
     "room": 331,
-    "adults_count": 7,
-    "children_count": 0,
+    "adults_count": 2,
+    "children_count": 1,
     "pets_count": 0,
     "check_in_date": "2028-05-13",
     "check_out_date": "2028-05-17",
@@ -176,7 +176,7 @@
     "guest": 25,
     "room": 428,
     "adults_count": 1,
-    "children_count": 4,
+    "children_count": 2,
     "pets_count": 0,
     "check_in_date": "2028-05-11",
     "check_out_date": "2028-05-20",
@@ -192,7 +192,7 @@
   "fields": {
     "guest": 10,
     "room": 355,
-    "adults_count": 7,
+    "adults_count": 2,
     "children_count": 0,
     "pets_count": 2,
     "check_in_date": "2027-07-05",
@@ -226,8 +226,8 @@
   "fields": {
     "guest": 15,
     "room": 445,
-    "adults_count": 10,
-    "children_count": 0,
+    "adults_count": 1,
+    "children_count": 1,
     "pets_count": 0,
     "check_in_date": "2026-07-01",
     "check_out_date": "2027-06-17",
@@ -243,7 +243,7 @@
   "fields": {
     "guest": 23,
     "room": 396,
-    "adults_count": 3,
+    "adults_count": 2,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2027-03-14",
@@ -260,8 +260,8 @@
   "fields": {
     "guest": 14,
     "room": 347,
-    "adults_count": 8,
-    "children_count": 0,
+    "adults_count": 2,
+    "children_count": 2,
     "pets_count": 0,
     "check_in_date": "2026-10-24",
     "check_out_date": "2027-06-24",
@@ -311,7 +311,7 @@
   "fields": {
     "guest": 5,
     "room": 419,
-    "adults_count": 7,
+    "adults_count": 2,
     "children_count": 1,
     "pets_count": 0,
     "check_in_date": "2027-06-28",
@@ -328,8 +328,8 @@
   "fields": {
     "guest": 29,
     "room": 412,
-    "adults_count": 4,
-    "children_count": 1,
+    "adults_count": 3,
+    "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2028-02-18",
     "check_out_date": "2028-04-26",
@@ -345,7 +345,7 @@
   "fields": {
     "guest": 30,
     "room": 338,
-    "adults_count": 5,
+    "adults_count": 3,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2028-03-12",
@@ -362,8 +362,8 @@
   "fields": {
     "guest": 6,
     "room": 396,
-    "adults_count": 3,
-    "children_count": 0,
+    "adults_count": 1,
+    "children_count": 1,
     "pets_count": 0,
     "check_in_date": "2026-10-19",
     "check_out_date": "2027-02-16",
@@ -414,7 +414,7 @@
     "guest": 22,
     "room": 420,
     "adults_count": 1,
-    "children_count": 4,
+    "children_count": 3,
     "pets_count": 0,
     "check_in_date": "2027-11-06",
     "check_out_date": "2028-05-06",
@@ -447,7 +447,7 @@
   "fields": {
     "guest": 8,
     "room": 334,
-    "adults_count": 7,
+    "adults_count": 2,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2026-09-15",
@@ -532,8 +532,8 @@
   "fields": {
     "guest": 16,
     "room": 306,
-    "adults_count": 6,
-    "children_count": 0,
+    "adults_count": 2,
+    "children_count": 1,
     "pets_count": 0,
     "check_in_date": "2024-06-11",
     "check_out_date": "2025-11-08",
@@ -566,7 +566,7 @@
   "fields": {
     "guest": 30,
     "room": 423,
-    "adults_count": 6,
+    "adults_count": 2,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2024-01-23",
@@ -583,7 +583,7 @@
   "fields": {
     "guest": 14,
     "room": 345,
-    "adults_count": 4,
+    "adults_count": 1,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2024-01-03",
@@ -600,8 +600,8 @@
   "fields": {
     "guest": 4,
     "room": 446,
-    "adults_count": 8,
-    "children_count": 0,
+    "adults_count": 2,
+    "children_count": 1,
     "pets_count": 0,
     "check_in_date": "2024-10-28",
     "check_out_date": "2024-11-05",
@@ -634,7 +634,7 @@
   "fields": {
     "guest": 4,
     "room": 431,
-    "adults_count": 3,
+    "adults_count": 1,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2025-10-27",
@@ -685,7 +685,7 @@
   "fields": {
     "guest": 24,
     "room": 431,
-    "adults_count": 3,
+    "adults_count": 1,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2023-06-05",
@@ -702,7 +702,7 @@
   "fields": {
     "guest": 11,
     "room": 439,
-    "adults_count": 8,
+    "adults_count": 2,
     "children_count": 0,
     "pets_count": 3,
     "check_in_date": "2024-09-25",
@@ -737,7 +737,7 @@
     "guest": 23,
     "room": 405,
     "adults_count": 2,
-    "children_count": 3,
+    "children_count": 1,
     "pets_count": 0,
     "check_in_date": "2023-11-10",
     "check_out_date": "2024-11-17",
@@ -838,7 +838,7 @@
   "fields": {
     "guest": 18,
     "room": 331,
-    "adults_count": 7,
+    "adults_count": 2,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2028-05-13",
@@ -855,7 +855,7 @@
   "fields": {
     "guest": 14,
     "room": 413,
-    "adults_count": 2,
+    "adults_count": 1,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2026-09-10",
@@ -872,8 +872,8 @@
   "fields": {
     "guest": 13,
     "room": 317,
-    "adults_count": 6,
-    "children_count": 0,
+    "adults_count": 3,
+    "children_count": 1,
     "pets_count": 0,
     "check_in_date": "2027-11-12",
     "check_out_date": "2028-04-05",
@@ -889,7 +889,7 @@
   "fields": {
     "guest": 23,
     "room": 430,
-    "adults_count": 5,
+    "adults_count": 1,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2026-08-14",
@@ -906,8 +906,8 @@
   "fields": {
     "guest": 20,
     "room": 347,
-    "adults_count": 5,
-    "children_count": 0,
+    "adults_count": 2,
+    "children_count": 2,
     "pets_count": 0,
     "check_in_date": "2026-06-03",
     "check_out_date": "2026-09-08",
@@ -940,7 +940,7 @@
   "fields": {
     "guest": 29,
     "room": 348,
-    "adults_count": 5,
+    "adults_count": 1,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2026-07-13",
@@ -957,7 +957,7 @@
   "fields": {
     "guest": 10,
     "room": 423,
-    "adults_count": 6,
+    "adults_count": 2,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2026-11-05",
@@ -974,7 +974,7 @@
   "fields": {
     "guest": 9,
     "room": 304,
-    "adults_count": 6,
+    "adults_count": 1,
     "children_count": 2,
     "pets_count": 0,
     "check_in_date": "2028-02-21",
@@ -991,7 +991,7 @@
   "fields": {
     "guest": 13,
     "room": 322,
-    "adults_count": 7,
+    "adults_count": 3,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2027-11-08",
@@ -1059,8 +1059,8 @@
   "fields": {
     "guest": 9,
     "room": 393,
-    "adults_count": 3,
-    "children_count": 2,
+    "adults_count": 2,
+    "children_count": 1,
     "pets_count": 2,
     "check_in_date": "2027-03-17",
     "check_out_date": "2027-07-05",
@@ -1076,7 +1076,7 @@
   "fields": {
     "guest": 5,
     "room": 414,
-    "adults_count": 7,
+    "adults_count": 2,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2026-09-15",
@@ -1093,7 +1093,7 @@
   "fields": {
     "guest": 17,
     "room": 420,
-    "adults_count": 7,
+    "adults_count": 4,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2027-02-14",
@@ -1110,7 +1110,7 @@
   "fields": {
     "guest": 5,
     "room": 309,
-    "adults_count": 4,
+    "adults_count": 1,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2028-02-18",
@@ -1144,8 +1144,8 @@
   "fields": {
     "guest": 30,
     "room": 399,
-    "adults_count": 3,
-    "children_count": 3,
+    "adults_count": 2,
+    "children_count": 1,
     "pets_count": 0,
     "check_in_date": "2026-07-23",
     "check_out_date": "2028-01-18",
@@ -1161,7 +1161,7 @@
   "fields": {
     "guest": 25,
     "room": 430,
-    "adults_count": 5,
+    "adults_count": 1,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2026-11-23",
@@ -1195,7 +1195,7 @@
   "fields": {
     "guest": 21,
     "room": 307,
-    "adults_count": 3,
+    "adults_count": 2,
     "children_count": 2,
     "pets_count": 0,
     "check_in_date": "2028-02-19",
@@ -1229,7 +1229,7 @@
   "fields": {
     "guest": 29,
     "room": 393,
-    "adults_count": 7,
+    "adults_count": 2,
     "children_count": 0,
     "pets_count": 1,
     "check_in_date": "2026-09-10",
@@ -1263,7 +1263,7 @@
   "fields": {
     "guest": 15,
     "room": 438,
-    "adults_count": 3,
+    "adults_count": 2,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2028-01-26",
@@ -1297,8 +1297,8 @@
   "fields": {
     "guest": 19,
     "room": 313,
-    "adults_count": 6,
-    "children_count": 0,
+    "adults_count": 2,
+    "children_count": 1,
     "pets_count": 0,
     "check_in_date": "2027-01-05",
     "check_out_date": "2027-05-04",
@@ -1331,7 +1331,7 @@
   "fields": {
     "guest": 18,
     "room": 325,
-    "adults_count": 8,
+    "adults_count": 2,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2026-08-16",
@@ -1348,7 +1348,7 @@
   "fields": {
     "guest": 30,
     "room": 348,
-    "adults_count": 6,
+    "adults_count": 1,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2026-05-27",
@@ -1365,7 +1365,7 @@
   "fields": {
     "guest": 10,
     "room": 413,
-    "adults_count": 2,
+    "adults_count": 1,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2025-03-17",
@@ -1382,7 +1382,7 @@
   "fields": {
     "guest": 28,
     "room": 336,
-    "adults_count": 4,
+    "adults_count": 2,
     "children_count": 1,
     "pets_count": 2,
     "check_in_date": "2025-06-07",
@@ -1399,9 +1399,9 @@
   "fields": {
     "guest": 27,
     "room": 399,
-    "adults_count": 8,
+    "adults_count": 2,
     "children_count": 0,
-    "pets_count": 0,
+    "pets_count": 1,
     "check_in_date": "2023-06-08",
     "check_out_date": "2024-07-23",
     "status": "CL",
@@ -1416,8 +1416,8 @@
   "fields": {
     "guest": 15,
     "room": 425,
-    "adults_count": 4,
-    "children_count": 0,
+    "adults_count": 1,
+    "children_count": 1,
     "pets_count": 0,
     "check_in_date": "2024-05-05",
     "check_out_date": "2024-10-11",
@@ -1433,7 +1433,7 @@
   "fields": {
     "guest": 23,
     "room": 437,
-    "adults_count": 8,
+    "adults_count": 2,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2023-07-08",
@@ -1450,8 +1450,8 @@
   "fields": {
     "guest": 29,
     "room": 391,
-    "adults_count": 6,
-    "children_count": 3,
+    "adults_count": 1,
+    "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2026-04-07",
     "check_out_date": "2026-05-04",
@@ -1501,7 +1501,7 @@
   "fields": {
     "guest": 25,
     "room": 413,
-    "adults_count": 2,
+    "adults_count": 1,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2023-05-28",
@@ -1518,8 +1518,8 @@
   "fields": {
     "guest": 10,
     "room": 393,
-    "adults_count": 7,
-    "children_count": 0,
+    "adults_count": 2,
+    "children_count": 1,
     "pets_count": 1,
     "check_in_date": "2024-12-03",
     "check_out_date": "2025-09-10",
@@ -1535,8 +1535,8 @@
   "fields": {
     "guest": 23,
     "room": 353,
-    "adults_count": 7,
-    "children_count": 0,
+    "adults_count": 3,
+    "children_count": 1,
     "pets_count": 0,
     "check_in_date": "2024-07-02",
     "check_out_date": "2025-07-06",
@@ -1552,8 +1552,8 @@
   "fields": {
     "guest": 23,
     "room": 347,
-    "adults_count": 7,
-    "children_count": 0,
+    "adults_count": 2,
+    "children_count": 2,
     "pets_count": 0,
     "check_in_date": "2025-11-17",
     "check_out_date": "2026-05-06",
@@ -1620,7 +1620,7 @@
   "fields": {
     "guest": 29,
     "room": 348,
-    "adults_count": 5,
+    "adults_count": 2,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2026-08-14",
@@ -1637,9 +1637,9 @@
   "fields": {
     "guest": 10,
     "room": 423,
-    "adults_count": 6,
-    "children_count": 0,
-    "pets_count": 0,
+    "adults_count": 1,
+    "children_count": 1,
+    "pets_count": 1,
     "check_in_date": "2027-01-03",
     "check_out_date": "2027-01-07",
     "status": "A",
@@ -1654,7 +1654,7 @@
   "fields": {
     "guest": 9,
     "room": 304,
-    "adults_count": 6,
+    "adults_count": 1,
     "children_count": 2,
     "pets_count": 0,
     "check_in_date": "2028-04-22",
@@ -1671,7 +1671,7 @@
   "fields": {
     "guest": 13,
     "room": 322,
-    "adults_count": 7,
+    "adults_count": 3,
     "children_count": 0,
     "pets_count": 0,
     "check_in_date": "2028-05-13",

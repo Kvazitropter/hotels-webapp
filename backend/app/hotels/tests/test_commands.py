@@ -3,7 +3,6 @@ from io import StringIO
 from unittest.mock import patch
 
 from django.core.management import call_command
-from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import TestCase
 
 from app.hotels.models import Hotel, RoomCategory, RoomType, Room, RoomPhoto
@@ -224,7 +223,7 @@ class DeleteHotelsCommandTest(TestCase):
         )
         self.photo = RoomPhoto.objects.create(
             room=self.room1,
-            photo=SimpleUploadedFile('photo1.jpg', b'img1', content_type='image/jpeg'),
+            photo_url='http://test-photo',
             order_number=1,
         )
         self.room2 = Room.objects.create(
