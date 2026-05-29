@@ -157,7 +157,7 @@ function ProfilePage() {
           <div>
             <h2 className="text-xl font-bold">Мои бронирования</h2>
             <p className="text-slate-600 mt-1">
-              Список бронирований подготовлен в формате, соответствующем endpoint&apos;у /api/me/bookings/.
+              Здесь отображаются бронирования пользователя и их текущий статус.
             </p>
           </div>
 

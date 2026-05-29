@@ -24,7 +24,6 @@ function BookingPage() {
     adultsCount: 1,
     childrenCount: 0,
     petsCount: 0,
-    bookingType: 'G',
   });
 
   const [errors, setErrors] = useState({});
@@ -107,7 +106,6 @@ function BookingPage() {
       adults_count: Number(formData.adultsCount),
       children_count: Number(formData.childrenCount),
       pets_count: Number(formData.petsCount),
-      type: formData.bookingType,
     };
 
     console.log('Booking payload for API:', bookingPayload);
@@ -266,18 +264,6 @@ function BookingPage() {
               />
             </label>
 
-            <label className="block">
-              <span className="text-sm text-slate-600">Тип бронирования</span>
-              <select
-                className="w-full border rounded-xl px-4 py-3 mt-1"
-                name="bookingType"
-                value={formData.bookingType}
-                onChange={handleChange}
-              >
-                <option value="G">Гарантированное</option>
-                <option value="N">Негарантированное</option>
-              </select>
-            </label>
           </div>
         </section>
 

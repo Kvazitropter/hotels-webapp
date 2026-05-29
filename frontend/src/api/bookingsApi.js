@@ -1,7 +1,7 @@
 import { apiRequest } from './client';
 
 export function createBooking(bookingData) {
-  return apiRequest('/bookings/', {
+  return apiRequest('/me/bookings/', {
     method: 'POST',
     body: JSON.stringify(bookingData),
   });
