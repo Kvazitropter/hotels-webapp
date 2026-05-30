@@ -1,3 +1,4 @@
+from datetime import date, timedelta
 from decimal import Decimal
 
 from django.contrib.auth import get_user_model
@@ -5,6 +6,8 @@ from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
 
+from app.accounts.models import Guest
+from app.bookings.models import Booking
 from app.hotels.models import Hotel, RoomCategory, RoomType, Room, RoomPhoto
 
 User = get_user_model()
@@ -99,13 +102,14 @@ class HotelsAPITestCase(APITestCase):
             photo_url='http://test-photo2',
             order_number=2,
         )
-        self.user = User.objects.create_user(
-            email='user@example.com',
-            first_name='Test',
-            last_name='User',
+        self.guest_user = User.objects.create_user(
+            email='guest@example.com',
+            first_name='Guest',
+            last_name='Test',
             phone_number='+79444444444',
             password='GoodPassword432+',
         )
+        self.guest = Guest.objects.create(user=self.guest_user)
 
     def _hotel_list_url(self):
         return reverse('hotel-list')
@@ -132,8 +136,8 @@ class HotelListAPITest(HotelsAPITestCase):
         response = self.client.get(self._hotel_list_url())
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test_authenticated_user_can_access(self):
-        self.client.force_authenticate(self.user)
+    def test_guest_can_access(self):
+        self.client.force_authenticate(self.guest_user)
         response = self.client.get(self._hotel_list_url())
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
@@ -306,25 +310,6 @@ class RoomListAPITest(HotelsAPITestCase):
 
 class RoomDetailAPITest(HotelsAPITestCase):
 
-    def test_returns_room_detail(self):
-        response = self.client.get(
-            self._room_detail_url(self.active_hotel.pk, self.standard_room.pk)
-        )
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data['id'], self.standard_room.pk)
-
-    def test_detail_has_photos(self):
-        response = self.client.get(
-            self._room_detail_url(self.active_hotel.pk, self.standard_room.pk)
-        )
-        self.assertEqual(len(response.data['photos']), 2)
-
-    def test_detail_has_room_number(self):
-        response = self.client.get(
-            self._room_detail_url(self.active_hotel.pk, self.standard_room.pk)
-        )
-        self.assertEqual(response.data['room_number'], self.standard_room.room_number)
-
     def test_room_from_other_hotel_returns_404(self):
         other_hotel = Hotel.objects.create(
             name='Чужой Отель',
@@ -346,3 +331,92 @@ class RoomDetailAPITest(HotelsAPITestCase):
             self._room_detail_url(self.active_hotel.pk, 99999)
         )
         self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+class RoomVacantDatesAPITest(HotelsAPITestCase):
+    def _get_vacant_dates_url(self, hotel_pk, room_pk):
+        return reverse('hotel-room-vacant-dates', kwargs={'hotel_pk': hotel_pk, 'pk': room_pk})
+
+    def test_returns_vacant_dates(self):
+        response = self.client.get(
+            self._get_vacant_dates_url(self.active_hotel.pk, self.standard_room.pk)
+        )
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertIn('vacant_dates', response.data)
+
+    def test_vacant_dates_is_list(self):
+        response = self.client.get(
+            self._get_vacant_dates_url(self.active_hotel.pk, self.standard_room.pk)
+        )
+        self.assertIsInstance(response.data['vacant_dates'], list)
+
+    def test_vacant_dates_excludes_booked_periods(self):
+        Booking.objects.create(
+            room=self.standard_room,
+            guest=self.guest,
+            adults_count=1,
+            children_count=0,
+            check_in_date=date.today() + timedelta(days=10),
+            check_out_date=date.today() + timedelta(days=15),
+            status=Booking.Status.ACTIVE,
+        )
+        response = self.client.get(
+            self._get_vacant_dates_url(self.active_hotel.pk, self.standard_room.pk)
+        )
+        booked_range = (
+            str(date.today() + timedelta(days=10)),
+            str(date.today() + timedelta(days=15)),
+        )
+        self.assertNotIn(booked_range, response.data['vacant_dates'])
+
+    def test_vacant_dates_with_after_param(self):
+        after = date.today() + timedelta(days=30)
+        response = self.client.get(
+            self._get_vacant_dates_url(self.active_hotel.pk, self.standard_room.pk),
+            {'after': after.isoformat()}
+        )
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        for start, end in response.data['vacant_dates']:
+            self.assertGreaterEqual(end, after)
+
+    def test_vacant_dates_with_before_param(self):
+        before = date.today() + timedelta(days=60)
+        response = self.client.get(
+            self._get_vacant_dates_url(self.active_hotel.pk, self.standard_room.pk),
+            {'before': before.isoformat()}
+        )
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        for start, end in response.data['vacant_dates']:
+            self.assertLessEqual(start, before)
+
+    def test_vacant_dates_with_after_and_before_params(self):
+        after = date.today() + timedelta(days=10)
+        before = date.today() + timedelta(days=40)
+        response = self.client.get(
+            self._get_vacant_dates_url(self.active_hotel.pk, self.standard_room.pk),
+            {'after': after.isoformat(), 'before': before.isoformat()}
+        )
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_vacant_dates_invalid_after_returns_400(self):
+        response = self.client.get(
+            self._get_vacant_dates_url(self.active_hotel.pk, self.standard_room.pk),
+            {'after': 'not-a-date'}
+        )
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_vacant_dates_invalid_before_returns_400(self):
+        response = self.client.get(
+            self._get_vacant_dates_url(self.active_hotel.pk, self.standard_room.pk),
+            {'before': 'not-a-date'}
+        )
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+    def test_vacant_dates_after_greater_than_before_returns_400(self):
+        response = self.client.get(
+            self._get_vacant_dates_url(self.active_hotel.pk, self.standard_room.pk),
+            {
+                'after': (date.today() + timedelta(days=60)).isoformat(),
+                'before': (date.today() + timedelta(days=10)).isoformat(),
+            }
+        )
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)

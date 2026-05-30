@@ -6,6 +6,7 @@ from django.conf import settings
 from django.core.exceptions import ValidationError as DjangoValidationError
 from django.db.models import Model
 import phonenumbers
+from phonenumbers import NumberParseException
 from rest_framework import serializers
 
 
@@ -71,7 +72,10 @@ def validate_email(email: str) -> bool:
 
 
 def validate_phone(phone_str: str) -> bool:
-    num = phonenumbers.parse(phone_str, settings.PHONENUMBER_DEFAULT_REGION)
+    try:
+        num = phonenumbers.parse(phone_str, settings.PHONENUMBER_DEFAULT_REGION)
+    except NumberParseException:
+        return False
     return phonenumbers.is_valid_number(num)
 
 

@@ -1,6 +1,10 @@
-from rest_framework import viewsets
-from rest_framework.permissions import AllowAny
+from datetime import date, timedelta
+
+from rest_framework import viewsets, status
+from rest_framework.decorators import action
 from rest_framework.exceptions import NotFound
+from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
 
 from app.hotels.filters import RoomFilter
 from app.hotels.models import Hotel, Room
@@ -9,6 +13,7 @@ from app.hotels.serializers import (
     RoomListSerializer,
     RoomDetailSerializer
 )
+from app.hotels.utils.helpers.get_vacant_dates import get_vacant_dates
 
 
 class HotelViewSet(viewsets.ReadOnlyModelViewSet):
@@ -44,3 +49,24 @@ class RoomViewSet(HotelNestedMixin, viewsets.ReadOnlyModelViewSet):
         if self.action == 'retrieve':
             return RoomDetailSerializer
         return RoomListSerializer
+
+    @action(detail=True, methods=['get'], url_path='vacant-dates')
+    def vacant_dates(self, request, *args, **kwargs):
+        room = self.get_object()
+        try:
+            after = date.fromisoformat(request.query_params.get('after', str(date.today())))
+            before = date.fromisoformat(request.query_params.get(
+                'before', str(date.today() + timedelta(days=365))
+            ))
+        except ValueError:
+            return Response(
+                {'detail': 'Некорректный формат даты, ожидается YYYY-MM-DD'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        if after >= before:
+            return Response(
+                {'detail': 'after должен быть меньше before'},
+                status=status.HTTP_400_BAD_REQUEST
+            )
+        vacant = get_vacant_dates(Room.objects.filter(pk=room.pk), after, before)
+        return Response({'vacant_dates': vacant[room.pk]})

@@ -49,17 +49,17 @@ class Command(BaseCommand):
         return None
 
     def _get_unique_email(self, existing_emails: set) -> str:
-        email = fake.email()
+        email = normalize_email(fake.email())
         while email in existing_emails or not validate_email(email):
             email = normalize_email(fake.email())
-        existing_emails.add(normalize_email(email))
+        existing_emails.add(email)
         return email
 
     def _get_unique_phone(self, existing_phones: set) -> str:
-        phone = fake.phone_number()
+        phone = normalize_phone(fake.phone_number())
         while phone in existing_phones or not validate_phone(phone):
             phone = normalize_phone(fake.phone_number())
-        existing_phones.add(normalize_phone(phone))
+        existing_phones.add(phone)
         return phone
 
     def _get_fullname_for_gender(self, gender: str) -> tuple[str, str, str]:

@@ -13,6 +13,7 @@ from app.accounts.models import Guest, Moderator
 from app.bookings.models import Booking, Review
 from app.bookings.utils.helpers.faker_providers import BookingProvider, ReviewProvider
 from app.hotels.models import Room
+from app.hotels.utils.helpers.get_vacant_dates import get_vacant_dates, free_vacant
 
 
 User = get_user_model()
@@ -106,59 +107,33 @@ class Command(BaseCommand):
         return data
 
     def _get_valid_dates(
-        self, generator: BookingProvider, booked: list[tuple[date, date]],
-        later: date | None = None, before: date | None = None
+        self, generator: BookingProvider, vacant: list[tuple[date, date]],
     ) -> tuple[date, date]:
-        today = date.today()
-        later = later or (today - timedelta(days=self._DEFAULT_PAST_DAYS))
-        before = before or (today + timedelta(days=self._DEFAULT_FUTURE_DAYS))
-        relevant = sorted(
-            (c_in, c_out) for c_in, c_out in booked
-            if c_in < before or c_out > later
-        )
-        gaps = []
-
-        if not relevant:
-            gaps.append((later, before))
-        else:
-            gaps.append((later, relevant[0][0]))
-            for (_, prev_out), (next_in, _) in zip(relevant, relevant[1:]):
-                if (next_in - prev_out).days >= 1:
-                    gaps.append((prev_out, next_in))
-            gaps.append((relevant[-1][1], before))
-
-        for gap_start, gap_end in gaps:
+        for i, (gap_start, gap_end) in enumerate(vacant):
             try:
-                period = generator.period(gap_start, gap_end)
-                booked.append(period)
-                return period
+                check_in, check_out = generator.period(gap_start, gap_end)
             except ValueError:
                 continue
 
-        raise RuntimeError(
-            f'Не удалось найти свободные даты (период: {later}, {before})'
-        )
+            new_gaps = []
+            if check_in > gap_start:
+                new_gaps.append((gap_start, check_in))
+            if check_out < gap_end:
+                new_gaps.append((check_out, gap_end))
 
-    def _get_booked_periods(self, rooms_qs: QuerySet[Room]) -> dict[int, list[tuple[date, date]]]:
-        statuses = [Booking.Status.ACTIVE, Booking.Status.CLOSED]
-        bookings = Booking.objects.filter(room__in=rooms_qs, status__in=statuses) \
-            .values_list('room_id', 'check_in_date', 'check_out_date')
-        periods = {}
-        for room in rooms_qs:
-            periods[room.pk] = []
-        for room_id, check_in, check_out in bookings:
-            periods[room_id].append((check_in, check_out))
-        return periods
+            vacant[i:i+1] = new_gaps
+            return check_in, check_out
+
+        raise RuntimeError('Не удалось найти свободные даты')
 
     def _create_booking(
         self, generator: BookingProvider, room: Room,
         guest: Guest, status: str,
-        booked: list[tuple[date, date]],
-        later: date | None = None, before: date | None = None
+        vacant: list[tuple[date, date]],
     ) -> Booking:
         data = generator.booking()
         data = self._adjust_booking_to_room(data, room)
-        dates = self._get_valid_dates(generator, booked, later, before)
+        dates = self._get_valid_dates(generator, vacant)
         data['check_in_date'], data['check_out_date'] = dates
         data['status'] = status
         return Booking(guest=guest, room=room, **data)
@@ -173,25 +148,28 @@ class Command(BaseCommand):
         cancelled_count = status_distribution[Booking.Status.CANCELLED]
         moved_count = status_distribution[Booking.Status.MOVED]
 
-        rooms = list(rooms_qs)
-        booked_periods = self._get_booked_periods(rooms_qs)
+        today = date.today()
+        after = today - timedelta(days=self._DEFAULT_PAST_DAYS)
+        before = today + timedelta(days=self._DEFAULT_FUTURE_DAYS)
+        vacant_periods = get_vacant_dates(rooms_qs, after, before)
+
         new_bookings = []
 
         active_count += cancelled_count
         for _ in range(active_count):
-            room = random.choice(rooms)
+            room = random.choice(rooms_qs)
             guest = random.choice(guests)
-            booked = booked_periods[room.pk]
+            vacant = vacant_periods[room.pk]
             new_bookings.append(self._create_booking(
-                generator, room, guest, Booking.Status.ACTIVE, booked, later=date.today()
+                generator, room, guest, Booking.Status.ACTIVE, vacant
             ))
 
         for _ in range(closed_count):
-            room = random.choice(rooms)
+            room = random.choice(rooms_qs)
             guest = random.choice(guests)
-            booked = booked_periods[room.pk]
+            vacant = vacant_periods[room.pk]
             new_bookings.append(self._create_booking(
-                generator, room, guest, Booking.Status.CLOSED, booked, before=date.today()
+                generator, room, guest, Booking.Status.CLOSED, vacant
             ))
 
         for booking in new_bookings:
@@ -201,22 +179,20 @@ class Command(BaseCommand):
             created_bookings = Booking.objects.bulk_create(new_bookings)
             active_bookings = [b for b in created_bookings if b.status == Booking.Status.ACTIVE]
 
-            for booking in active_bookings:
+            for i in range(cancelled_count + moved_count):
+                booking = active_bookings[i]
                 if cancelled_count > 0:
                     booking.cancel(generator.cancellation_reason())
                     cancelled_count -= 1
                 elif moved_count > 0:
-                    booked = booked_periods[booking.room.pk]
-                    original_period = (booking.check_in_date, booking.check_out_date)
-                    if original_period in booked:
-                        booked.remove(original_period)
-                    check_in, check_out = self._get_valid_dates(
-                        generator, booked, later=booking.check_out_date
+                    vacant = free_vacant(
+                        vacant_periods[booking.room.pk],
+                        booking.check_in_date,
+                        booking.check_out_date
                     )
+                    check_in, check_out = self._get_valid_dates(generator, vacant)
                     booking.move(check_in, check_out)
                     moved_count -= 1
-                if cancelled_count < 0 and moved_count < 0:
-                    break
 
         for booking in created_bookings:
             self.stdout.write(self.style.SUCCESS(f'Создано {booking}'))
