@@ -33,7 +33,7 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 
-    location /static/ {
+    location /dj-static/ {
         alias {{ app_dir }}/staticfiles/;
     }
 
