@@ -292,6 +292,36 @@
       when: postgres_backup_enabled | bool
       tags: backup
 
+    - name: Create Uptime Kuma dirs
+      ansible.builtin.file:
+        path: "{{ item }}"
+        state: directory
+        owner: "{{ deploy_user }}"
+        group: "{{ deploy_user }}"
+        mode: "0755"
+      loop:
+        - /opt/uptime-kuma
+        - /opt/uptime-kuma/data
+      tags: monitoring
+
+    - name: Copy monitoring compose
+      ansible.builtin.copy:
+        src: "{{ playbook_dir }}/../docker-compose.monitoring.yml"
+        dest: /opt/uptime-kuma/docker-compose.yml
+        owner: "{{ deploy_user }}"
+        group: "{{ deploy_user }}"
+        mode: "0644"
+      tags: monitoring
+
+    - name: Start Uptime Kuma
+      community.docker.docker_compose_v2:
+        project_src: /opt/uptime-kuma
+        files:
+          - docker-compose.yml
+        state: present
+        pull: always
+      tags: monitoring
+
   handlers:
     - name: Test nginx config
       ansible.builtin.command: nginx -t

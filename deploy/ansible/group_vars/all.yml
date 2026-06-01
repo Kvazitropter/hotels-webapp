@@ -28,5 +28,5 @@ postgres_backup_minute: "20"
 email_host: smtp.timeweb.ru
 email_port: 587
 email_use_tls: true
-email_host_user: support@тутати.рф
+email_host_user: support@xn--80aq2aabd.xn--p1ai
 default_from_email: Служба поддержки <support@тутати.рф>

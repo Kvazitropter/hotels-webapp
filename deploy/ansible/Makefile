@@ -6,7 +6,7 @@ ANSIBLE_ENV = ANSIBLE_LOCAL_TEMP=/tmp/ansible-local ANSIBLE_REMOTE_TEMP=/tmp/ans
 ANSIBLE_PLAYBOOK = $(ANSIBLE_ENV) ansible-playbook -i $(INVENTORY) $(PLAYBOOK) --vault-password-file $(VAULT_PASSWORD_FILE)
 ANSIBLE = $(ANSIBLE_ENV) ansible -i $(INVENTORY)
 
-.PHONY: roles ping prepare security firewall backup deploy nginx all ps logs migrate vault-edit
+.PHONY: roles ping prepare security firewall backup deploy nginx all ps logs migrate vault-edit monitoring
 
 roles:
 	ansible-galaxy collection install -r requirements.yml
@@ -46,3 +46,6 @@ migrate:
 
 vault-edit:
 	EDITOR=$(VAULT_EDITOR) $(ANSIBLE_ENV) ansible-vault edit group_vars/vault.yml --vault-password-file $(VAULT_PASSWORD_FILE)
+
+monitoring:
+	$(ANSIBLE_PLAYBOOK) --tags monitoring
