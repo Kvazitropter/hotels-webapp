@@ -1,42 +1,49 @@
-[![project check](https://github.com/kotovann/hotels-webapp/actions/workflows/check.yml/badge.svg?branch=main)](https://github.com/kotovann/hotels-webapp/actions/workflows/check.yml)
+# HotelsWeb
 
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=kotovann_hotels-webapp&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=kotovann_hotels-webapp)
+<p align="center">
+  <a href="https://github.com/kotovann/hotels-webapp/actions/workflows/check.yml">
+    <img src="https://github.com/kotovann/hotels-webapp/actions/workflows/check.yml/badge.svg?branch=main" alt="project check">
+  </a>
+  <a href="https://sonarcloud.io/summary/new_code?id=kotovann_hotels-webapp">
+    <img src="https://sonarcloud.io/api/project_badges/measure?project=kotovann_hotels-webapp&metric=alert_status" alt="Quality Gate Status">
+  </a>
+  <a href="https://sonarcloud.io/summary/new_code?id=kotovann_hotels-webapp">
+    <img src="https://sonarcloud.io/api/project_badges/measure?project=kotovann_hotels-webapp&metric=coverage" alt="Coverage">
+  </a>
+</p>
 
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=kotovann_hotels-webapp&metric=coverage)](https://sonarcloud.io/summary/new_code?id=kotovann_hotels-webapp)
+Веб-приложение сети гостиниц доступно по [ссылке](https://тутати.рф/)
 
-!Для запуска Docker используйте команды Makefile!
+    - frontend: React
+    - backend: Django
+    - database: PostgreSQL
+    - reverse proxy: Nginx
+    - deployment: GitHub Actions + GHCR + Ansible
+    - monitoring: Uptime Kuma
 
-####  Первый запуск (с загрузкой фикстур):
+---
+
+###  Локальный запуск
+
+**Требования:**
+
+- Docker
+- Make
+
+Файлы `.env` не хранятся в репозитории. Пример наполнения -  `.env.example` и `backend/.env.example`
+
+1. Склонировать репозиторий
+2. Запуск с созданием env-файлов, сборкой контейнеров, применением миграций и загрузкой фикстур:
 
 ```bash
 make init
 ```
+**Основные команды Makefile:**
 
-#### Запуск с пересборкой + миграции (без загрузки фикстур):
-
-```bash
-make dev
-```
-
-#### Просто запуск сущесвуещих контейнеров:
-```bash
-make up
-```
-
-#### Пересоздать БД:
-
-```bash
-make db-redo
-```
-
-#### Остановить:
-
-```bash
-make down
-```
-
-Остановить и удалить данные БД:
-
-```bash
-make down-v
-```
+| Команда  | Действие |
+| --- | --- |
+| make dev | пересборка + миграции (без загрузки фикстур) |
+| make up | запуск существуещих контейнеров |
+| make db-redo | пересоздать БД |
+| make down | остановить |
+| make down-v | остановить + удалить данные БД|
