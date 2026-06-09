@@ -223,7 +223,7 @@
         env_files:
           - .env.production
         service: backend
-        command: uv run python manage.py collectstatic --noinput
+        command: uv run --no-dev python manage.py collectstatic --noinput
       tags: deploy
 
     - name: Run migrations
@@ -234,7 +234,7 @@
         env_files:
           - .env.production
         service: backend
-        command: uv run python manage.py migrate --noinput
+        command: uv run --no-dev python manage.py migrate --noinput
       tags: deploy
 
     - name: Load fixtures
@@ -245,7 +245,7 @@
         env_files:
           - .env.production
         service: backend
-        command: uv run python manage.py loaddata fixtures/users_data.json fixtures/hotels_data.json fixtures/bookings_data.json
+        command: uv run --no-dev python manage.py loaddata fixtures/users_data.json fixtures/hotels_data.json fixtures/bookings_data.json
       tags: fixtures
 
     - name: Create db backup dir
