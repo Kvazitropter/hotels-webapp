@@ -15,13 +15,12 @@
 Веб-приложение сети гостиниц доступно по [ссылке](https://тутати.рф/)
 
     - frontend: React
-    - backend: Django
+    - backend: Django + Django REST Framework
     - database: PostgreSQL
     - reverse proxy: Nginx
     - deployment: GitHub Actions + GHCR + Ansible
     - monitoring: Uptime Kuma
 
----
 
 ###  Локальный запуск
 
