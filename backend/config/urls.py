@@ -8,6 +8,7 @@ from health_check.views import HealthCheckView
 
 
 HEALTH_TOKEN = config('HEALTH_TOKEN')
+DOCS_TOKEN = config('DOCS_TOKEN')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -21,16 +22,14 @@ urlpatterns = [
                 "health_check.Mail"
             ]
         )
-    )
+    ),
+    path('api/schema/{DOCS_TOKEN}/', SpectacularAPIView.as_view(), name='schema'),
+    path(
+        'api/docs/{DOCS_TOKEN}/',
+        SpectacularSwaggerView.as_view(url_name='schema'),
+        name='swagger-ui'
+    ),
 ]
 
 if settings.DEBUG:
-    urlpatterns += [
-        path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
-        path(
-            'api/docs/',
-            SpectacularSwaggerView.as_view(url_name='schema'),
-            name='swagger-ui'
-        ),
-    ]
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

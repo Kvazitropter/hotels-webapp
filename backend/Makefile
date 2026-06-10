@@ -51,7 +51,10 @@ list-commands:
 	@echo   migrate                     - Применить миграции
 	@echo   shell                       - Запустить Django shell
 	@echo   superuser                   - Создать администратора
-	@echo   test                        - Запустить pytest
+	@echo   test                        - Запустить тесты (TEST_NAME=<имя>)
+	@echo   coverage                    - Запустить тесты с измерением покрытия (APP_NAME=<приложение>)
+	@echo   cov-report                  - Вывести отчёт о покрытии в консоль
+	@echo   cov-html                    - Сформировать HTML-отчёт о покрытии
 	@echo   lint                        - Проверить код ruff
 	@echo   lint-fix                    - Исправить ошибки ruff
 	@echo   gen-secret                  - Сгенерировать SECRET_KEY
@@ -63,13 +66,14 @@ list-commands:
 	@echo   create-users                - Создать пользователей с указанной ролью (USER_COUNT, ROLE_NAME)
 	@echo   delete-all-users            - Удалить ВСЕХ пользователей
 	@echo   delete-users                - Удалить пользователей по фильтру (USER_LOOKUP)
-	@echo   create-hotels               - Сгенерировать отели и номера (HOTEL_NAME, HOTEL_COUNT, ROOM_TYPE_COUNT, ROOM_PER_HOTEL)
+	@echo   create-hotels               - Сгенерировать отели и номера (HOTEL_NAME, HOTEL_COUNT, ROOM_TYPE_COUNT, ROOM_PER_HOTEL, PHOTO_PER_ROOM)
 	@echo   create-room-types           - Создать только типы номеров (ROOM_TYPE_COUNT)
-	@echo   create-rooms                - Создать только комнаты (ROOM_PER_HOTEL)
+	@echo   create-rooms                - Создать только номера (HOTEL_NAME, ROOM_PER_HOTEL, PHOTO_PER_ROOM)
 	@echo   delete-hotels               - Удалить отели по фильтру (HOTEL_LOOKUP)
 	@echo   delete-room-types           - Удалить типы номеров по фильтру (ROOM_TYPE_LOOKUP)
-	@echo   delete-hotels-all           - Удалить все отели и типы номеров
-	@echo   create-bookings             - Сгенерировать бронирования и отзывы (BOOKING_COUNT, REVIEW_COUNT)
+	@echo   create-bookings             - Сгенерировать бронирования и отзывы (BOOKING_COUNT)
+	@echo   create-bookings-no-reviews  - Сгенерировать бронирования без отзывов (BOOKING_COUNT)
+	@echo   create-reviews              - Сгенерировать отзывы для существующих бронирований
 	@echo   delete-bookings-all         - Удалить все бронирования и отзывы (BOOKING_LOOKUP)
 	@echo   list-commands               - Показать эту справку
 
@@ -102,8 +106,7 @@ lint-fix:
 	docker compose exec backend uv run ruff check --fix .
 
 gen-secret:
-	docker compose exec backend uv run python -c "import secrets; print('SECRET_KEY=' + secrets.token_urlsafe(32))"
-	@echo "Замените строку с SECRET_KEY в .env на сгенерированную"
+	docker compose exec backend uv run python -c "import secrets; print(secrets.token_urlsafe(32))"
 
 # Тестовые данные
 load-data:
