@@ -39,6 +39,7 @@ jobs:
 
       SECRET_KEY: super_ci_secret
       HEALTH_TOKEN: super_ci_token
+      DOCS_TOKEN: super_ci_token
       DEBUG: True
       ALLOWED_HOSTS: ""
       FRONTEND_URL: http://localhost:3000
